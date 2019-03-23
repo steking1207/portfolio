@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SK2 Design</title>
+<link rel="shortcut icon" href="../favicon.ico" />
+<link href="../css/reset.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+body {font-size:13px; line-height:1.6; color:#666}
+a:link,
+a:visited {color:#369}
+a:hover {text-decoration:none}
+img {display:block}
+#container {position:relative}
+header {position:fixed; left:0; top:0; width:100%; background:rgba(0,0,0,0.8); text-align:center; font:16px/2 "微軟正黑體", "Microsoft JhengHei";
+-webkit-box-shadow:0 0 5px 0 rgba(0,0,0,0.8);
+        box-shadow:0 0 5px 0 rgba(0,0,0,0.8)}
+h1 {margin-right:30px; color:#fff; display:inline-block}
+.mainnav {display:inline-block}
+.mainnav li {display:inline-block; margin:5px 10px}
+.mainnav li a:link,
+.mainnav li a:visited {color:#fff}
+#main section {padding-top:45px}
+#main .project {; margin:0 auto; width:920px; margin-bottom:30px}
+#main .project img {
+  -webkit-box-shadow:0 0 5px 0 rgba(0,0,0,0.8);
+          box-shadow:0 0 5px 0 rgba(0,0,0,0.8)
+}
+#main .project img.noshadow {
+  -webkit-box-shadow:none;
+          box-shadow:none
+}
+#main h2 {display:block; margin-bottom:20px; padding:0 15px; border-bottom:2px solid #333; font:18px/2 "微軟正黑體", "Microsoft JhengHei"}
+#main h3 {display:block; margin:5px 0; font-weight:bold; font-size:13px; color:#000}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+	function goToByScroll(id){
+		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+	}
+</script>
+</head>
+
+<body>
+<div id="container">
+<header>
+<h1>SK2's Portfolio</h1>
+<ul class="mainnav">
+	<li><a href="#s1" onClick="goToByScroll('s1')">視覺設計+前端開發 (4)</a></li>
+    <li><a href="#s2" onClick="goToByScroll('s2')">前端開發 (5)</a></li>
+    <li><a href="#s3" onClick="goToByScroll('s3')">APP設計 (9)</a></li>
+</ul>
+</header>
+<div id="main">
+	<section id="s1">
+    <h2>視覺設計+前端開發</h2>
+        <div class="project">
+        <img src="img/2012-dcplus.jpg">
+        <h3>dcplus 數位行銷實戰家 (<a href="http://www.dcplus.com.tw/" target="_blank">上線中</a>)</h3>
+        </div>
+        <div class="project">
+        <img src="img/2012-fichet1.jpg">
+        <h3>高等教育國際合作基金會 (<a href="http://www.fichet.org.tw/" target="_blank">上線中</a>)</h3>
+        </div>
+        <div class="project">
+        <img src="img/2012-nac.jpg">
+        <h3>國農化工 (<a href="http://www.nationalagricultural.com" target="_blank">上線中</a>)</h3>
+        </div>
+        <div class="project">
+        <img src="img/2012-wenshui.jpg">
+        <h3>文水藝文中心 (<a href="http://www.wenshui.com.tw/" target="_blank">上線中</a>)</h3>
+        </div>
+    </section>
+    <section id="s2">
+    <h2>前端開發</h2>
+    	<div class="project">
+        <img src="img/2012-cht.jpg" class="noshadow">
+        <h3>中華電信 (<a href="http://www.cht.com.tw/" target="_blank">上線中</a>)</h3>
+        <p>自適應網站 (隨裝置變化排版)</p>
+        </div>
+        <div class="project">
+        <img src="img/2012-echo-taitung.jpg">
+        <h3>臺東聚落回聲 (<a href="http://www.echotaitung.net/" target="_blank">上線中</a>)</h3>
+        <p>行動版最佳化</p>
+        </div>
+        <div class="project">
+        <img src="img/2012-ysykitchen.jpg">
+        <h3>悅湘園餐廳 (<a href="http://www.ysykitchen.com.tw/" target="_blank">上線中</a>)</h3>
+        <p>滿版式設計</p>
+        </div>
+        <div class="project">
+        <img src="img/2012-ASUS-SonicMaster.jpg">
+        <h3>ASUS SonicMaster (<a href="http://sonicmaster.asus.com/" target="_blank">上線中</a>)</h3>
+        <p>HTML5+CSS3</p>
+        </div>
+        <div class="project">
+        <img src="img/2012-pts.jpg">
+        <h3>公視紀錄片 載他去想去的地方 (<a href="http://bus.pts.org.tw/" target="_blank">上線中</a>)</h3>
+        <p>滿版背景影片</p>
+        </div>
+    </section>
+    <section id="s3">
+    <h2>APP設計</h2>
+    	<div class="project">
+        <img src="img/2012-taaze-icon.jpg">
+        <img src="img/2012-taaze-screen.jpg">
+        <h3>TAAZE讀冊 (<a href="https://itunes.apple.com/us/app/id555230285?mt=8" target="_blank">iOS</a>)</h3>
+      </div>
+      	<div class="project">
+        <img src="img/2012-ilan.jpg">
+        <h3>宜蘭伴手禮 (<a href="http://itunes.apple.com/tw/app/yi-lan-ban-shou-li/id532508667?mt=8" target="_blank">iOS</a>)</h3>
+      	</div>
+        <div class="project">
+        <img src="img/2012-ipcam.jpg">
+        <h3>IP CAM (Android)</h3>
+        <p>客製化APP</p>
+        </div>
+        <div class="project">
+        <img src="img/2012-home-control.jpg">
+        <h3>居家控制 (Android)</h3>
+        <p>客製化APP</p>
+        </div>
+        <div class="project">
+        <img src="img/2012-gokimo.jpg">
+        <h3>休息一夏 (<a href="https://play.google.com/store/apps/details?id=com.gokimo.qk.qNavi" target="_blank">Android</a>)</h3>
+        </div>
+        <div class="project">
+        <img src="img/2012-anfish.jpg">
+        <h3>Anfish (<a href="https://play.google.com/store/apps/details?id=com.a0soft.gphone.aTruffleHog" target="_blank">Android</a>)</h3>
+        <p>線上仍是舊版</p>
+        </div>
+        <div class="project">
+        <img src="img/2012-sabuz-toefl.jpg">
+        <h3>TOEFL遊戲 (Android)</h3>
+        <p>未上線</p>
+        </div>
+        <div class="project">
+        <img src="img/2012-supernote-main.jpg">
+        <img src="img/2012-supernote-detail.jpg">
+        <h3>SuperNote (Android)</h3>
+        <p>未上線</p>
+        </div>
+        <div class="project">
+        <img src="img/2011_sapuz_ehome-mobile_01.jpg">
+        <img src="img/2011_sapuz_ehome-tablet_01.jpg">
+        <img src="img/2011_sapuz_ehome-tablet_03.jpg">
+        <h3>E-Home御宅神智慧家庭 (Android)</h3>
+        <p>客製化APP</p>
+        </div>
+    </section>
+</div>
+</div>
+</body>
+</html>
