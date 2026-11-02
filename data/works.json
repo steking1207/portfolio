@@ -79,13 +79,15 @@
           "src": "images/works/2024-jctprovider/mvzbxs1c0.webp",
           "thumb": "images/works/2024-jctprovider/mvzbxs1c0-t.webp",
           "w": 1074,
-          "h": 2634
+          "h": 2634,
+          "frame": "phone"
         },
         {
           "src": "images/works/2024-jctprovider/mvzbxs8w1.webp",
           "thumb": "images/works/2024-jctprovider/mvzbxs8w1-t.webp",
           "w": 1074,
-          "h": 2615
+          "h": 2615,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -112,22 +114,26 @@
         {
           "src": "images/works/2023-mrcharger/01.webp",
           "w": 1600,
-          "h": 1600
+          "h": 1600,
+          "frame": "none"
         },
         {
           "src": "images/works/2023-mrcharger/02.webp",
           "w": 1600,
-          "h": 2263
+          "h": 2263,
+          "frame": "none"
         },
         {
           "src": "images/works/2023-mrcharger/03.webp",
           "w": 1600,
-          "h": 2263
+          "h": 2263,
+          "frame": "none"
         },
         {
           "src": "images/works/2023-mrcharger/04.webp",
           "w": 1040,
-          "h": 1040
+          "h": 1040,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -154,22 +160,26 @@
         {
           "src": "images/works/2021-tsuei/01.webp",
           "w": 1080,
-          "h": 1080
+          "h": 1080,
+          "frame": "none"
         },
         {
           "src": "images/works/2021-tsuei/02.webp",
           "w": 1600,
-          "h": 1735
+          "h": 1735,
+          "frame": "none"
         },
         {
           "src": "images/works/2021-tsuei/03.webp",
           "w": 1600,
-          "h": 1735
+          "h": 1735,
+          "frame": "none"
         },
         {
           "src": "images/works/2021-tsuei/04.webp",
           "w": 1080,
-          "h": 1080
+          "h": 1080,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -194,12 +204,14 @@
         {
           "src": "images/works/2020-lab22/01.webp",
           "w": 1080,
-          "h": 1080
+          "h": 1080,
+          "frame": "none"
         },
         {
           "src": "images/works/2020-lab22/02.webp",
           "w": 1080,
-          "h": 1080
+          "h": 1080,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -224,22 +236,26 @@
         {
           "src": "images/works/2020-syntrend/01.webp",
           "w": 1200,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         },
         {
           "src": "images/works/2020-syntrend/02.webp",
           "w": 1200,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         },
         {
           "src": "images/works/2020-syntrend/03.webp",
           "w": 1200,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         },
         {
           "src": "images/works/2020-syntrend/04.webp",
           "w": 1200,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -265,27 +281,32 @@
         {
           "src": "images/works/2020-judicial/01.webp",
           "w": 1200,
-          "h": 794
+          "h": 794,
+          "frame": "none"
         },
         {
           "src": "images/works/2020-judicial/02.webp",
           "w": 1600,
-          "h": 1067
+          "h": 1067,
+          "frame": "none"
         },
         {
           "src": "images/works/2020-judicial/03.webp",
           "w": 1200,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         },
         {
           "src": "images/works/2020-judicial/04.webp",
           "w": 1040,
-          "h": 1040
+          "h": 1040,
+          "frame": "none"
         },
         {
           "src": "images/works/2020-judicial/05.webp",
           "w": 1600,
-          "h": 1080
+          "h": 1080,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -310,17 +331,20 @@
         {
           "src": "images/works/2020-aurora/01.webp",
           "w": 1200,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2020-aurora/02.webp",
           "w": 600,
-          "h": 600
+          "h": 600,
+          "frame": "none"
         },
         {
           "src": "images/works/2020-aurora/03.webp",
           "w": 1200,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -345,92 +369,110 @@
         {
           "src": "images/works/2019-amazon/01.webp",
           "w": 1600,
-          "h": 1601
+          "h": 1601,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/02.webp",
           "w": 1200,
-          "h": 794
+          "h": 794,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/03.webp",
           "w": 1600,
-          "h": 1600
+          "h": 1600,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/04.webp",
           "w": 1200,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/05.webp",
           "w": 509,
-          "h": 743
+          "h": 743,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/06.webp",
           "w": 939,
-          "h": 939
+          "h": 939,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/07.webp",
           "w": 1200,
-          "h": 794
+          "h": 794,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/08.webp",
           "w": 1200,
-          "h": 794
+          "h": 794,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/09.webp",
           "w": 1600,
-          "h": 1600
+          "h": 1600,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/10.webp",
           "w": 1200,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/11.webp",
           "w": 509,
-          "h": 743
+          "h": 743,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/12.webp",
           "w": 1200,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/13.webp",
           "w": 509,
-          "h": 743
+          "h": 743,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/14.webp",
           "w": 1200,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/15.webp",
           "w": 509,
-          "h": 743
+          "h": 743,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/16.webp",
           "w": 1200,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/17.webp",
           "w": 1200,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-amazon/18.webp",
           "w": 1200,
-          "h": 3000
+          "h": 3000,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -455,27 +497,32 @@
         {
           "src": "images/works/2019-haruharu/01.webp",
           "w": 1080,
-          "h": 1080
+          "h": 1080,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-haruharu/02.webp",
           "w": 1200,
-          "h": 630
+          "h": 630,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-haruharu/03.webp",
           "w": 1200,
-          "h": 630
+          "h": 630,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-haruharu/04.webp",
           "w": 1080,
-          "h": 1080
+          "h": 1080,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-haruharu/05.webp",
           "w": 1080,
-          "h": 1080
+          "h": 1080,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -500,17 +547,20 @@
         {
           "src": "images/works/2019-lantian/01.webp",
           "w": 509,
-          "h": 746
+          "h": 746,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-lantian/02.webp",
           "w": 509,
-          "h": 746
+          "h": 746,
+          "frame": "none"
         },
         {
           "src": "images/works/2019-lantian/03.webp",
           "w": 509,
-          "h": 746
+          "h": 746,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -536,7 +586,8 @@
         {
           "src": "images/works/2018-104-hmi/01.webp",
           "w": 1280,
-          "h": 3493
+          "h": 3493,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -562,17 +613,20 @@
         {
           "src": "images/works/2018-cheers-csr/01.webp",
           "w": 1600,
-          "h": 832
+          "h": 832,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-cheers-csr/02.webp",
           "w": 1600,
-          "h": 1430
+          "h": 1430,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-cheers-csr/03.webp",
           "w": 1600,
-          "h": 1064
+          "h": 1064,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -598,7 +652,8 @@
         {
           "src": "images/works/2018-bt-rpa/01.webp",
           "w": 1280,
-          "h": 2262
+          "h": 2262,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -625,67 +680,80 @@
         {
           "src": "images/works/2018-bt-air/01.webp",
           "w": 1600,
-          "h": 808
+          "h": 808,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/02.webp",
           "w": 1600,
-          "h": 656
+          "h": 656,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/03.webp",
           "w": 1600,
-          "h": 824
+          "h": 824,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/04.webp",
           "w": 1600,
-          "h": 824
+          "h": 824,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/05.webp",
           "w": 1600,
-          "h": 712
+          "h": 712,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/06.webp",
           "w": 1600,
-          "h": 712
+          "h": 712,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/07.webp",
           "w": 1600,
-          "h": 712
+          "h": 712,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/08.webp",
           "w": 1600,
-          "h": 712
+          "h": 712,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/09.webp",
           "w": 1600,
-          "h": 712
+          "h": 712,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/10.webp",
           "w": 1600,
-          "h": 712
+          "h": 712,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/11.webp",
           "w": 1600,
-          "h": 712
+          "h": 712,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/12.webp",
           "w": 1600,
-          "h": 712
+          "h": 712,
+          "frame": "browser"
         },
         {
           "src": "images/works/2018-bt-air/13.webp",
           "w": 1600,
-          "h": 936
+          "h": 936,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -711,7 +779,8 @@
         {
           "src": "images/works/2018-twm-fubon/01.webp",
           "w": 1280,
-          "h": 2570
+          "h": 2570,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -737,7 +806,8 @@
         {
           "src": "images/works/2018-fetnet-sme/01.webp",
           "w": 1280,
-          "h": 2245
+          "h": 2245,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -763,7 +833,8 @@
         {
           "src": "images/works/2017-edm/01.webp",
           "w": 1280,
-          "h": 5061
+          "h": 5061,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -789,7 +860,8 @@
         {
           "src": "images/works/2017-sogi-farm/01.webp",
           "w": 1280,
-          "h": 3162
+          "h": 3162,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -815,17 +887,20 @@
         {
           "src": "images/works/2017-cw-ctbc/01.webp",
           "w": 1600,
-          "h": 1887
+          "h": 1887,
+          "frame": "browser"
         },
         {
           "src": "images/works/2017-cw-ctbc/02.webp",
           "w": 1600,
-          "h": 1887
+          "h": 1887,
+          "frame": "browser"
         },
         {
           "src": "images/works/2017-cw-ctbc/03.webp",
           "w": 1600,
-          "h": 1064
+          "h": 1064,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -851,7 +926,8 @@
         {
           "src": "images/works/2017-ch-forum/01.webp",
           "w": 1280,
-          "h": 694
+          "h": 694,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -877,7 +953,8 @@
         {
           "src": "images/works/2017-luckyart/01.webp",
           "w": 1280,
-          "h": 971
+          "h": 971,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -903,17 +980,20 @@
         {
           "src": "images/works/2016-cheers-quiz/01.webp",
           "w": 1600,
-          "h": 667
+          "h": 667,
+          "frame": "browser"
         },
         {
           "src": "images/works/2016-cheers-quiz/02.webp",
           "w": 1600,
-          "h": 667
+          "h": 667,
+          "frame": "browser"
         },
         {
           "src": "images/works/2016-cheers-quiz/03.webp",
           "w": 1600,
-          "h": 667
+          "h": 667,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -939,17 +1019,20 @@
         {
           "src": "images/works/2016-ego/01.webp",
           "w": 1600,
-          "h": 3838
+          "h": 3838,
+          "frame": "browser"
         },
         {
           "src": "images/works/2016-ego/02.webp",
           "w": 1600,
-          "h": 2762
+          "h": 2762,
+          "frame": "browser"
         },
         {
           "src": "images/works/2016-ego/03.webp",
           "w": 1600,
-          "h": 4190
+          "h": 4190,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -975,17 +1058,20 @@
         {
           "src": "images/works/2015-cie/01.webp",
           "w": 1400,
-          "h": 1105
+          "h": 1105,
+          "frame": "browser"
         },
         {
           "src": "images/works/2015-cie/02.webp",
           "w": 900,
-          "h": 1384
+          "h": 1384,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-cie/03.webp",
           "w": 500,
-          "h": 1830
+          "h": 1830,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -1011,152 +1097,182 @@
         {
           "src": "images/works/2015-twm-office/01.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/02.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/03.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/04.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/05.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/06.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/07.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/08.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/09.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/10.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/11.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/12.webp",
           "w": 750,
-          "h": 1334
+          "h": 1334,
+          "frame": "phone"
         },
         {
           "src": "images/works/2015-twm-office/13.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/14.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/15.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/16.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/17.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/18.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/19.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/20.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/21.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/22.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/23.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/24.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/25.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/26.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/27.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/28.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/29.webp",
           "w": 1600,
-          "h": 1200
+          "h": 1200,
+          "frame": "none"
         },
         {
           "src": "images/works/2015-twm-office/30.webp",
           "w": 1400,
-          "h": 900
+          "h": 900,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -1179,12 +1295,14 @@
         {
           "src": "images/works/2015-continental/01.webp",
           "w": 1200,
-          "h": 2685
+          "h": 2685,
+          "frame": "browser"
         },
         {
           "src": "images/works/2015-continental/02.webp",
           "w": 1200,
-          "h": 1902
+          "h": 1902,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -1210,52 +1328,62 @@
         {
           "src": "images/works/2014-tci/01.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2014-tci/02.webp",
           "w": 1024,
-          "h": 1072
+          "h": 1072,
+          "frame": "none"
         },
         {
           "src": "images/works/2014-tci/03.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2014-tci/04.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2014-tci/05.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2014-tci/06.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2014-tci/07.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2014-tci/08.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2014-tci/09.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2014-tci/10.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -1280,32 +1408,38 @@
         {
           "src": "images/works/2013-aengin/01.webp",
           "w": 768,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-aengin/02.webp",
           "w": 580,
-          "h": 1466
+          "h": 1466,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-aengin/03.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-aengin/04.webp",
           "w": 768,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-aengin/05.webp",
           "w": 768,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-aengin/06.webp",
           "w": 768,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -1330,42 +1464,50 @@
         {
           "src": "images/works/2013-geasy/01.webp",
           "w": 752,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-geasy/02.webp",
           "w": 752,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-geasy/03.webp",
           "w": 752,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-geasy/04.webp",
           "w": 752,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-geasy/05.webp",
           "w": 752,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-geasy/06.webp",
           "w": 752,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-geasy/07.webp",
           "w": 752,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-geasy/08.webp",
           "w": 588,
-          "h": 1422
+          "h": 1422,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -1391,122 +1533,146 @@
         {
           "src": "images/works/2013-pgg/01.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/02.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/03.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/04.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/05.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/06.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/07.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/08.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/09.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/10.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/11.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/12.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/13.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/14.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/15.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/16.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/17.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/18.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/19.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/20.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/21.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/22.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/23.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-pgg/24.webp",
           "w": 1080,
-          "h": 1920
+          "h": 1920,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -1529,7 +1695,8 @@
         {
           "src": "images/works/2013-taipeiculture/01.webp",
           "w": 1200,
-          "h": 960
+          "h": 960,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -1555,12 +1722,14 @@
         {
           "src": "images/works/2013-sogi-shop/01.webp",
           "w": 1440,
-          "h": 2000
+          "h": 2000,
+          "frame": "browser"
         },
         {
           "src": "images/works/2013-sogi-shop/02.webp",
           "w": 1280,
-          "h": 2658
+          "h": 2658,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -1585,17 +1754,20 @@
         {
           "src": "images/works/2013-filemanager/01.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-filemanager/02.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2013-filemanager/03.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -1620,7 +1792,8 @@
         {
           "src": "images/works/2012-asus-sonicmaster/01.webp",
           "w": 920,
-          "h": 508
+          "h": 508,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -1645,12 +1818,14 @@
         {
           "src": "images/works/2012-anfish/01.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-anfish/02.webp",
           "w": 1280,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -1673,12 +1848,14 @@
         {
           "src": "images/works/2012-euro/01.webp",
           "w": 1440,
-          "h": 1050
+          "h": 1050,
+          "frame": "browser"
         },
         {
           "src": "images/works/2012-euro/02.webp",
           "w": 1440,
-          "h": 1050
+          "h": 1050,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -1703,47 +1880,56 @@
         {
           "src": "images/works/2012-ipcam/01.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ipcam/02.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ipcam/03.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ipcam/04.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ipcam/05.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ipcam/06.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ipcam/07.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ipcam/08.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ipcam/09.webp",
           "w": 720,
-          "h": 1280
+          "h": 1280,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -1768,12 +1954,14 @@
         {
           "src": "images/works/2012-supernote/01.webp",
           "w": 1280,
-          "h": 752
+          "h": 752,
+          "frame": "none"
         },
         {
           "src": "images/works/2012-supernote/02.webp",
           "w": 1280,
-          "h": 752
+          "h": 752,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -1799,72 +1987,86 @@
         {
           "src": "images/works/2012-taaze/01.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/02.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/03.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/04.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/05.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/06.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/07.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/08.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/09.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/10.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/11.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/12.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/13.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-taaze/14.webp",
           "w": 640,
-          "h": 960
+          "h": 960,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -1889,52 +2091,62 @@
         {
           "src": "images/works/2012-toefl/01.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-toefl/02.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-toefl/03.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-toefl/04.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-toefl/05.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-toefl/06.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-toefl/07.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-toefl/08.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-toefl/09.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-toefl/10.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -1958,7 +2170,8 @@
         {
           "src": "images/works/2012-dcplus/01.webp",
           "w": 920,
-          "h": 600
+          "h": 600,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -1983,47 +2196,56 @@
         {
           "src": "images/works/2012-ezform/01.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ezform/02.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ezform/03.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ezform/04.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ezform/05.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-ezform/06.webp",
           "w": 876,
-          "h": 572
+          "h": 572,
+          "frame": "none"
         },
         {
           "src": "images/works/2012-ezform/07.webp",
           "w": 512,
-          "h": 512
+          "h": 512,
+          "frame": "none"
         },
         {
           "src": "images/works/2012-ezform/08.webp",
           "w": 512,
-          "h": 512
+          "h": 512,
+          "frame": "none"
         },
         {
           "src": "images/works/2012-ezform/09.webp",
           "w": 512,
-          "h": 512
+          "h": 512,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -2046,7 +2268,8 @@
         {
           "src": "images/works/2012-secedu/01.webp",
           "w": 1280,
-          "h": 1750
+          "h": 1750,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2072,12 +2295,14 @@
         {
           "src": "images/works/2012-cht/01.webp",
           "w": 1000,
-          "h": 1135
+          "h": 1135,
+          "frame": "browser"
         },
         {
           "src": "images/works/2012-cht/02.webp",
           "w": 1280,
-          "h": 1333
+          "h": 1333,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2102,27 +2327,32 @@
         {
           "src": "images/works/2012-qnavi/01.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-qnavi/02.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-qnavi/03.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-qnavi/04.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-qnavi/05.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -2148,7 +2378,8 @@
         {
           "src": "images/works/2012-pts-bus/01.webp",
           "w": 920,
-          "h": 504
+          "h": 504,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2172,7 +2403,8 @@
         {
           "src": "images/works/2012-tsu/01.webp",
           "w": 1400,
-          "h": 1300
+          "h": 1300,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2196,12 +2428,14 @@
         {
           "src": "images/works/2012-nac/01.webp",
           "w": 1280,
-          "h": 800
+          "h": 800,
+          "frame": "browser"
         },
         {
           "src": "images/works/2012-nac/02.webp",
           "w": 1280,
-          "h": 800
+          "h": 800,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2224,7 +2458,8 @@
         {
           "src": "images/works/2012-intledu/01.webp",
           "w": 1400,
-          "h": 1400
+          "h": 1400,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2249,7 +2484,8 @@
         {
           "src": "images/works/2012-yilan-gift/01.webp",
           "w": 920,
-          "h": 600
+          "h": 600,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -2274,17 +2510,20 @@
         {
           "src": "images/works/2012-home-control/01.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-home-control/02.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-home-control/03.webp",
           "w": 876,
-          "h": 1656
+          "h": 1656,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -2308,7 +2547,8 @@
         {
           "src": "images/works/2012-ysykitchen/01.webp",
           "w": 920,
-          "h": 500
+          "h": 500,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2332,12 +2572,14 @@
         {
           "src": "images/works/2012-wenshui/01.webp",
           "w": 1600,
-          "h": 1029
+          "h": 1029,
+          "frame": "browser"
         },
         {
           "src": "images/works/2012-wenshui/02.webp",
           "w": 1600,
-          "h": 1029
+          "h": 1029,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2363,7 +2605,8 @@
         {
           "src": "images/works/2012-echotaitung/01.webp",
           "w": 920,
-          "h": 492
+          "h": 492,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2386,12 +2629,14 @@
         {
           "src": "images/works/2012-nyc/01.webp",
           "w": 1600,
-          "h": 833
+          "h": 833,
+          "frame": "browser"
         },
         {
           "src": "images/works/2012-nyc/02.webp",
           "w": 1600,
-          "h": 833
+          "h": 833,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2416,17 +2661,20 @@
         {
           "src": "images/works/2012-epaper/01.webp",
           "w": 900,
-          "h": 755
+          "h": 755,
+          "frame": "browser"
         },
         {
           "src": "images/works/2012-epaper/02.webp",
           "w": 900,
-          "h": 1780
+          "h": 1780,
+          "frame": "phone"
         },
         {
           "src": "images/works/2012-epaper/03.webp",
           "w": 900,
-          "h": 1000
+          "h": 1000,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2450,17 +2698,20 @@
         {
           "src": "images/works/2012-fichet/01.webp",
           "w": 1360,
-          "h": 1604
+          "h": 1604,
+          "frame": "browser"
         },
         {
           "src": "images/works/2012-fichet/02.webp",
           "w": 1360,
-          "h": 1800
+          "h": 1800,
+          "frame": "browser"
         },
         {
           "src": "images/works/2012-fichet/03.webp",
           "w": 1360,
-          "h": 1800
+          "h": 1800,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2485,122 +2736,146 @@
         {
           "src": "images/works/2011-ehome/01.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/02.webp",
           "w": 1600,
-          "h": 940
+          "h": 940,
+          "frame": "none"
         },
         {
           "src": "images/works/2011-ehome/03.webp",
           "w": 1600,
-          "h": 900
+          "h": 900,
+          "frame": "none"
         },
         {
           "src": "images/works/2011-ehome/04.webp",
           "w": 1600,
-          "h": 900
+          "h": 900,
+          "frame": "none"
         },
         {
           "src": "images/works/2011-ehome/05.webp",
           "w": 1280,
-          "h": 752
+          "h": 752,
+          "frame": "none"
         },
         {
           "src": "images/works/2011-ehome/06.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/07.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/08.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/09.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/10.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/11.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/12.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/13.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/14.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/15.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/16.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/17.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/18.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/19.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/20.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/21.webp",
           "w": 800,
-          "h": 480
+          "h": 480,
+          "frame": "none"
         },
         {
           "src": "images/works/2011-ehome/22.webp",
           "w": 800,
-          "h": 480
+          "h": 480,
+          "frame": "none"
         },
         {
           "src": "images/works/2011-ehome/23.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         },
         {
           "src": "images/works/2011-ehome/24.webp",
           "w": 480,
-          "h": 800
+          "h": 800,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -2623,7 +2898,8 @@
         {
           "src": "images/works/2011-naturalization/01.webp",
           "w": 1200,
-          "h": 1400
+          "h": 1400,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -2646,12 +2922,14 @@
         {
           "src": "images/works/2011-hanchiu/01.webp",
           "w": 1200,
-          "h": 650
+          "h": 650,
+          "frame": "browser"
         },
         {
           "src": "images/works/2011-hanchiu/02.webp",
           "w": 1200,
-          "h": 1108
+          "h": 1108,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2674,17 +2952,20 @@
         {
           "src": "images/works/2010-gogobox/01.webp",
           "w": 1050,
-          "h": 1127
+          "h": 1127,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-gogobox/02.webp",
           "w": 240,
-          "h": 258
+          "h": 258,
+          "frame": "none"
         },
         {
           "src": "images/works/2010-gogobox/03.webp",
           "w": 1420,
-          "h": 1127
+          "h": 1127,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2707,22 +2988,26 @@
         {
           "src": "images/works/2010-gogobox-events/01.webp",
           "w": 1200,
-          "h": 700
+          "h": 700,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-gogobox-events/02.webp",
           "w": 1200,
-          "h": 866
+          "h": 866,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-gogobox-events/03.webp",
           "w": 1100,
-          "h": 700
+          "h": 700,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-gogobox-events/04.webp",
           "w": 1000,
-          "h": 990
+          "h": 990,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2747,12 +3032,14 @@
         {
           "src": "images/works/2010-msi/01.webp",
           "w": 1280,
-          "h": 1024
+          "h": 1024,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-msi/02.webp",
           "w": 1280,
-          "h": 1024
+          "h": 1024,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2775,42 +3062,50 @@
         {
           "src": "images/works/2010-sogi/01.webp",
           "w": 1050,
-          "h": 2100
+          "h": 2100,
+          "frame": "phone"
         },
         {
           "src": "images/works/2010-sogi/02.webp",
           "w": 240,
-          "h": 480
+          "h": 480,
+          "frame": "phone"
         },
         {
           "src": "images/works/2010-sogi/03.webp",
           "w": 1050,
-          "h": 2100
+          "h": 2100,
+          "frame": "phone"
         },
         {
           "src": "images/works/2010-sogi/04.webp",
           "w": 1200,
-          "h": 1192
+          "h": 1192,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-sogi/05.webp",
           "w": 1076,
-          "h": 1866
+          "h": 1866,
+          "frame": "phone"
         },
         {
           "src": "images/works/2010-sogi/06.webp",
           "w": 240,
-          "h": 160
+          "h": 160,
+          "frame": "none"
         },
         {
           "src": "images/works/2010-sogi/07.webp",
           "w": 1076,
-          "h": 1866
+          "h": 1866,
+          "frame": "phone"
         },
         {
           "src": "images/works/2010-sogi/08.webp",
           "w": 1076,
-          "h": 1866
+          "h": 1866,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -2833,12 +3128,14 @@
         {
           "src": "images/works/2010-sogofun/01.webp",
           "w": 1020,
-          "h": 764
+          "h": 764,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-sogofun/02.webp",
           "w": 1020,
-          "h": 1022
+          "h": 1022,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2861,22 +3158,26 @@
         {
           "src": "images/works/2010-trengo/01.webp",
           "w": 1100,
-          "h": 800
+          "h": 800,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-trengo/02.webp",
           "w": 1100,
-          "h": 800
+          "h": 800,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-trengo/03.webp",
           "w": 1100,
-          "h": 782
+          "h": 782,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-trengo/04.webp",
           "w": 1200,
-          "h": 900
+          "h": 900,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2899,22 +3200,26 @@
         {
           "src": "images/works/2010-hidotv/01.webp",
           "w": 1024,
-          "h": 634
+          "h": 634,
+          "frame": "none"
         },
         {
           "src": "images/works/2010-hidotv/02.webp",
           "w": 1024,
-          "h": 634
+          "h": 634,
+          "frame": "none"
         },
         {
           "src": "images/works/2010-hidotv/03.webp",
           "w": 1024,
-          "h": 634
+          "h": 634,
+          "frame": "none"
         },
         {
           "src": "images/works/2010-hidotv/04.webp",
           "w": 1024,
-          "h": 634
+          "h": 634,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -2937,12 +3242,14 @@
         {
           "src": "images/works/2010-kptel/01.webp",
           "w": 1440,
-          "h": 600
+          "h": 600,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-kptel/02.webp",
           "w": 1440,
-          "h": 600
+          "h": 600,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2965,7 +3272,8 @@
         {
           "src": "images/works/2010-cks-park/01.webp",
           "w": 1280,
-          "h": 1900
+          "h": 1900,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -2990,12 +3298,14 @@
         {
           "src": "images/works/2010-grandhoyal/01.webp",
           "w": 1280,
-          "h": 700
+          "h": 700,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-grandhoyal/02.webp",
           "w": 1280,
-          "h": 1370
+          "h": 1370,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3018,12 +3328,14 @@
         {
           "src": "images/works/2010-cungo/01.webp",
           "w": 1200,
-          "h": 900
+          "h": 900,
+          "frame": "browser"
         },
         {
           "src": "images/works/2010-cungo/02.webp",
           "w": 1200,
-          "h": 900
+          "h": 900,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3046,7 +3358,8 @@
         {
           "src": "images/works/2010-fashion/01.webp",
           "w": 1360,
-          "h": 1718
+          "h": 1718,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3071,7 +3384,8 @@
         {
           "src": "images/works/2010-sinopac-edm/01.webp",
           "w": 900,
-          "h": 1000
+          "h": 1000,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3094,22 +3408,26 @@
         {
           "src": "images/works/2010-trend-mazuu/01.webp",
           "w": 850,
-          "h": 550
+          "h": 550,
+          "frame": "none"
         },
         {
           "src": "images/works/2010-trend-mazuu/02.webp",
           "w": 850,
-          "h": 550
+          "h": 550,
+          "frame": "none"
         },
         {
           "src": "images/works/2010-trend-mazuu/03.webp",
           "w": 850,
-          "h": 550
+          "h": 550,
+          "frame": "none"
         },
         {
           "src": "images/works/2010-trend-mazuu/04.webp",
           "w": 1500,
-          "h": 920
+          "h": 920,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -3134,17 +3452,20 @@
         {
           "src": "images/works/2009-benq/01.webp",
           "w": 1280,
-          "h": 697
+          "h": 697,
+          "frame": "browser"
         },
         {
           "src": "images/works/2009-benq/02.webp",
           "w": 1280,
-          "h": 848
+          "h": 848,
+          "frame": "browser"
         },
         {
           "src": "images/works/2009-benq/03.webp",
           "w": 1200,
-          "h": 1186
+          "h": 1186,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3167,17 +3488,20 @@
         {
           "src": "images/works/2009-dynasafe/01.webp",
           "w": 950,
-          "h": 550
+          "h": 550,
+          "frame": "browser"
         },
         {
           "src": "images/works/2009-dynasafe/02.webp",
           "w": 950,
-          "h": 550
+          "h": 550,
+          "frame": "browser"
         },
         {
           "src": "images/works/2009-dynasafe/03.webp",
           "w": 950,
-          "h": 550
+          "h": 550,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3202,12 +3526,14 @@
         {
           "src": "images/works/2009-intel/01.webp",
           "w": 350,
-          "h": 200
+          "h": 200,
+          "frame": "none"
         },
         {
           "src": "images/works/2009-intel/02.webp",
           "w": 300,
-          "h": 250
+          "h": 250,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -3230,7 +3556,8 @@
         {
           "src": "images/works/2009-nextlink/01.webp",
           "w": 1200,
-          "h": 700
+          "h": 700,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3253,12 +3580,14 @@
         {
           "src": "images/works/2009-smartpay/01.webp",
           "w": 1400,
-          "h": 800
+          "h": 800,
+          "frame": "browser"
         },
         {
           "src": "images/works/2009-smartpay/02.webp",
           "w": 1400,
-          "h": 800
+          "h": 800,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3281,7 +3610,8 @@
         {
           "src": "images/works/2009-yahoo/01.webp",
           "w": 1280,
-          "h": 1710
+          "h": 1710,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3306,12 +3636,14 @@
         {
           "src": "images/works/2009-nutrimate/01.webp",
           "w": 420,
-          "h": 80
+          "h": 80,
+          "frame": "none"
         },
         {
           "src": "images/works/2009-nutrimate/02.webp",
           "w": 150,
-          "h": 150
+          "h": 150,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -3336,12 +3668,14 @@
         {
           "src": "images/works/2009-binmusic/01.webp",
           "w": 1024,
-          "h": 1070
+          "h": 1070,
+          "frame": "browser"
         },
         {
           "src": "images/works/2009-binmusic/02.webp",
           "w": 1024,
-          "h": 1030
+          "h": 1030,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3364,27 +3698,32 @@
         {
           "src": "images/works/2008-mjib/01.webp",
           "w": 240,
-          "h": 160
+          "h": 160,
+          "frame": "none"
         },
         {
           "src": "images/works/2008-mjib/02.webp",
           "w": 950,
-          "h": 585
+          "h": 585,
+          "frame": "none"
         },
         {
           "src": "images/works/2008-mjib/03.webp",
           "w": 950,
-          "h": 585
+          "h": 585,
+          "frame": "none"
         },
         {
           "src": "images/works/2008-mjib/04.webp",
           "w": 950,
-          "h": 585
+          "h": 585,
+          "frame": "none"
         },
         {
           "src": "images/works/2008-mjib/05.webp",
           "w": 950,
-          "h": 585
+          "h": 585,
+          "frame": "none"
         }
       ],
       "hidden": false
@@ -3407,7 +3746,8 @@
         {
           "src": "images/works/2007-guclub/01.webp",
           "w": 950,
-          "h": 1270
+          "h": 1270,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -3432,12 +3772,14 @@
         {
           "src": "images/works/2007-htc-touch/01.webp",
           "w": 1149,
-          "h": 659
+          "h": 659,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-htc-touch/02.webp",
           "w": 1280,
-          "h": 1200
+          "h": 1200,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3462,17 +3804,20 @@
         {
           "src": "images/works/2007-nokia6100/01.webp",
           "w": 1280,
-          "h": 580
+          "h": 580,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-nokia6100/02.webp",
           "w": 1280,
-          "h": 580
+          "h": 580,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-nokia6100/03.webp",
           "w": 1280,
-          "h": 580
+          "h": 580,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3497,17 +3842,20 @@
         {
           "src": "images/works/2007-cthouse-3pigs/01.webp",
           "w": 770,
-          "h": 550
+          "h": 550,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-cthouse-3pigs/02.webp",
           "w": 770,
-          "h": 550
+          "h": 550,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-cthouse-3pigs/03.webp",
           "w": 770,
-          "h": 550
+          "h": 550,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3530,17 +3878,20 @@
         {
           "src": "images/works/2007-familymart-husky/01.webp",
           "w": 950,
-          "h": 550
+          "h": 550,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-familymart-husky/02.webp",
           "w": 1000,
-          "h": 924
+          "h": 924,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-familymart-husky/03.webp",
           "w": 1000,
-          "h": 1572
+          "h": 1572,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -3565,32 +3916,38 @@
         {
           "src": "images/works/2007-familymart-keroro/01.webp",
           "w": 1260,
-          "h": 648
+          "h": 648,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-familymart-keroro/02.webp",
           "w": 1260,
-          "h": 648
+          "h": 648,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-familymart-keroro/03.webp",
           "w": 1260,
-          "h": 648
+          "h": 648,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-familymart-keroro/04.webp",
           "w": 1259,
-          "h": 870
+          "h": 870,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-familymart-keroro/05.webp",
           "w": 1259,
-          "h": 1011
+          "h": 1011,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-familymart-keroro/06.webp",
           "w": 1259,
-          "h": 946
+          "h": 946,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3632,17 +3989,20 @@
         {
           "src": "images/works/2007-twm/01.webp",
           "w": 995,
-          "h": 720
+          "h": 720,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-twm/02.webp",
           "w": 995,
-          "h": 1200
+          "h": 1200,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-twm/03.webp",
           "w": 995,
-          "h": 1200
+          "h": 1200,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3667,37 +4027,44 @@
         {
           "src": "images/works/2007-smec/01.webp",
           "w": 240,
-          "h": 147
+          "h": 147,
+          "frame": "none"
         },
         {
           "src": "images/works/2007-smec/02.webp",
           "w": 950,
-          "h": 580
+          "h": 580,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-smec/03.webp",
           "w": 950,
-          "h": 580
+          "h": 580,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-smec/04.webp",
           "w": 950,
-          "h": 580
+          "h": 580,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-smec/05.webp",
           "w": 950,
-          "h": 580
+          "h": 580,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-smec/06.webp",
           "w": 950,
-          "h": 580
+          "h": 580,
+          "frame": "browser"
         },
         {
           "src": "images/works/2007-smec/07.webp",
           "w": 950,
-          "h": 580
+          "h": 580,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3720,7 +4087,8 @@
         {
           "src": "images/works/2007-funcooking/01.webp",
           "w": 950,
-          "h": 1475
+          "h": 1475,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -3743,12 +4111,14 @@
         {
           "src": "images/works/2006-annasui/01.webp",
           "w": 900,
-          "h": 1070
+          "h": 1070,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-annasui/02.webp",
           "w": 900,
-          "h": 1200
+          "h": 1200,
+          "frame": "phone"
         }
       ],
       "hidden": false
@@ -3773,17 +4143,20 @@
         {
           "src": "images/works/2006-airwaves/01.webp",
           "w": 1000,
-          "h": 621
+          "h": 621,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-airwaves/02.webp",
           "w": 1000,
-          "h": 621
+          "h": 621,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-airwaves/03.webp",
           "w": 1000,
-          "h": 621
+          "h": 621,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3806,7 +4179,8 @@
         {
           "src": "images/works/2006-benq-sl75/01.webp",
           "w": 1264,
-          "h": 1668
+          "h": 1668,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3831,17 +4205,20 @@
         {
           "src": "images/works/2006-mri/01.webp",
           "w": 640,
-          "h": 800
+          "h": 800,
+          "frame": "none"
         },
         {
           "src": "images/works/2006-mri/02.webp",
           "w": 840,
-          "h": 630
+          "h": 630,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-mri/03.webp",
           "w": 840,
-          "h": 630
+          "h": 630,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3864,17 +4241,20 @@
         {
           "src": "images/works/2006-ni-drt/01.webp",
           "w": 1280,
-          "h": 805
+          "h": 805,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-ni-drt/02.webp",
           "w": 1280,
-          "h": 805
+          "h": 805,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-ni-drt/03.webp",
           "w": 1280,
-          "h": 805
+          "h": 805,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3899,22 +4279,26 @@
         {
           "src": "images/works/2006-nissan/01.webp",
           "w": 240,
-          "h": 170
+          "h": 170,
+          "frame": "none"
         },
         {
           "src": "images/works/2006-nissan/02.webp",
           "w": 770,
-          "h": 545
+          "h": 545,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-nissan/03.webp",
           "w": 770,
-          "h": 545
+          "h": 545,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-nissan/04.webp",
           "w": 770,
-          "h": 545
+          "h": 545,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3939,22 +4323,26 @@
         {
           "src": "images/works/2006-sony-alpha/01.webp",
           "w": 240,
-          "h": 180
+          "h": 180,
+          "frame": "none"
         },
         {
           "src": "images/works/2006-sony-alpha/02.webp",
           "w": 1024,
-          "h": 768
+          "h": 768,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-sony-alpha/03.webp",
           "w": 1024,
-          "h": 768
+          "h": 768,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-sony-alpha/04.webp",
           "w": 1024,
-          "h": 768
+          "h": 768,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -3977,37 +4365,44 @@
         {
           "src": "images/works/2006-seednet/01.webp",
           "w": 800,
-          "h": 600
+          "h": 600,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-seednet/02.webp",
           "w": 1264,
-          "h": 805
+          "h": 805,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-seednet/03.webp",
           "w": 1264,
-          "h": 1103
+          "h": 1103,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-seednet/04.webp",
           "w": 1264,
-          "h": 614
+          "h": 614,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-seednet/05.webp",
           "w": 1264,
-          "h": 916
+          "h": 916,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-seednet/06.webp",
           "w": 1264,
-          "h": 614
+          "h": 614,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-seednet/07.webp",
           "w": 1264,
-          "h": 1258
+          "h": 1258,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -4030,17 +4425,20 @@
         {
           "src": "images/works/2006-cthouse/01.webp",
           "w": 240,
-          "h": 259
+          "h": 259,
+          "frame": "none"
         },
         {
           "src": "images/works/2006-cthouse/02.webp",
           "w": 900,
-          "h": 978
+          "h": 978,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-cthouse/03.webp",
           "w": 900,
-          "h": 978
+          "h": 978,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -4065,17 +4463,20 @@
         {
           "src": "images/works/2006-highq/01.webp",
           "w": 778,
-          "h": 508
+          "h": 508,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-highq/02.webp",
           "w": 778,
-          "h": 508
+          "h": 508,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-highq/03.webp",
           "w": 778,
-          "h": 508
+          "h": 508,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -4098,17 +4499,20 @@
         {
           "src": "images/works/2006-familymart-wang/01.webp",
           "w": 1264,
-          "h": 500
+          "h": 500,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-familymart-wang/02.webp",
           "w": 1264,
-          "h": 1355
+          "h": 1355,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-familymart-wang/03.webp",
           "w": 1264,
-          "h": 778
+          "h": 778,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -4131,22 +4535,26 @@
         {
           "src": "images/works/2006-twm-music/01.webp",
           "w": 900,
-          "h": 1554
+          "h": 1554,
+          "frame": "phone"
         },
         {
           "src": "images/works/2006-twm-music/02.webp",
           "w": 995,
-          "h": 720
+          "h": 720,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-twm-music/03.webp",
           "w": 995,
-          "h": 1200
+          "h": 1200,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-twm-music/04.webp",
           "w": 995,
-          "h": 1200
+          "h": 1200,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -4171,32 +4579,38 @@
         {
           "src": "images/works/2006-foxconn/01.webp",
           "w": 1003,
-          "h": 600
+          "h": 600,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-foxconn/02.webp",
           "w": 1003,
-          "h": 600
+          "h": 600,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-foxconn/03.webp",
           "w": 1003,
-          "h": 600
+          "h": 600,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-foxconn/04.webp",
           "w": 1024,
-          "h": 600
+          "h": 600,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-foxconn/05.webp",
           "w": 1024,
-          "h": 600
+          "h": 600,
+          "frame": "browser"
         },
         {
           "src": "images/works/2006-foxconn/06.webp",
           "w": 1024,
-          "h": 600
+          "h": 600,
+          "frame": "browser"
         }
       ],
       "hidden": false
@@ -4221,17 +4635,20 @@
         {
           "src": "images/works/2005-nokia6630/01.webp",
           "w": 1280,
-          "h": 621
+          "h": 621,
+          "frame": "browser"
         },
         {
           "src": "images/works/2005-nokia6630/02.webp",
           "w": 1280,
-          "h": 621
+          "h": 621,
+          "frame": "browser"
         },
         {
           "src": "images/works/2005-nokia6630/03.webp",
           "w": 1280,
-          "h": 621
+          "h": 621,
+          "frame": "browser"
         }
       ],
       "hidden": false

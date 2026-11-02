@@ -94,7 +94,9 @@ textarea.input { height: auto; min-height: 110px; padding: 10px 12px; resize: ve
 .hint { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
 
 .images { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
-.img { position: relative; border-radius: 10px; overflow: hidden; background: var(--line); aspect-ratio: 4 / 3; cursor: grab; border: 2px solid transparent; }
+.img { position: relative; border-radius: 10px; overflow: hidden; background: var(--line); cursor: grab; border: 2px solid transparent; display: flex; flex-direction: column; }
+.img__pic { position: relative; aspect-ratio: 4 / 3; }
+.img__frame { width: 100%; height: 30px; border: 0; border-top: 1px solid var(--line); background: var(--panel, var(--bg)); color: inherit; font: inherit; font-size: 12px; padding: 0 6px; cursor: pointer; }
 .img:first-child { border-color: var(--accent); }
 .img:first-child::before { content: "封面"; position: absolute; left: 6px; top: 6px; z-index: 1; font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--accent); color: #fff; }
 .img img { width: 100%; height: 100%; object-fit: cover; object-position: top; pointer-events: none; }
@@ -147,3 +149,10 @@ textarea.input { height: auto; min-height: 110px; padding: 10px 12px; resize: ve
 .login__new ol { margin: 0; padding-left: 20px; font-size: 13px; color: var(--muted); display: grid; gap: 4px; }
 .login__new b { color: var(--ink); font-weight: 600; }
 .login__new .btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: var(--ink); }
+.picks { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.pick { height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--panel); color: inherit; font: inherit; font-size: 14px; cursor: pointer; }
+.pick:hover { border-color: var(--ink); }
+.pick.is-on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.pick.is-on::before { content: "✓ "; }
+.pick-add { flex: 1 1 140px; min-width: 120px; height: 34px; border: 1px dashed var(--line-strong); border-radius: 999px; background: transparent; color: inherit; font: inherit; font-size: 14px; padding: 0 14px; }
+.pick-add:focus { outline: none; border-color: var(--accent); border-style: solid; }

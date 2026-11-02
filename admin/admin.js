@@ -11,6 +11,44 @@ const LS = {
 };
 const thumbOf = (img) => img.thumb || img.src.replace(/\.(webp|jpe?g|png)$/i, '-t.$1');
 const DATA_PATH = 'data/works.json';
+const FRAMES = [['browser', '瀏覽器框'], ['phone', '手機框'], ['none', '無外框']];
+// Same fallback the site uses for images saved before frames were chosen by hand.
+function autoFrame(w, im) {
+  if (w.category === 'graphic') return 'none';
+  if (im.h / im.w >= 1.3 && im.w <= 1100) return 'phone';
+  return w.category === 'app' || im.w < 700 ? 'none' : 'browser';
+}
+const frameOf = (w, im) => (FRAMES.some(([v]) => v === im.frame) ? im.frame : autoFrame(w, im));
+// Default for a new upload. Phone screens are roughly 16:9 to 20:9; full-page website captures are
+// usually much taller or wider, so they get the browser frame. Always changeable per image.
+function guessFrame(w, W, H) {
+  if (w.category === 'graphic') return 'none';
+  const r = H / W;
+  if (w.category === 'app') return r >= 1.3 ? 'phone' : 'none';
+  return r >= 1.7 && r <= 2.3 && W <= 1300 ? 'phone' : 'browser';
+}
+// Every role/tag already used on any work, most used first, so they can be picked instead of typed.
+function vocab(key) {
+  const n = new Map();
+  (state.data.works || []).forEach((x) => (x[key] || []).forEach((v) => n.set(v, (n.get(v) || 0) + 1)));
+  return [...n.keys()].sort((a, b) => n.get(b) - n.get(a) || a.localeCompare(b, 'zh-Hant'));
+}
+function pickerHTML(w, key, label, placeholder) {
+  const cur = w[key] || [];
+  const all = [...new Set([...vocab(key), ...cur])];
+  return `<div class="field"><span>${label}<small class="hint">（點選套用，再點一次取消）</small></span><div class="picks" data-picks="${key}">
+    ${all.map((v) => `<button type="button" class="pick ${cur.includes(v) ? 'is-on' : ''}" data-pick="${esc(v)}" aria-pressed="${cur.includes(v)}">${esc(v)}</button>`).join('')}
+    <input class="pick-add" data-pick-add="${key}" placeholder="${placeholder}" aria-label="新增${label}">
+  </div></div>`;
+}
+function yearOptions(cur) {
+  const now = new Date().getFullYear();
+  const ys = (state.data.works || []).map((x) => x.year).filter(Boolean);
+  const lo = Math.min(2000, cur || now, ...ys); const hi = Math.max(now + 1, cur || now);
+  let out = '';
+  for (let y = hi; y >= lo; y--) out += `<option value="${y}" ${y === cur ? 'selected' : ''}>${y}</option>`;
+  return out;
+}
 const STATUS = [['', '不標示（已下線或無網址）'], ['live', '上線中（網站仍是這個設計）'], ['redesigned', '已改版（網站還在，設計已換）']];
 
 const state = {
@@ -240,7 +278,7 @@ function canvasBlob(canvas, quality) {
     else canvas.toBlob((j) => res({ blob: j, ext: 'jpg' }), 'image/jpeg', 0.85);
   }, 'image/webp', quality));
 }
-async function processFile(file, dir, index) {
+async function processFile(file, dir, index, w) {
   const img = await toImage(file);
   const W = img.width; const H = img.height;
   const fw = Math.min(1600, W); const fh = Math.min(12000, Math.round(H * fw / W));
@@ -257,7 +295,7 @@ async function processFile(file, dir, index) {
   const src = `${dir}/${stamp}.${full.ext}`; const tsrc = `${dir}/${stamp}-t.${thumb.ext}`;
   state.pending.set(src, { blob: full.blob, url: URL.createObjectURL(full.blob) });
   state.pending.set(tsrc, { blob: thumb.blob, url: URL.createObjectURL(thumb.blob) });
-  return { src, thumb: tsrc, w: fw, h: fh };
+  return { src, thumb: tsrc, w: fw, h: fh, frame: guessFrame(w, W, H) };
 }
 
 /* ---------------- list ---------------- */
@@ -292,11 +330,11 @@ function renderEditor() {
     <div class="ed-head"><h1>${esc(w.title || '新作品')}</h1>${w._new ? '' : `<a href="../#/work/${encodeURIComponent(w.id)}" target="_blank" rel="noopener">在網站上查看 ↗</a>`}</div>
     <div class="grid">
       <label class="field c4"><span>標題</span><input class="input" data-f="title" value="${esc(w.title)}" placeholder="例：今周刊 ESG 專題" required></label>
-      <label class="field c2"><span>年份</span><input class="input" data-f="year" type="number" min="1990" max="2100" value="${w.year}"></label>
+      <label class="field c2"><span>年份</span><select class="input" data-f="year">${yearOptions(w.year)}</select></label>
       <label class="field c4"><span>副標（一句話說明）</span><input class="input" data-f="subtitle" value="${esc(w.subtitle || '')}" placeholder="例：RWD 互動專題與測驗"></label>
       <label class="field c2"><span>分類</span><select class="input" data-f="category">${state.data.categories.map((c) => `<option value="${c.id}" ${c.id === w.category ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></label>
-      <label class="field c3"><span>角色（用、或逗號分隔）</span><input class="input" data-f="roles" value="${esc((w.roles || []).join('、'))}" placeholder="視覺設計、前端開發"></label>
-      <label class="field c3"><span>標籤（用、或逗號分隔）</span><input class="input" data-f="tags" value="${esc((w.tags || []).join('、'))}" placeholder="RWD、Android"></label>
+      ${pickerHTML(w, 'roles', '角色', '＋ 其他角色，按 Enter')}
+      ${pickerHTML(w, 'tags', '標籤', '＋ 其他標籤，按 Enter')}
       <label class="field"><span>作品說明（選填）</span><textarea class="input" data-f="summary" placeholder="專案背景、你負責的部分、成果……">${esc(w.summary || '')}</textarea></label>
     </div>
 
@@ -315,9 +353,9 @@ function renderEditor() {
       </div>
     </div>
 
-    <div class="section"><h2>圖片 <small class="hint">${(w.images || []).length} 張・第一張是封面・拖曳排序</small></h2>
+    <div class="section"><h2>圖片 <small class="hint">${(w.images || []).length} 張・第一張是封面・拖曳排序・每張可選外框</small></h2>
       <div class="images" data-images>
-        ${(w.images || []).map((im, i) => `<div class="img" draggable="true" data-i="${i}"><img src="${esc(imgURL(thumbOf(im)))}" alt=""><span class="img__no">${i + 1}</span><button type="button" class="img__del" data-del="${i}" aria-label="移除第 ${i + 1} 張">×</button><span class="img__move"><button type="button" data-mv="${i}:-1" aria-label="往前">←</button><button type="button" data-mv="${i}:1" aria-label="往後">→</button></span></div>`).join('')}
+        ${(w.images || []).map((im, i) => `<div class="img" draggable="true" data-i="${i}"><div class="img__pic"><img src="${esc(imgURL(thumbOf(im)))}" alt=""><span class="img__no">${i + 1}</span><button type="button" class="img__del" data-del="${i}" aria-label="移除第 ${i + 1} 張">×</button><span class="img__move"><button type="button" data-mv="${i}:-1" aria-label="往前">←</button><button type="button" data-mv="${i}:1" aria-label="往後">→</button></span></div><select class="img__frame" data-frame="${i}" aria-label="第 ${i + 1} 張的外框" title="網站上顯示這張圖時的外框">${FRAMES.map(([v, l]) => `<option value="${v}" ${v === frameOf(w, im) ? 'selected' : ''}>${l}</option>`).join('')}</select></div>`).join('')}
         <label class="drop" data-drop><b>＋</b>拖曳圖片到這裡<br>或點擊選擇<input type="file" accept="image/*" multiple hidden data-file></label>
       </div>
       <p class="hint">上傳時會自動縮成網頁用尺寸（寬 1600px）並產生縮圖，原檔不會上傳。</p>
@@ -362,13 +400,22 @@ async function addFiles(files) {
   toast(`處理 ${list.length} 張圖片…`);
   w.images = w.images || [];
   for (let i = 0; i < list.length; i++) {
-    try { w.images.push(await processFile(list[i], `images/works/${w.id}`, i)); } catch (e) { toast(`「${list[i].name}」無法讀取`, 'error'); }
+    try { w.images.push(await processFile(list[i], `images/works/${w.id}`, i, w)); } catch (e) { toast(`「${list[i].name}」無法讀取`, 'error'); }
   }
   setDirty(); renderEditor(); renderList(); toast(`已加入 ${list.length} 張圖片，記得按「發佈到 GitHub」。`);
 }
 
 function bindEditor() {
   const el = $('[data-editor]');
+  el.addEventListener('keydown', (e) => {
+    const inp = e.target.closest('[data-pick-add]'); if (!inp || e.key !== 'Enter' || e.isComposing) return;
+    e.preventDefault();
+    const w = current(); const key = inp.dataset.pickAdd;
+    const add = inp.value.split(/[、,，]/).map((x) => x.trim()).filter(Boolean);
+    if (!add.length) return;
+    w[key] = [...new Set([...(w[key] || []), ...add])];
+    setDirty(); renderEditor(); $(`[data-pick-add="${key}"]`).focus();
+  });
   el.addEventListener('input', (e) => { if (e.target.dataset.f && e.target.dataset.f !== 'title') onField(e); else if (e.target.dataset.f === 'title') { current().title = e.target.value; $('.ed-head h1').textContent = e.target.value || '新作品'; setDirty(); renderList(); } });
   el.addEventListener('change', (e) => {
     const w = current(); if (!w) return;
@@ -385,12 +432,20 @@ function bindEditor() {
       const pos = Math.max(1, Math.min(f.length + 1, parseInt(e.target.value, 10) || 1)) - 1;
       f.splice(pos, 0, w.id); state.data.featured = f; setDirty(); renderEditor();
     }
+    if (e.target.matches('[data-frame]')) { const im = w.images[+e.target.dataset.frame]; if (im) { im.frame = e.target.value; setDirty(); } return; }
     if (e.target.matches('[data-file]')) { addFiles(e.target.files); e.target.value = ''; }
   });
   el.addEventListener('click', (e) => {
     const w = current(); if (!w) return;
     const del = e.target.closest('[data-del]');
     if (del) { w.images.splice(+del.dataset.del, 1); setDirty(); renderEditor(); renderList(); return; }
+    const pk = e.target.closest('[data-pick]');
+    if (pk) {
+      const key = pk.closest('[data-picks]').dataset.picks; const v = pk.dataset.pick;
+      const arr = w[key] || []; w[key] = arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v];
+      pk.classList.toggle('is-on', w[key].includes(v)); pk.setAttribute('aria-pressed', w[key].includes(v));
+      setDirty(); return;
+    }
     const mv = e.target.closest('[data-mv]');
     if (mv) { const [i, d] = mv.dataset.mv.split(':').map(Number); moveImage(i, i + d); return; }
     if (e.target.closest('[data-delete]')) {
