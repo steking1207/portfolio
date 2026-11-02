@@ -26,7 +26,15 @@
         <div class="row2"><input class="input" name="owner" aria-label="帳號" required><input class="input" name="repo" aria-label="Repo" required></div>
         <input class="input" name="branch" aria-label="分支" required>
       </details>
-      <p class="hint">還沒有權杖？到 <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub 建立 Fine-grained token</a>：只選 <code>portfolio</code> repo，Contents 設為 Read and write。</p>
+      <div class="login__new">
+        <p class="login__new-title">還沒有權杖？三步完成</p>
+        <ol>
+          <li>按下方按鈕，到 GitHub 建立權杖（名稱、權限已幫你填好）</li>
+          <li>Repository access 選 <b>Only select repositories</b> → 勾 <code>portfolio</code>，按 <b>Generate token</b></li>
+          <li>複製產生的 <code>github_pat_…</code>，貼到上方欄位</li>
+        </ol>
+        <a class="btn btn--block" data-token-link href="https://github.com/settings/personal-access-tokens/new?name=SK2%20portfolio%20admin&amp;description=SK2%20%E4%BD%9C%E5%93%81%E9%9B%86%E5%BE%8C%E5%8F%B0&amp;target_name=steking1207&amp;expires_in=366&amp;contents=write" target="_blank" rel="noopener">在 GitHub 建立權杖 ↗</a>
+      </div>
     </form>
   </div>
 
