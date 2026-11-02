@@ -60,6 +60,39 @@
   ],
   "works": [
     {
+      "id": "2024-jctprovider",
+      "title": "榮宗科技",
+      "subtitle": "",
+      "year": 2024,
+      "category": "corporate",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "live",
+      "url": "https://jctprovider.com.tw/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2026-work/mvzblf7r0.webp",
+          "thumb": "images/works/2026-work/mvzblf7r0-t.webp",
+          "w": 1074,
+          "h": 2634
+        },
+        {
+          "src": "images/works/2026-work/mvzblffh1.webp",
+          "thumb": "images/works/2026-work/mvzblffh1-t.webp",
+          "w": 1074,
+          "h": 2615
+        }
+      ],
+      "hidden": false
+    },
+    {
       "id": "2023-mrcharger",
       "title": "Mr.Charger 充電先生",
       "subtitle": "名片、平面與社群圖",
