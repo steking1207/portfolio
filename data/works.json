@@ -60,6 +60,39 @@
   ],
   "works": [
     {
+      "id": "2024-work",
+      "title": "崔媽媽優良搬家網",
+      "subtitle": "",
+      "year": 2024,
+      "category": "platform",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [],
+      "status": "redesigned",
+      "url": "https://move.tmm.tw/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2024-work/mvzfh0d20.webp",
+          "thumb": "images/works/2024-work/mvzfh0d20-t.webp",
+          "w": 1728,
+          "h": 5189,
+          "frame": "browser"
+        },
+        {
+          "src": "images/works/2024-work/mvzfh0jl1.webp",
+          "thumb": "images/works/2024-work/mvzfh0jl1-t.webp",
+          "w": 1728,
+          "h": 1778,
+          "frame": "browser"
+        }
+      ],
+      "hidden": false
+    },
+    {
       "id": "2025-medisana",
       "title": "medisana 德國健康管理專家",
       "subtitle": "momo網站活動",
