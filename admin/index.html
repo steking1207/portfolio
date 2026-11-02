@@ -65,7 +65,7 @@
     <aside class="side">
       <div class="side__tools">
         <input type="search" class="input" placeholder="搜尋作品" data-q>
-        <select class="input" data-fcat><option value="">全部分類</option></select>
+        <div class="filters"><select class="input" data-fcat aria-label="分類篩選"><option value="">全部分類</option></select><select class="input" data-fyear aria-label="年份篩選"><option value="">全部年份</option></select></div>
         <button type="button" class="btn btn--primary btn--block" data-add>＋ 新增作品</button>
       </div>
       <p class="side__count mono" data-count></p>

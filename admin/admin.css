@@ -156,3 +156,4 @@ textarea.input { height: auto; min-height: 110px; padding: 10px 12px; resize: ve
 .pick.is-on::before { content: "✓ "; }
 .pick-add { flex: 1 1 140px; min-width: 120px; height: 34px; border: 1px dashed var(--line-strong); border-radius: 999px; background: transparent; color: inherit; font: inherit; font-size: 14px; padding: 0 14px; }
 .pick-add:focus { outline: none; border-color: var(--accent); border-style: solid; }
+.filters { display: grid; grid-template-columns: 1fr 120px; gap: 8px; }

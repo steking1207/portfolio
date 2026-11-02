@@ -41,18 +41,10 @@ function pickerHTML(w, key, label, placeholder) {
     <input class="pick-add" data-pick-add="${key}" placeholder="${placeholder}" aria-label="新增${label}">
   </div></div>`;
 }
-function yearOptions(cur) {
-  const now = new Date().getFullYear();
-  const ys = (state.data.works || []).map((x) => x.year).filter(Boolean);
-  const lo = Math.min(2000, cur || now, ...ys); const hi = Math.max(now + 1, cur || now);
-  let out = '';
-  for (let y = hi; y >= lo; y--) out += `<option value="${y}" ${y === cur ? 'selected' : ''}>${y}</option>`;
-  return out;
-}
 const STATUS = [['', '不標示（已下線或無網址）'], ['live', '上線中（網站仍是這個設計）'], ['redesigned', '已改版（網站還在，設計已換）']];
 
 const state = {
-  data: null, original: null, sha: null, selected: null, q: '', fcat: '',
+  data: null, original: null, sha: null, selected: null, q: '', fcat: '', fyear: '',
   pending: new Map(), // repo path -> { blob, url }
   dirty: false,
 };
@@ -299,11 +291,19 @@ async function processFile(file, dir, index, w) {
 }
 
 /* ---------------- list ---------------- */
+// Year filter lists only years that have works, newest first, with counts; rebuilt as works change.
+function renderYearFilter() {
+  const sel = $('[data-fyear]'); if (!sel) return;
+  const n = {}; state.data.works.forEach((w) => { n[w.year] = (n[w.year] || 0) + 1; });
+  if (state.fyear && !n[state.fyear]) state.fyear = '';
+  sel.innerHTML = `<option value="">全部年份</option>${Object.keys(n).sort((a, b) => b - a).map((y) => `<option value="${y}" ${y === state.fyear ? 'selected' : ''}>${y}（${n[y]}）</option>`).join('')}`;
+}
 function renderList() {
+  renderYearFilter();
   const q = state.q.toLowerCase();
   const items = state.data.works
     .map((w, i) => ({ w, i }))
-    .filter(({ w }) => (!state.fcat || w.category === state.fcat) && (!q || `${w.title} ${w.subtitle} ${w.year} ${w.id}`.toLowerCase().includes(q)))
+    .filter(({ w }) => (!state.fcat || w.category === state.fcat) && (!state.fyear || String(w.year) === state.fyear) && (!q || `${w.title} ${w.subtitle} ${w.year} ${w.id}`.toLowerCase().includes(q)))
     .sort((a, b) => b.w.year - a.w.year || a.i - b.i);
   const shown = state.data.works.filter((w) => !w.hidden).length;
   $('[data-count]').textContent = `共 ${state.data.works.length} 件・顯示中 ${shown} 件・下架 ${state.data.works.length - shown} 件`;
@@ -330,7 +330,7 @@ function renderEditor() {
     <div class="ed-head"><h1>${esc(w.title || '新作品')}</h1>${w._new ? '' : `<a href="../#/work/${encodeURIComponent(w.id)}" target="_blank" rel="noopener">在網站上查看 ↗</a>`}</div>
     <div class="grid">
       <label class="field c4"><span>標題</span><input class="input" data-f="title" value="${esc(w.title)}" placeholder="例：今周刊 ESG 專題" required></label>
-      <label class="field c2"><span>年份</span><select class="input" data-f="year">${yearOptions(w.year)}</select></label>
+      <label class="field c2"><span>年份</span><input class="input" data-f="year" type="number" min="1990" max="2100" value="${w.year}"></label>
       <label class="field c4"><span>副標（一句話說明）</span><input class="input" data-f="subtitle" value="${esc(w.subtitle || '')}" placeholder="例：RWD 互動專題與測驗"></label>
       <label class="field c2"><span>分類</span><select class="input" data-f="category">${state.data.categories.map((c) => `<option value="${c.id}" ${c.id === w.category ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></label>
       ${pickerHTML(w, 'roles', '角色', '＋ 其他角色，按 Enter')}
@@ -583,6 +583,7 @@ async function boot() {
   $('[data-list]').addEventListener('click', (e) => { const li = e.target.closest('[data-id]'); if (!li) return; state.selected = li.dataset.id; renderList(); renderEditor(); if (innerWidth < 900) $('[data-editor]').scrollIntoView(); });
   $('[data-q]').addEventListener('input', (e) => { state.q = e.target.value; renderList(); });
   $('[data-fcat]').addEventListener('change', (e) => { state.fcat = e.target.value; renderList(); });
+  $('[data-fyear]').addEventListener('change', (e) => { state.fyear = e.target.value; renderList(); });
   $('[data-add]').addEventListener('click', newWork);
   $('[data-publish]').addEventListener('click', publish);
   $('[data-download]').addEventListener('click', download);
