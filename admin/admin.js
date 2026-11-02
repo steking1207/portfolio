@@ -26,12 +26,65 @@ function defaults() {
   const repo = host.endsWith('.github.io') && parts[0] && parts[0] !== 'admin' ? parts[0] : 'portfolio';
   return { owner, repo, branch: 'master', token: '' };
 }
+// Token lives in sessionStorage (cleared when the browser closes) unless the user ticks "remember".
+const SS = {
+  get(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { /* noop */ } },
+  del(k) { try { sessionStorage.removeItem(k); } catch (e) { /* noop */ } },
+};
+function getToken() { return SS.get('sk2:token') || LS.get('sk2:token') || ''; }
+function setToken(t, remember) { SS.del('sk2:token'); LS.del('sk2:token'); if (t) (remember ? LS : SS).set('sk2:token', t); }
 function settings() {
   let s = {};
   try { s = JSON.parse(LS.get('sk2:gh') || '{}'); } catch (e) { s = {}; }
-  return { ...defaults(), ...s };
+  if (s.token) { setToken(s.token, true); delete s.token; LS.set('sk2:gh', JSON.stringify(s)); } // migrate old storage
+  return { ...defaults(), ...s, token: getToken() };
 }
-function saveSettings(s) { LS.set('sk2:gh', JSON.stringify(s)); }
+function saveSettings(s) { const { token, ...rest } = s; LS.set('sk2:gh', JSON.stringify(rest)); }
+function logout() {
+  if (state.dirty && !confirm('有未發佈的變更，登出後只會保留文字草稿。確定登出？')) return;
+  setToken(''); location.reload();
+}
+
+/* Only someone whose token can push to this repo gets in. */
+async function verifyAccess() {
+  const s = settings();
+  if (!s.token) return { ok: false };
+  try {
+    const repo = await gh('');
+    if (!repo.permissions || !repo.permissions.push) return { ok: false, msg: '這組權杖沒有這個 repo 的寫入權限。' };
+    return { ok: true };
+  } catch (err) { return { ok: false, msg: err.message }; }
+}
+
+function showLogin(msg = '') {
+  const s = settings();
+  const el = $('[data-login]'); el.hidden = false;
+  document.body.classList.add('is-locked');
+  const f = $('[data-login-form]');
+  f.elements.owner.value = s.owner; f.elements.repo.value = s.repo; f.elements.branch.value = s.branch;
+  $('[data-login-error]').textContent = msg; $('[data-login-error]').hidden = !msg;
+  setTimeout(() => f.elements.token.focus(), 50);
+  return new Promise((resolve) => {
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = $('button[type="submit"]', f); btn.disabled = true; btn.textContent = '驗證中…';
+      saveSettings({ owner: f.elements.owner.value.trim(), repo: f.elements.repo.value.trim(), branch: f.elements.branch.value.trim() });
+      setToken(f.elements.token.value.trim(), f.elements.remember.checked);
+      const r = await verifyAccess();
+      btn.disabled = false; btn.textContent = '進入後台';
+      if (r.ok) { el.hidden = true; document.body.classList.remove('is-locked'); f.elements.token.value = ''; resolve(); }
+      else { setToken(''); $('[data-login-error]').textContent = r.msg || '權杖無效。'; $('[data-login-error]').hidden = false; }
+    });
+  });
+}
+
+/* Admin appearance: light / dark / system */
+function applyAdminTheme(mode) {
+  const root = document.documentElement;
+  if (mode === 'light' || mode === 'dark') root.setAttribute('data-theme', mode); else root.removeAttribute('data-theme');
+  $$('[data-admin-theme]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.adminTheme === (mode || 'system'))));
+}
 
 /* ---------------- GitHub API ---------------- */
 async function gh(path, opts = {}) {
@@ -43,7 +96,7 @@ async function gh(path, opts = {}) {
   if (!res.ok) {
     let msg = `${res.status}`;
     try { const j = await res.json(); msg += ` ${j.message || ''}`; } catch (e) { /* noop */ }
-    if (res.status === 401) msg = '權杖無效或已過期，請到 ⚙ 重新設定。';
+    if (res.status === 401) msg = '權杖無效或已過期，請重新輸入。';
     if (res.status === 403 || res.status === 404) msg += '（請確認權杖有這個 repo 的 Contents: Read and write 權限）';
     throw new Error(msg);
   }
@@ -61,7 +114,7 @@ async function loadRemote() {
 
 async function publish() {
   const s = settings();
-  if (!s.token) { openSettings(); toast('請先設定 GitHub 權杖。'); return; }
+  if (!s.token) { logout(); return; }
   const problems = validate();
   if (problems.length) { toast(problems[0], 'error'); return; }
   const btn = $('[data-publish]'); btn.disabled = true; btn.textContent = '發佈中…';
@@ -356,6 +409,7 @@ function renderSite() {
       <label class="field"><span>首頁簡介</span><textarea class="input" data-s="intro">${esc(s.intro || '')}</textarea></label>
       <label class="field"><span>關於區塊的大段文字</span><textarea class="input" data-s="statement">${esc(s.statement || '')}</textarea></label>
       <label class="field c3"><span>聯絡 Email（留空則不顯示）</span><input class="input" type="email" data-s="email" value="${esc(s.email || '')}" placeholder="you@example.com"></label>
+      <label class="field c3"><span>網站預設顯示</span><select class="input" data-s="theme">${[['system', '跟隨訪客系統設定'], ['light', '淺色'], ['dark', '深色']].map(([v, l]) => `<option value="${v}" ${(s.theme || 'system') === v ? 'selected' : ''}>${l}</option>`).join('')}</select><small>訪客仍可用右上角按鈕切換；這裡決定第一次打開時的樣子。</small></label>
     </div>
     <div class="section"><h2>外部連結</h2><div class="links-edit" data-links>
       ${(s.links || []).map((l, i) => `<div class="lrow"><input class="input" data-l="${i}:label" value="${esc(l.label)}" placeholder="名稱"><input class="input" data-l="${i}:url" value="${esc(l.url)}" placeholder="https://"><button type="button" class="btn" data-ldel="${i}">移除</button></div>`).join('')}
@@ -387,7 +441,7 @@ function toast(msg, kind = '') {
 }
 function openSettings() {
   const s = settings(); const f = $('[data-settings-form]');
-  ['owner', 'repo', 'branch', 'token'].forEach((k) => { f.elements[k].value = s[k] || ''; });
+  ['owner', 'repo', 'branch'].forEach((k) => { f.elements[k].value = s[k] || ''; });
   $('[data-settings-dialog]').showModal();
 }
 function download() {
@@ -428,15 +482,14 @@ function newWork() {
 
 /* ---------------- boot ---------------- */
 async function boot() {
+  applyAdminTheme(LS.get('sk2:admin-theme') || 'system');
+  $$('[data-admin-theme]').forEach((b) => b.addEventListener('click', () => { LS.set('sk2:admin-theme', b.dataset.adminTheme); applyAdminTheme(b.dataset.adminTheme); }));
+  const access = await verifyAccess();
+  if (!access.ok) await showLogin(settings().token ? access.msg : '');
+  $('[data-app]').hidden = false;
   let loaded = null;
   const s = settings();
-  try {
-    if (s.token) { loaded = await loadRemote(); }
-  } catch (err) { toast(`無法從 GitHub 載入：${err.message}。先改用網站上的版本。`, 'error'); }
-  if (!loaded) {
-    const res = await fetch(`../${DATA_PATH}?t=${Date.now()}`, { cache: 'no-store' });
-    loaded = { data: await res.json(), sha: null };
-  }
+  try { loaded = await loadRemote(); } catch (err) { toast(`無法從 GitHub 載入：${err.message}`, 'error'); return; }
   state.data = loaded.data; state.sha = loaded.sha;
   state.data.featured = state.data.featured || [];
   state.original = clone(state.data);
@@ -453,7 +506,6 @@ async function boot() {
 
   $('[data-fcat]').innerHTML += state.data.categories.map((c) => `<option value="${c.id}">${esc(c.name)}</option>`).join('');
   renderList(); renderSite();
-  if (!s.token) toast('尚未設定 GitHub 權杖：可以編輯和預覽，發佈前請按 ⚙ 設定。');
 
   $('[data-list]').addEventListener('click', (e) => { const li = e.target.closest('[data-id]'); if (!li) return; state.selected = li.dataset.id; renderList(); renderEditor(); if (innerWidth < 900) $('[data-editor]').scrollIntoView(); });
   $('[data-q]').addEventListener('input', (e) => { state.q = e.target.value; renderList(); });
@@ -463,11 +515,11 @@ async function boot() {
   $('[data-download]').addEventListener('click', download);
   $('[data-preview]').addEventListener('click', preview);
   $('[data-settings]').addEventListener('click', openSettings);
-  $('[data-clear-token]').addEventListener('click', () => { const x = settings(); x.token = ''; saveSettings(x); $('[data-settings-form]').elements.token.value = ''; toast('已清除權杖。'); });
+  $('[data-logout]').addEventListener('click', logout);
   $('[data-settings-dialog]').addEventListener('close', (e) => {
     if (e.target.returnValue !== 'ok') return;
     const f = $('[data-settings-form]').elements;
-    saveSettings({ owner: f.owner.value.trim(), repo: f.repo.value.trim(), branch: f.branch.value.trim(), token: f.token.value.trim() });
+    saveSettings({ owner: f.owner.value.trim(), repo: f.repo.value.trim(), branch: f.branch.value.trim() });
     if (state.dirty && !confirm('重新載入會以 GitHub 上的資料為準，未發佈的文字變更會保留在草稿中。繼續？')) return;
     location.reload();
   });

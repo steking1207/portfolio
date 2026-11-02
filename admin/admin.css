@@ -6,8 +6,25 @@
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --paper: #111110; --panel: #1A1A18; --ink: #ECE9E2; --muted: #8F8D86; --line: rgba(236,233,226,.12); --line-strong: rgba(236,233,226,.25); color-scheme: dark; }
+  :root:not([data-theme="light"]) { --paper: #111110; --panel: #1A1A18; --ink: #ECE9E2; --muted: #8F8D86; --line: rgba(236,233,226,.12); --line-strong: rgba(236,233,226,.25); color-scheme: dark; }
 }
+:root[data-theme="dark"] { --paper: #111110; --panel: #1A1A18; --ink: #ECE9E2; --muted: #8F8D86; --line: rgba(236,233,226,.12); --line-strong: rgba(236,233,226,.25); color-scheme: dark; }
+.seg { display: flex; padding: 3px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--panel); }
+.seg button { width: 32px; height: 30px; border: 0; border-radius: 999px; background: none; cursor: pointer; font-size: 14px; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.login { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 16px; background: var(--paper); }
+.login__card { width: min(440px, 100%); display: grid; gap: 16px; padding: 32px; border-radius: 20px; background: var(--panel); box-shadow: 0 30px 60px -30px rgba(0,0,0,.35); border: 1px solid var(--line); }
+.login__card { grid-template-columns: minmax(0, 1fr); }
+.login__card > *, .login__card > .field { grid-column: 1 / -1; }
+.login__card h1 { margin: 8px 0 0; font-size: 26px; }
+.login__card .hint { margin: 0; }
+.login__card code { font-family: var(--mono); font-size: 12px; background: var(--line); padding: 1px 5px; border-radius: 4px; }
+.login__error { margin: 0; padding: 10px 12px; border-radius: 10px; background: color-mix(in srgb, var(--warn) 12%, transparent); color: var(--warn); font-size: 14px; }
+.login__more summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+.login__more[open] { display: grid; gap: 8px; }
+.login__more[open] summary { margin-bottom: 4px; }
+.check--plain { border: 0; padding: 0; background: none; font-weight: 400; font-size: 14px; }
+body.is-locked { overflow: hidden; }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.6 var(--f); -webkit-font-smoothing: antialiased; }
 button, input, select, textarea { font: inherit; color: inherit; }
