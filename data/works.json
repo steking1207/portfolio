@@ -69,7 +69,9 @@
         "視覺設計",
         "前端開發"
       ],
-      "tags": [],
+      "tags": [
+        "RWD"
+      ],
       "status": "live",
       "url": "https://jctprovider.com.tw/",
       "demo": "",
@@ -80,14 +82,14 @@
           "thumb": "images/works/2024-jctprovider/mvzbxs1c0-t.webp",
           "w": 1074,
           "h": 2634,
-          "frame": "phone"
+          "frame": "browser"
         },
         {
           "src": "images/works/2024-jctprovider/mvzbxs8w1.webp",
           "thumb": "images/works/2024-jctprovider/mvzbxs8w1-t.webp",
           "w": 1074,
           "h": 2615,
-          "frame": "phone"
+          "frame": "browser"
         }
       ],
       "hidden": false
