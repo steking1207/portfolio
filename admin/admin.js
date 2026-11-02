@@ -270,19 +270,34 @@ function canvasBlob(canvas, quality) {
     else canvas.toBlob((j) => res({ blob: j, ext: 'jpg' }), 'image/jpeg', 0.85);
   }, 'image/webp', quality));
 }
+// Scale the top sw×sh of the source to dw×dh. Halving in steps (instead of one big drawImage)
+// avoids the blurry/jagged result browsers give when shrinking a very large image in one go.
+function resample(src, sw, sh, dw, dh) {
+  let cur = src; let cw = sw; let ch = sh;
+  while (cw / 2 >= dw * 1.05) {
+    const nw = Math.round(cw / 2); const nh = Math.round(ch / 2);
+    const c = document.createElement('canvas'); c.width = nw; c.height = nh;
+    const x = c.getContext('2d'); x.imageSmoothingEnabled = true; x.imageSmoothingQuality = 'high';
+    x.drawImage(cur, 0, 0, cw, ch, 0, 0, nw, nh);
+    cur = c; cw = nw; ch = nh;
+  }
+  const out = document.createElement('canvas'); out.width = dw; out.height = dh;
+  const x = out.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, dw, dh);
+  x.imageSmoothingEnabled = true; x.imageSmoothingQuality = 'high';
+  x.drawImage(cur, 0, 0, cw, ch, 0, 0, dw, dh);
+  return out;
+}
+const MAX_W = 2000; // sharp on high-DPI screens at the site's widest image size
+const MAX_AREA = 16e6; // Safari refuses canvases larger than ~16.7M pixels
 async function processFile(file, dir, index, w) {
   const img = await toImage(file);
   const W = img.width; const H = img.height;
-  const fw = Math.min(1600, W); const fh = Math.min(12000, Math.round(H * fw / W));
-  const c = document.createElement('canvas'); c.width = fw; c.height = fh;
-  const ctx = c.getContext('2d'); ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, fw, fh);
-  ctx.drawImage(img, 0, 0, W, Math.round(fh * W / fw), 0, 0, fw, fh);
-  const full = await canvasBlob(c, 0.8);
+  // very tall captures get a narrower width rather than being cut off; crop only past that
+  const fw = Math.min(W, MAX_W, Math.max(1000, Math.floor(Math.sqrt(MAX_AREA * W / H))));
+  const fh = Math.min(Math.round(H * fw / W), Math.floor(MAX_AREA / fw));
+  const full = await canvasBlob(resample(img, W, Math.round(fh * W / fw), fw, fh), 0.9);
   const tw = Math.min(760, W); const th = Math.min(Math.round(H * tw / W), Math.round(tw * 1.5));
-  const t = document.createElement('canvas'); t.width = tw; t.height = th;
-  const tctx = t.getContext('2d'); tctx.fillStyle = '#fff'; tctx.fillRect(0, 0, tw, th);
-  tctx.drawImage(img, 0, 0, W, Math.round(th * W / tw), 0, 0, tw, th);
-  const thumb = await canvasBlob(t, 0.74);
+  const thumb = await canvasBlob(resample(img, W, Math.round(th * W / tw), tw, th), 0.82);
   const stamp = `${Date.now().toString(36)}${index}`;
   const src = `${dir}/${stamp}.${full.ext}`; const tsrc = `${dir}/${stamp}-t.${thumb.ext}`;
   state.pending.set(src, { blob: full.blob, url: URL.createObjectURL(full.blob) });
@@ -358,7 +373,7 @@ function renderEditor() {
         ${(w.images || []).map((im, i) => `<div class="img" draggable="true" data-i="${i}"><div class="img__pic"><img src="${esc(imgURL(thumbOf(im)))}" alt=""><span class="img__no">${i + 1}</span><button type="button" class="img__del" data-del="${i}" aria-label="移除第 ${i + 1} 張">×</button><span class="img__move"><button type="button" data-mv="${i}:-1" aria-label="往前">←</button><button type="button" data-mv="${i}:1" aria-label="往後">→</button></span></div><select class="img__frame" data-frame="${i}" aria-label="第 ${i + 1} 張的外框" title="網站上顯示這張圖時的外框">${FRAMES.map(([v, l]) => `<option value="${v}" ${v === frameOf(w, im) ? 'selected' : ''}>${l}</option>`).join('')}</select></div>`).join('')}
         <label class="drop" data-drop><b>＋</b>拖曳圖片到這裡<br>或點擊選擇<input type="file" accept="image/*" multiple hidden data-file></label>
       </div>
-      <p class="hint">上傳時會自動縮成網頁用尺寸（寬 1600px）並產生縮圖，原檔不會上傳。</p>
+      <p class="hint">上傳時會自動縮成網頁用尺寸（最寬 2000px）並產生縮圖，原檔不會上傳。</p>
     </div>
 
     <div class="section"><h2>進階</h2>
