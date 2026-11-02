@@ -75,18 +75,25 @@
       "summary": "",
       "images": [
         {
-          "src": "images/works/2025-msf/mvze95kp0.webp",
-          "thumb": "images/works/2025-msf/mvze95kp0-t.webp",
-          "w": 1600,
-          "h": 6524,
+          "src": "images/works/2025-msf/mvzepsl70.webp",
+          "thumb": "images/works/2025-msf/mvzepsl70-t.webp",
+          "w": 1980,
+          "h": 8074,
           "frame": "browser"
         },
         {
-          "src": "images/works/2025-msf/mvzdz9u01.webp",
-          "thumb": "images/works/2025-msf/mvzdz9u01-t.webp",
-          "w": 690,
-          "h": 7538,
-          "frame": "phone"
+          "src": "images/works/2025-msf/mvzeptku1.webp",
+          "thumb": "images/works/2025-msf/mvzeptku1-t.webp",
+          "w": 2000,
+          "h": 7443,
+          "frame": "browser"
+        },
+        {
+          "src": "images/works/2025-msf/mvzepu9o2.webp",
+          "thumb": "images/works/2025-msf/mvzepu9o2-t.webp",
+          "w": 2000,
+          "h": 5170,
+          "frame": "browser"
         }
       ],
       "hidden": false
