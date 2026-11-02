@@ -472,6 +472,50 @@ function bindEditor() {
 }
 
 /* ---------------- site editor ---------------- */
+/* ---------------- featured order ---------------- */
+function renderFeatured() {
+  const el = $('[data-featured-editor]'); if (!el || !state.data) return;
+  const byId = new Map(state.data.works.map((w) => [w.id, w]));
+  state.data.featured = state.data.featured.filter((id) => byId.has(id));
+  const f = state.data.featured;
+  const rest = state.data.works.filter((w) => !f.includes(w.id)).sort((a, b) => b.year - a.year);
+  el.innerHTML = `
+    <div class="ed-head"><h1>首頁精選</h1><span class="hint">${f.length} 件・拖曳或用 ↑↓ 排序，最上面排第一</span></div>
+    <ol class="feat" data-feat-list>
+      ${f.map((id, i) => { const w = byId.get(id); const im = (w.images || [])[0]; return `<li class="feat__item" draggable="true" data-fi="${i}">
+        <span class="feat__no mono">${i + 1}</span>
+        ${im ? `<img src="${esc(imgURL(thumbOf(im)))}" alt="">` : '<span class="noimg"></span>'}
+        <div class="feat__text"><div class="list__title">${esc(w.title || '（未命名）')}</div><div class="list__meta">${w.year} · ${esc(catName(w.category))}${w.hidden ? ' · <b class="feat__warn">已下架，不會顯示</b>' : ''}</div></div>
+        <span class="feat__btns"><button type="button" class="btn" data-fmv="${i}:-1" aria-label="往上" ${i ? '' : 'disabled'}>↑</button><button type="button" class="btn" data-fmv="${i}:1" aria-label="往下" ${i < f.length - 1 ? '' : 'disabled'}>↓</button><button type="button" class="btn" data-fdel="${i}" aria-label="移出精選">×</button></span>
+      </li>`; }).join('') || '<li class="empty">還沒有精選作品。</li>'}
+    </ol>
+    <label class="field" style="margin-top:20px"><span>加入精選</span><select class="input" data-feat-add><option value="">選一件作品加到最後…</option>${rest.map((w) => `<option value="${esc(w.id)}">${w.year}・${esc(w.title || w.id)}${w.hidden ? '（已下架）' : ''}</option>`).join('')}</select></label>`;
+}
+function moveFeatured(from, to) {
+  const f = state.data.featured;
+  if (to < 0 || to >= f.length || from === to) return;
+  const [id] = f.splice(from, 1); f.splice(to, 0, id);
+  setDirty(); renderFeatured(); renderList();
+}
+function bindFeatured() {
+  const el = $('[data-featured-editor]');
+  el.addEventListener('click', (e) => {
+    const mv = e.target.closest('[data-fmv]');
+    if (mv) { const [i, d] = mv.dataset.fmv.split(':').map(Number); moveFeatured(i, i + d); return; }
+    const del = e.target.closest('[data-fdel]');
+    if (del) { state.data.featured.splice(+del.dataset.fdel, 1); setDirty(); renderFeatured(); renderList(); }
+  });
+  el.addEventListener('change', (e) => {
+    if (!e.target.matches('[data-feat-add]') || !e.target.value) return;
+    state.data.featured.push(e.target.value); setDirty(); renderFeatured(); renderList();
+  });
+  let dragI = null;
+  el.addEventListener('dragstart', (e) => { const it = e.target.closest('[data-fi]'); if (it) { dragI = +it.dataset.fi; it.classList.add('is-drag'); e.dataTransfer.effectAllowed = 'move'; } });
+  el.addEventListener('dragend', () => { dragI = null; $$('[data-fi]', el).forEach((x) => x.classList.remove('is-drag', 'is-over')); });
+  el.addEventListener('dragover', (e) => { const it = e.target.closest('[data-fi]'); if (it && dragI !== null) { e.preventDefault(); $$('[data-fi]', el).forEach((x) => x.classList.toggle('is-over', x === it)); } });
+  el.addEventListener('drop', (e) => { const it = e.target.closest('[data-fi]'); if (it && dragI !== null) { e.preventDefault(); moveFeatured(dragI, +it.dataset.fi); } });
+}
+
 function renderSite() {
   const s = state.data.site;
   $('[data-site-editor]').innerHTML = `
@@ -600,8 +644,10 @@ async function boot() {
   $$('[data-tab]').forEach((b) => b.addEventListener('click', () => {
     $$('[data-tab]').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
     $$('[data-panel]').forEach((p) => { p.hidden = p.dataset.panel !== b.dataset.tab; });
+    if (b.dataset.tab === 'featured') renderFeatured();
+    if (b.dataset.tab === 'works') renderEditor();
   }));
   addEventListener('beforeunload', (e) => { if (state.dirty) { e.preventDefault(); e.returnValue = ''; } });
-  bindEditor(); bindSite();
+  bindEditor(); bindSite(); bindFeatured();
 }
 boot();

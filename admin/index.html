@@ -43,6 +43,7 @@
     <a class="brand" href="../" target="_blank" rel="noopener">SK2<i></i><span>作品管理</span></a>
     <div class="top__tabs" role="tablist">
       <button type="button" role="tab" aria-selected="true" data-tab="works">作品</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="featured">首頁精選</button>
       <button type="button" role="tab" aria-selected="false" data-tab="site">網站資訊</button>
       <button type="button" role="tab" aria-selected="false" data-tab="help">使用說明</button>
     </div>
@@ -77,6 +78,10 @@
     </section>
   </main>
 
+  <main class="layout layout--single" data-panel="featured" hidden>
+    <section class="editor" data-featured-editor></section>
+  </main>
+
   <main class="layout layout--single" data-panel="site" hidden>
     <section class="editor" data-site-editor></section>
   </main>
@@ -90,7 +95,7 @@
         <li><b>編輯</b>：點左側作品，直接改欄位。</li>
         <li><b>下架</b>：勾選「下架（不在網站顯示）」。資料和圖片都保留，之後取消勾選就會重新上架。</li>
         <li><b>刪除</b>：按作品頁最下方的「刪除這件作品」。發佈時會一併刪掉它的圖片檔。</li>
-        <li><b>精選</b>：勾選「放在首頁精選」，並用數字決定順序（1 最前面）。建議 4 到 8 件。</li>
+        <li><b>精選</b>：到上方「首頁精選」分頁，拖曳或用 ↑↓ 調整順序、× 移除，下方選單加入新作品。也可以在作品頁勾選「放在首頁精選」。建議 4 到 8 件。</li>
         <li><b>發佈</b>：按「發佈到 GitHub」。所有變更會變成一次 commit，GitHub Pages 約 1 分鐘後更新。</li>
       </ol>
       <h3>線上狀態怎麼填</h3>
