@@ -60,6 +60,80 @@
   ],
   "works": [
     {
+      "id": "2025-ionex",
+      "title": "Ionex光陽電動車",
+      "subtitle": "官網、產品網站、活動網站前端開發",
+      "year": 2023,
+      "category": "corporate",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [],
+      "status": "live",
+      "url": "https://www.ionex.com.tw/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2025-ionex/mvzgdu3c6.webp",
+          "thumb": "images/works/2025-ionex/mvzgdu3c6-t.webp",
+          "w": 1259,
+          "h": 12697,
+          "frame": "browser"
+        },
+        {
+          "src": "images/works/2025-ionex/mvzgdquv3.webp",
+          "thumb": "images/works/2025-ionex/mvzgdquv3-t.webp",
+          "w": 960,
+          "h": 7733,
+          "frame": "browser"
+        },
+        {
+          "src": "images/works/2025-ionex/mvzgdrva4.webp",
+          "thumb": "images/works/2025-ionex/mvzgdrva4-t.webp",
+          "w": 1552,
+          "h": 10305,
+          "frame": "browser"
+        },
+        {
+          "src": "images/works/2025-ionex/mvzgdt265.webp",
+          "thumb": "images/works/2025-ionex/mvzgdt265-t.webp",
+          "w": 1210,
+          "h": 13217,
+          "frame": "browser"
+        },
+        {
+          "src": "images/works/2025-ionex/mvzgdpad1.webp",
+          "thumb": "images/works/2025-ionex/mvzgdpad1-t.webp",
+          "w": 1336,
+          "h": 11965,
+          "frame": "browser"
+        }
+      ],
+      "hidden": false,
+      "yearEnd": 2025,
+      "sites": [
+        {
+          "key": "smvzgfeb7",
+          "name": "Ionex換電網路",
+          "status": "live",
+          "url": "https://batteryevent.ionex.com.tw/"
+        },
+        {
+          "key": "smvzgga1j",
+          "name": "MiG 9",
+          "status": "live",
+          "url": "https://products.ionex.com.tw/mig9/"
+        },
+        {
+          "key": "smvzgguyh",
+          "name": "Many Macaron",
+          "status": "redesigned",
+          "url": "https://products.ionex.com.tw/many-macaron/"
+        }
+      ]
+    },
+    {
       "id": "2024-work",
       "title": "崔媽媽優良搬家網",
       "subtitle": "",
