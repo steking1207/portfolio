@@ -60,6 +60,41 @@
   ],
   "works": [
     {
+      "id": "2025-medisana",
+      "title": "medisana 德國健康管理專家",
+      "subtitle": "momo網站活動",
+      "year": 2025,
+      "category": "campaign",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [
+        "RWD",
+        "HTML/CSS"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2025-medisana/mvzf4iov0.webp",
+          "thumb": "images/works/2025-medisana/mvzf4iov0-t.webp",
+          "w": 1680,
+          "h": 5974,
+          "frame": "browser"
+        },
+        {
+          "src": "images/works/2025-medisana/mvzf4ivl1.webp",
+          "thumb": "images/works/2025-medisana/mvzf4ivl1-t.webp",
+          "w": 375,
+          "h": 6828,
+          "frame": "phone"
+        }
+      ],
+      "hidden": false
+    },
+    {
       "id": "2025-msf",
       "title": "無國界醫生",
       "subtitle": "",
