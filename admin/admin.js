@@ -63,6 +63,8 @@ function showLogin(msg = '') {
   document.body.classList.add('is-locked');
   const f = $('[data-login-form]');
   f.elements.owner.value = s.owner; f.elements.repo.value = s.repo; f.elements.branch.value = s.branch;
+  const q = new URLSearchParams({ name: `SK2 ${s.repo} admin`, description: 'SK2 作品集後台', target_name: s.owner, expires_in: '366', contents: 'write' });
+  $('[data-token-link]').href = `https://github.com/settings/personal-access-tokens/new?${q}`;
   $('[data-login-error]').textContent = msg; $('[data-login-error]').hidden = !msg;
   setTimeout(() => f.elements.token.focus(), 50);
   return new Promise((resolve) => {

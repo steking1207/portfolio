@@ -141,3 +141,9 @@ textarea.input { height: auto; min-height: 110px; padding: 10px 12px; resize: ve
   .c2, .c3, .c4 { grid-column: span 6; }
   .cats-edit .crow { grid-template-columns: 1fr 1fr; }
 }
+
+.login__new { display: grid; gap: 10px; padding: 16px; border-radius: 12px; background: color-mix(in srgb, var(--accent) 6%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent); }
+.login__new-title { margin: 0; font-weight: 600; font-size: 14px; }
+.login__new ol { margin: 0; padding-left: 20px; font-size: 13px; color: var(--muted); display: grid; gap: 4px; }
+.login__new b { color: var(--ink); font-weight: 600; }
+.login__new .btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: var(--ink); }
