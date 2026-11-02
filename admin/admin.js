@@ -92,6 +92,7 @@ function applyAdminTheme(mode) {
 async function gh(path, opts = {}) {
   const s = settings();
   const res = await fetch(`https://api.github.com/repos/${s.owner}/${s.repo}${path}`, {
+    cache: 'no-store',
     ...opts,
     headers: { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', ...(s.token ? { Authorization: `Bearer ${s.token}` } : {}), ...(opts.body ? { 'Content-Type': 'application/json' } : {}) },
   });
@@ -108,10 +109,14 @@ const b64FromText = (text) => { const bytes = new TextEncoder().encode(text); le
 const textFromB64 = (b64) => new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\n/g, '')), (c) => c.charCodeAt(0)));
 const b64FromBlob = (blob) => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1]); r.onerror = rej; r.readAsDataURL(blob); });
 
+// Always read works.json pinned to the branch's current commit, never a cached copy:
+// a stale read would make the next publish silently revert earlier changes.
 async function loadRemote() {
   const s = settings();
-  const j = await gh(`/contents/${DATA_PATH}?ref=${encodeURIComponent(s.branch)}`);
-  return { data: JSON.parse(textFromB64(j.content)), sha: j.sha };
+  const ref = await gh(`/git/ref/heads/${encodeURIComponent(s.branch)}?t=${Date.now()}`);
+  const head = ref.object.sha;
+  const j = await gh(`/contents/${DATA_PATH}?ref=${head}`);
+  return { data: JSON.parse(textFromB64(j.content)), sha: j.sha, head };
 }
 
 async function publish() {
@@ -121,12 +126,23 @@ async function publish() {
   if (problems.length) { toast(problems[0], 'error'); return; }
   const btn = $('[data-publish]'); btn.disabled = true; btn.textContent = '發佈中…';
   try {
-    // conflict check
-    const remote = await gh(`/contents/${DATA_PATH}?ref=${encodeURIComponent(s.branch)}`);
-    if (state.sha && remote.sha !== state.sha && !confirm('GitHub 上的作品資料在你載入後被改過。仍要用目前的版本覆蓋嗎？')) return;
-    const ref = await gh(`/git/ref/heads/${encodeURIComponent(s.branch)}`);
+    // conflict check against the branch's real current commit
+    const ref = await gh(`/git/ref/heads/${encodeURIComponent(s.branch)}?t=${Date.now()}`);
+    if (state.head && ref.object.sha !== state.head) {
+      const remote = await gh(`/contents/${DATA_PATH}?ref=${ref.object.sha}`);
+      if (remote.sha !== state.sha && !confirm('GitHub 上的作品資料在你載入後被別處改過（例如另一個分頁或另一台電腦）。\n按「確定」用目前畫面的版本覆蓋；按「取消」先不發佈，可重新整理載入最新版本。')) return;
+    }
     const baseCommit = await gh(`/git/commits/${ref.object.sha}`);
     const tree = [];
+    // new images were named after the work's id at upload time; move them under its final id
+    state.data.works.forEach((w) => (w.images || []).forEach((im) => {
+      const dir = `images/works/${w.id}/`;
+      [['src', im.src], ['thumb', thumbOf(im)]].forEach(([k, path]) => {
+        if (!state.pending.has(path) || path.startsWith(dir)) return;
+        const to = dir + path.split('/').pop();
+        state.pending.set(to, state.pending.get(path)); state.pending.delete(path); im[k] = to;
+      });
+    }));
     const used = referencedPaths(state.data);
     let n = 0;
     for (const [path, p] of state.pending) {
@@ -146,8 +162,8 @@ async function publish() {
     const commit = await gh('/git/commits', { method: 'POST', body: JSON.stringify({ message: `更新作品集：${summary}`, tree: newTree.sha, parents: [ref.object.sha] }) });
     await gh(`/git/refs/heads/${encodeURIComponent(s.branch)}`, { method: 'PATCH', body: JSON.stringify({ sha: commit.sha }) });
     // refresh baseline
-    const fresh = await gh(`/contents/${DATA_PATH}?ref=${commit.sha}`);
-    state.sha = fresh.sha;
+    state.head = commit.sha;
+    state.sha = dataBlob.sha;
     state.original = clone(state.data);
     state.pending.forEach((p) => URL.revokeObjectURL(p.url));
     state.pending.clear();
@@ -492,14 +508,14 @@ async function boot() {
   let loaded = null;
   const s = settings();
   try { loaded = await loadRemote(); } catch (err) { toast(`無法從 GitHub 載入：${err.message}`, 'error'); return; }
-  state.data = loaded.data; state.sha = loaded.sha;
+  state.data = loaded.data; state.sha = loaded.sha; state.head = loaded.head;
   state.data.featured = state.data.featured || [];
   state.original = clone(state.data);
 
   // restore unsaved draft (text only; new images can't survive a reload)
   try {
     const draft = JSON.parse(LS.get('sk2:admin-draft') || 'null');
-    if (draft && draft.data && JSON.stringify(draft.data) !== JSON.stringify(state.data) && confirm(`找到 ${new Date(draft.at).toLocaleString()} 未發佈的草稿，要還原嗎？（草稿中新上傳的圖片無法還原）`)) {
+    if (draft && draft.data && JSON.stringify(draft.data) !== JSON.stringify(state.data) && confirm(`找到 ${new Date(draft.at).toLocaleString()} 未發佈的草稿，要還原嗎？（草稿中新上傳的圖片無法還原）${draft.sha && draft.sha !== state.sha ? '\n\n注意：這份草稿之後 GitHub 上的資料已經更新過，還原後再發佈會蓋掉那些更新。' : ''}`)) {
       const known = referencedPaths(state.original);
       draft.data.works.forEach((w) => { w.images = (w.images || []).filter((im) => known.has(im.src)); });
       state.data = draft.data; setDirty();
