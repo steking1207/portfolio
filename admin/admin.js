@@ -27,6 +27,20 @@ function guessFrame(w, W, H) {
   if (w.category === 'app') return r >= 1.3 ? 'phone' : 'none';
   return r >= 1.7 && r <= 2.3 && W <= 1300 ? 'phone' : 'browser';
 }
+// Every role/tag already used on any work, most used first, so they can be picked instead of typed.
+function vocab(key) {
+  const n = new Map();
+  (state.data.works || []).forEach((x) => (x[key] || []).forEach((v) => n.set(v, (n.get(v) || 0) + 1)));
+  return [...n.keys()].sort((a, b) => n.get(b) - n.get(a) || a.localeCompare(b, 'zh-Hant'));
+}
+function pickerHTML(w, key, label, placeholder) {
+  const cur = w[key] || [];
+  const all = [...new Set([...vocab(key), ...cur])];
+  return `<div class="field"><span>${label}<small class="hint">（點選套用，再點一次取消）</small></span><div class="picks" data-picks="${key}">
+    ${all.map((v) => `<button type="button" class="pick ${cur.includes(v) ? 'is-on' : ''}" data-pick="${esc(v)}" aria-pressed="${cur.includes(v)}">${esc(v)}</button>`).join('')}
+    <input class="pick-add" data-pick-add="${key}" placeholder="${placeholder}" aria-label="新增${label}">
+  </div></div>`;
+}
 function yearOptions(cur) {
   const now = new Date().getFullYear();
   const ys = (state.data.works || []).map((x) => x.year).filter(Boolean);
@@ -319,8 +333,8 @@ function renderEditor() {
       <label class="field c2"><span>年份</span><select class="input" data-f="year">${yearOptions(w.year)}</select></label>
       <label class="field c4"><span>副標（一句話說明）</span><input class="input" data-f="subtitle" value="${esc(w.subtitle || '')}" placeholder="例：RWD 互動專題與測驗"></label>
       <label class="field c2"><span>分類</span><select class="input" data-f="category">${state.data.categories.map((c) => `<option value="${c.id}" ${c.id === w.category ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></label>
-      <label class="field c3"><span>角色（用、或逗號分隔）</span><input class="input" data-f="roles" value="${esc((w.roles || []).join('、'))}" placeholder="視覺設計、前端開發"></label>
-      <label class="field c3"><span>標籤（用、或逗號分隔）</span><input class="input" data-f="tags" value="${esc((w.tags || []).join('、'))}" placeholder="RWD、Android"></label>
+      ${pickerHTML(w, 'roles', '角色', '＋ 其他角色，按 Enter')}
+      ${pickerHTML(w, 'tags', '標籤', '＋ 其他標籤，按 Enter')}
       <label class="field"><span>作品說明（選填）</span><textarea class="input" data-f="summary" placeholder="專案背景、你負責的部分、成果……">${esc(w.summary || '')}</textarea></label>
     </div>
 
@@ -393,6 +407,15 @@ async function addFiles(files) {
 
 function bindEditor() {
   const el = $('[data-editor]');
+  el.addEventListener('keydown', (e) => {
+    const inp = e.target.closest('[data-pick-add]'); if (!inp || e.key !== 'Enter' || e.isComposing) return;
+    e.preventDefault();
+    const w = current(); const key = inp.dataset.pickAdd;
+    const add = inp.value.split(/[、,，]/).map((x) => x.trim()).filter(Boolean);
+    if (!add.length) return;
+    w[key] = [...new Set([...(w[key] || []), ...add])];
+    setDirty(); renderEditor(); $(`[data-pick-add="${key}"]`).focus();
+  });
   el.addEventListener('input', (e) => { if (e.target.dataset.f && e.target.dataset.f !== 'title') onField(e); else if (e.target.dataset.f === 'title') { current().title = e.target.value; $('.ed-head h1').textContent = e.target.value || '新作品'; setDirty(); renderList(); } });
   el.addEventListener('change', (e) => {
     const w = current(); if (!w) return;
@@ -416,6 +439,13 @@ function bindEditor() {
     const w = current(); if (!w) return;
     const del = e.target.closest('[data-del]');
     if (del) { w.images.splice(+del.dataset.del, 1); setDirty(); renderEditor(); renderList(); return; }
+    const pk = e.target.closest('[data-pick]');
+    if (pk) {
+      const key = pk.closest('[data-picks]').dataset.picks; const v = pk.dataset.pick;
+      const arr = w[key] || []; w[key] = arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v];
+      pk.classList.toggle('is-on', w[key].includes(v)); pk.setAttribute('aria-pressed', w[key].includes(v));
+      setDirty(); return;
+    }
     const mv = e.target.closest('[data-mv]');
     if (mv) { const [i, d] = mv.dataset.mv.split(':').map(Number); moveImage(i, i + d); return; }
     if (e.target.closest('[data-delete]')) {
