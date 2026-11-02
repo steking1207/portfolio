@@ -8,11 +8,11 @@
 
 打開 **https://steking1207.github.io/portfolio/admin/**（後台不會出現在網站選單上）。
 
-1. 第一次使用：按右上角 ⚙，貼上 GitHub 權杖。
+1. **登入**：後台有保護，必須貼上對這個 repo 有寫入權限的 GitHub 權杖才進得去，其他人打開只會看到登入畫面。
    - 到 [Fine-grained personal access tokens](https://github.com/settings/personal-access-tokens/new) 建立
    - Repository access：只選 `portfolio`
    - Repository permissions → **Contents：Read and write**
-   - 權杖只存在你這台電腦的瀏覽器，不會進 repo
+   - 預設關掉瀏覽器就登出；勾「記住這台電腦」才會保留。權杖只存在你的瀏覽器，不會進 repo
 2. **新增**：「＋ 新增作品」→ 填標題、年份、分類 → 把截圖拖進「圖片」。第一張是封面，可拖曳排序。圖片會自動縮成網頁尺寸（WebP，寬 1600px）並產生縮圖。
 3. **編輯**：點左側作品直接改。
 4. **下架**：勾「下架（不在網站顯示）」，資料與圖片都保留。
@@ -20,7 +20,13 @@
 6. **精選**：勾「放在首頁精選」並設定順序。
 7. 按 **預覽** 可先在新分頁看效果，確認後按 **發佈到 GitHub**。所有變更會合成一次 commit，GitHub Pages 約 1 分鐘後更新。
 
-沒有權杖也能用：按「下載 works.json」，自己覆蓋 `data/works.json` 再 commit。
+也可以按「下載 works.json」，自己覆蓋 `data/works.json` 再 commit。
+
+## 深淺色
+
+- 網站預設：後台「網站資訊」→「網站預設顯示」選 跟隨系統／淺色／深色（存在 `site.theme`）
+- 訪客：右上角按鈕依序切換 跟隨系統 → 淺色 → 深色，會記在訪客自己的瀏覽器
+- 後台本身：右上角 ☀ ☾ ◐ 切換
 
 ## 線上狀態標示
 

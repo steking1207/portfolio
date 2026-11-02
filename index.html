@@ -21,7 +21,7 @@
   <script>
     (function () {
       try {
-        var t = localStorage.getItem('sk2:theme');
+        var t = localStorage.getItem('sk2:theme') || localStorage.getItem('sk2:theme-default');
         if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
         if (!sessionStorage.getItem('sk2:seen')) document.documentElement.classList.add('is-first');
       } catch (e) {}
@@ -52,7 +52,7 @@
     </nav>
     <div class="nav__tools">
       <span class="nav__clock mono" data-clock aria-label="台北時間">TPE --:--</span>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切換深淺色">
+      <button class="theme-toggle" type="button" data-theme-toggle data-mode="system" aria-label="顯示模式：跟隨系統（點擊切換）" title="跟隨系統">
         <span class="theme-toggle__icon" aria-hidden="true"></span>
       </button>
     </div>

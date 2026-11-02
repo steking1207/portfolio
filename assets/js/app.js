@@ -578,13 +578,37 @@ function countUp() {
   });
 }
 
+/* Theme: visitor choice (light / dark / system) overrides the site default set in the admin. */
+const THEME_LABEL = { system: '跟隨系統', light: '淺色', dark: '深色' };
+function themePref() { return store.get('sk2:theme') || store.get('sk2:theme-default') || 'system'; }
+function applyTheme(mode) {
+  const root = document.documentElement;
+  if (mode === 'light' || mode === 'dark') root.setAttribute('data-theme', mode); else root.removeAttribute('data-theme');
+  const btn = $('[data-theme-toggle]');
+  btn.dataset.mode = mode;
+  btn.title = THEME_LABEL[mode];
+  btn.setAttribute('aria-label', `顯示模式：${THEME_LABEL[mode]}（點擊切換）`);
+}
 function bindTheme() {
+  applyTheme(themePref());
   $('[data-theme-toggle]').addEventListener('click', () => {
-    const root = document.documentElement;
-    const cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    const next = cur === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next); store.set('sk2:theme', next);
+    const order = ['system', 'light', 'dark'];
+    const next = order[(order.indexOf(themePref()) + 1) % order.length];
+    store.set('sk2:theme', next); applyTheme(next);
+    toastTheme(next);
   });
+}
+function siteDefaultTheme(mode) {
+  const m = ['light', 'dark', 'system'].includes(mode) ? mode : 'system';
+  store.set('sk2:theme-default', m);
+  if (!store.get('sk2:theme')) applyTheme(m);
+}
+let themeTip;
+function toastTheme(mode) {
+  let t = $('.theme-tip');
+  if (!t) { t = document.createElement('div'); t.className = 'theme-tip mono'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+  t.textContent = `顯示：${THEME_LABEL[mode]}`;
+  t.classList.add('is-on'); clearTimeout(themeTip); themeTip = setTimeout(() => t.classList.remove('is-on'), 1400);
 }
 
 function runLoader() {
@@ -619,6 +643,7 @@ function runLoader() {
     return;
   }
   prepare(data);
+  siteDefaultTheme(data.site && data.site.theme);
   renderHero();
   renderFeatured();
   refreshArchive();
