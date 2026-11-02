@@ -325,13 +325,14 @@ const dScroll = $('[data-detail-scroll]');
 
 function navList() { return state.current && state.list && state.list.some((w) => w.id === state.current.id) ? state.list : state.works; }
 
-function galleryHTML(w) {
-  const imgs = w.images;
+// pairs: [[image, indexInWork]]; host: what the browser frame's address bar shows
+function galleryHTML(w, pairs = w.images.map((im, i) => [im, i]), host = hostOf(w)) {
+  const imgs = pairs.map(([im]) => im);
   const shot = (im, i, cls = 'd-shot') => `<button type="button" class="${cls}" data-zoom="${esc(im.src)}" aria-label="放大第 ${i + 1} 張圖"><img src="${esc(im.src)}" alt="${esc(w.title)} 截圖 ${i + 1}" width="${im.w}" height="${im.h}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async"></button>`;
-  if (w.category === 'graphic' && imgs.every((im) => frameOf(w, im) === 'none')) return `<div class="d-graphics">${imgs.map((im, i) => shot(im, i)).join('')}</div>`;
+  if (w.category === 'graphic' && imgs.every((im) => frameOf(w, im) === 'none')) return `<div class="d-graphics">${pairs.map(([im, i]) => shot(im, i)).join('')}</div>`;
   // group consecutive phone-framed screenshots into horizontal strips
   const groups = [];
-  imgs.forEach((im, i) => {
+  pairs.forEach(([im, i]) => {
     const kind = frameOf(w, im) === 'phone' ? 'phone' : 'wide';
     const last = groups[groups.length - 1];
     if (last && last.kind === 'phone' && kind === 'phone') last.items.push([im, i]);
@@ -341,8 +342,29 @@ function galleryHTML(w) {
     if (g.kind === 'phone') return `<div class="d-phones">${g.items.map(([im, i]) => `<button type="button" class="phone" data-zoom="${esc(im.src)}" aria-label="放大第 ${i + 1} 張圖"><img src="${esc(im.src)}" alt="${esc(w.title)} 畫面 ${i + 1}" width="${im.w}" height="${im.h}" loading="lazy" decoding="async"></button>`).join('')}</div>`;
     const [im, i] = g.items[0];
     if (frameOf(w, im) === 'none') return `<figure>${shot(im, i, 'd-shot d-wide')}</figure>`;
-    return `<figure class="frame d-shot-wrap"><div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">${esc(hostOf(w))}</span></div><div class="frame__view">${shot(im, i)}</div></figure>`;
+    return `<figure class="frame d-shot-wrap"><div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">${esc(host)}</span></div><div class="frame__view">${shot(im, i)}</div></figure>`;
   }).join('');
+}
+
+// A project can have several sites (official, product, campaign…). Images tagged with a site key
+// are shown in that site's own section with its name and link; untagged images belong to the work's main URL.
+function sitesHTML(w) {
+  const sites = (w.sites || []).filter((s) => s && s.key);
+  const all = w.images.map((im, i) => [im, i]);
+  if (!sites.length) return `<div class="d-gallery">${galleryHTML(w)}</div>`;
+  const keys = new Set(sites.map((s) => s.key));
+  const main = all.filter(([im]) => !keys.has(im.site));
+  let html = main.length ? `<div class="d-gallery">${galleryHTML(w, main)}</div>` : '';
+  sites.forEach((st) => {
+    const pairs = all.filter(([im]) => im.site === st.key);
+    const badge = statusBadge({ status: st.status, url: st.url, title: st.name }, { small: true });
+    if (!pairs.length && !badge) return;
+    let host = hostOf(w);
+    if (st.url) { try { host = new URL(st.url).host.replace(/^www\./, ''); } catch (e) { /* noop */ } }
+    html += `<section class="d-site"><header class="d-site__head"><h3 class="d-site__name">${esc(st.name || '網站')}</h3>${badge}</header>
+      ${pairs.length ? `<div class="d-gallery">${galleryHTML(w, pairs, host)}</div>` : ''}</section>`;
+  });
+  return html;
 }
 
 function renderDetail(w) {
@@ -366,7 +388,7 @@ function renderDetail(w) {
     </header>
     <dl class="d-meta" style="--n:${meta.length}">${meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
     ${w.summary ? `<p class="d-summary">${esc(w.summary)}</p>` : ''}
-    <div class="d-gallery">${galleryHTML(w)}</div>
+    ${sitesHTML(w)}
     ${next && next.id !== w.id ? `<a class="d-next" href="${workHref(next)}" data-swap="${esc(next.id)}"><span class="d-next__label">Next project — ${esc(catName(next.category))} · ${next.year}</span><span class="d-next__title"><span>${esc(next.title)}</span><span aria-hidden="true">→</span></span></a>` : ''}`;
   dScroll.scrollTop = 0;
   document.title = `${w.title} — ${state.data.site.name || 'SK DESIGN'}`;

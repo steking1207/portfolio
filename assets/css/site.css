@@ -543,3 +543,9 @@ a.status:hover { transform: translateY(-2px); }
   .js .hero__title .line > span { transform: none; }
   .loader { display: none !important; }
 }
+
+/* Multi-site projects: one section per site */
+.d-site { margin-top: clamp(56px, 8vw, 112px); }
+.d-site__head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; padding-bottom: 16px; border-bottom: 1px solid var(--line-strong); }
+.d-site__name { margin: 0; font-size: var(--step-1, 1.25rem); font-weight: 700; }
+.d-site .d-gallery { margin-top: clamp(24px, 4vw, 48px); }

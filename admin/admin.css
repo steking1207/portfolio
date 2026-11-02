@@ -167,3 +167,8 @@ textarea.input { height: auto; min-height: 110px; padding: 10px 12px; resize: ve
 .feat__item.is-drag { opacity: .4; }
 .feat__item.is-over { outline: 2px dashed var(--accent); outline-offset: 2px; }
 [data-featured-editor] .ed-head, [data-featured-editor] .field { max-width: 760px; }
+.sub { margin: 24px 0 10px; font-size: 15px; }
+.sites { display: grid; gap: 8px; justify-items: start; }
+.site-row { display: grid; grid-template-columns: minmax(0, 1.2fr) 150px minmax(0, 2fr) 38px; gap: 8px; width: 100%; }
+.site-row .btn { padding: 0; }
+@media (max-width: 720px) { .site-row { grid-template-columns: 1fr 1fr; } }
