@@ -60,6 +60,38 @@
   ],
   "works": [
     {
+      "id": "2025-msf",
+      "title": "無國界醫生",
+      "subtitle": "",
+      "year": 2025,
+      "category": "platform",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [],
+      "status": "live",
+      "url": "https://www.msf.org.tw/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2025-msf/mvzdz9k80.webp",
+          "thumb": "images/works/2025-msf/mvzdz9k80-t.webp",
+          "w": 1074,
+          "h": 5499,
+          "frame": "browser"
+        },
+        {
+          "src": "images/works/2025-msf/mvzdz9u01.webp",
+          "thumb": "images/works/2025-msf/mvzdz9u01-t.webp",
+          "w": 690,
+          "h": 7538,
+          "frame": "phone"
+        }
+      ],
+      "hidden": false
+    },
+    {
       "id": "2024-jctprovider",
       "title": "榮宗科技",
       "subtitle": "",
@@ -4657,6 +4689,7 @@
     }
   ],
   "featured": [
+    "2025-msf",
     "2016-ego",
     "2018-bt-air",
     "2015-twm-office",
