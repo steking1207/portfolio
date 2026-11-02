@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>作品管理 — SK2</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FF4A1C'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='26' text-anchor='middle' fill='%23fff'%3ESK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="../" target="_blank" rel="noopener">SK2<i></i><span>作品管理</span></a>
+    <div class="top__tabs" role="tablist">
+      <button type="button" role="tab" aria-selected="true" data-tab="works">作品</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="site">網站資訊</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="help">使用說明</button>
+    </div>
+    <div class="top__actions">
+      <span class="dirty" data-dirty hidden>有未發佈的變更</span>
+      <button type="button" class="btn" data-preview>預覽</button>
+      <button type="button" class="btn" data-download>下載 works.json</button>
+      <button type="button" class="btn btn--primary" data-publish>發佈到 GitHub</button>
+      <button type="button" class="icon-btn" data-settings aria-label="GitHub 連線設定" title="GitHub 連線設定">⚙</button>
+    </div>
+  </header>
+
+  <main class="layout" data-panel="works">
+    <aside class="side">
+      <div class="side__tools">
+        <input type="search" class="input" placeholder="搜尋作品" data-q>
+        <select class="input" data-fcat><option value="">全部分類</option></select>
+        <button type="button" class="btn btn--primary btn--block" data-add>＋ 新增作品</button>
+      </div>
+      <p class="side__count mono" data-count></p>
+      <ul class="list" data-list></ul>
+    </aside>
+
+    <section class="editor" data-editor>
+      <div class="empty">從左側選一件作品編輯，或按「新增作品」。</div>
+    </section>
+  </main>
+
+  <main class="layout layout--single" data-panel="site" hidden>
+    <section class="editor" data-site-editor></section>
+  </main>
+
+  <main class="layout layout--single" data-panel="help" hidden>
+    <section class="editor prose">
+      <h2>怎麼新增、編輯、刪除、下架作品</h2>
+      <ol>
+        <li><b>第一次使用</b>：按右上角 ⚙，貼上 GitHub 權杖（建立方式見下方）。權杖只存在這台電腦的瀏覽器裡。</li>
+        <li><b>新增</b>：按「＋ 新增作品」，填標題、年份、分類，把截圖拖進「圖片」區。第一張圖就是封面，可以拖曳調整順序。</li>
+        <li><b>編輯</b>：點左側作品，直接改欄位。</li>
+        <li><b>下架</b>：勾選「下架（不在網站顯示）」。資料和圖片都保留，之後取消勾選就會重新上架。</li>
+        <li><b>刪除</b>：按作品頁最下方的「刪除這件作品」。發佈時會一併刪掉它的圖片檔。</li>
+        <li><b>精選</b>：勾選「放在首頁精選」，並用數字決定順序（1 最前面）。建議 4 到 8 件。</li>
+        <li><b>發佈</b>：按「發佈到 GitHub」。所有變更會變成一次 commit，GitHub Pages 約 1 分鐘後更新。</li>
+      </ol>
+      <h3>線上狀態怎麼填</h3>
+      <ul>
+        <li><b>上線中</b>：網站還在、而且是你做的版本。填網址，網站會顯示「上線中 ↗」。</li>
+        <li><b>已改版</b>：網站還在，但已經改成別的設計。填網址，顯示「已改版 ↗」。</li>
+        <li><b>不標示</b>：已下線，或是 APP、平面這類沒有網址的作品。</li>
+        <li><b>Demo 網址</b>：你自己放在 GitHub Pages 等地方的可操作版本，會顯示「線上 Demo ↗」。</li>
+      </ul>
+      <h3>建立 GitHub 權杖</h3>
+      <ol>
+        <li>開啟 <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Fine-grained personal access token</a>。</li>
+        <li>Repository access 選 <b>Only select repositories</b>，選 <code>portfolio</code>。</li>
+        <li>Permissions → Repository permissions → <b>Contents</b> 設成 <b>Read and write</b>。</li>
+        <li>產生後複製，貼到 ⚙ 設定裡。</li>
+      </ol>
+      <h3>沒有權杖也可以</h3>
+      <p>按「下載 works.json」，把檔案放到 repo 的 <code>data/works.json</code>，新圖片放進 <code>images/works/作品代號/</code>，再 commit。</p>
+    </section>
+  </main>
+
+  <dialog class="dialog" data-settings-dialog>
+    <form method="dialog" class="dialog__body" data-settings-form>
+      <h2>GitHub 連線設定</h2>
+      <label class="field"><span>帳號 / Repo</span><div class="row2"><input class="input" name="owner" required><input class="input" name="repo" required></div></label>
+      <label class="field"><span>分支（GitHub Pages 使用的分支）</span><input class="input" name="branch" required></label>
+      <label class="field"><span>權杖（Fine-grained token，Contents: Read and write）</span><input class="input" name="token" type="password" autocomplete="off" placeholder="github_pat_…"></label>
+      <p class="hint">權杖只存在這個瀏覽器（localStorage），不會寫進網站或 repo。在公用電腦上用完請按「清除權杖」。</p>
+      <div class="dialog__actions">
+        <button type="button" class="btn" data-clear-token>清除權杖</button>
+        <span class="spacer"></span>
+        <button value="cancel" class="btn" formnovalidate>取消</button>
+        <button value="ok" class="btn btn--primary">儲存並重新載入</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

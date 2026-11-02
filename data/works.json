@@ -1,0 +1,4216 @@
+{
+  "site": {
+    "name": "SK2",
+    "title": "SK2 — 網頁、介面與數位視覺設計作品集",
+    "tagline": "把品牌放進螢幕裡，從 2005 年開始。",
+    "intro": "SK2 是一名網頁與介面設計師，橫跨企業官網、品牌活動、媒體專題、APP 與社群視覺。這裡收錄近二十年的作品紀錄。",
+    "email": "",
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/steking1207"
+      }
+    ],
+    "statement": "從 Flash 互動活動、企業官網到 RWD 響應式網站，從 Android／iOS APP 介面到社群視覺，二十年來替近百個品牌與機構設計螢幕裡的第一印象。好的設計不只好看，而是讓人一眼就懂、願意多停留一秒。"
+  },
+  "categories": [
+    {
+      "id": "corporate",
+      "name": "企業品牌官網",
+      "en": "Corporate",
+      "desc": "公司、機構、品牌、產品的官方網站"
+    },
+    {
+      "id": "platform",
+      "name": "入口與平台",
+      "en": "Platforms",
+      "desc": "媒體入口、影音／社群平台、電商、資訊網"
+    },
+    {
+      "id": "campaign",
+      "name": "品牌活動網站",
+      "en": "Campaigns",
+      "desc": "產品上市、促銷、互動遊戲活動頁"
+    },
+    {
+      "id": "editorial",
+      "name": "媒體專題與互動內容",
+      "en": "Editorial",
+      "desc": "雜誌／媒體的數位專題、測驗、論壇頁"
+    },
+    {
+      "id": "app",
+      "name": "APP 與系統介面",
+      "en": "Apps & UI",
+      "desc": "Android／iOS APP、後台與系統介面"
+    },
+    {
+      "id": "graphic",
+      "name": "社群與平面設計",
+      "en": "Social & Print",
+      "desc": "FB／IG／LINE 素材、名片、平面物"
+    },
+    {
+      "id": "advertising",
+      "name": "網路廣告、EDM 與部落格",
+      "en": "Ads & EDM",
+      "desc": "Banner、電子報、品牌部落格、動畫"
+    }
+  ],
+  "works": [
+    {
+      "id": "2023-mrcharger",
+      "title": "Mr.Charger 充電先生",
+      "subtitle": "名片、平面與社群圖",
+      "year": 2023,
+      "category": "graphic",
+      "roles": [
+        "社群視覺",
+        "視覺設計"
+      ],
+      "tags": [
+        "平面",
+        "社群"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2023-mrcharger/01.webp",
+          "w": 1600,
+          "h": 1600
+        },
+        {
+          "src": "images/works/2023-mrcharger/02.webp",
+          "w": 1600,
+          "h": 2263
+        },
+        {
+          "src": "images/works/2023-mrcharger/03.webp",
+          "w": 1600,
+          "h": 2263
+        },
+        {
+          "src": "images/works/2023-mrcharger/04.webp",
+          "w": 1040,
+          "h": 1040
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2021-tsuei",
+      "title": "崔媽媽基金會",
+      "subtitle": "IG 貼文與平面設計",
+      "year": 2021,
+      "category": "graphic",
+      "roles": [
+        "社群視覺",
+        "視覺設計"
+      ],
+      "tags": [
+        "Instagram",
+        "平面"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2021-tsuei/01.webp",
+          "w": 1080,
+          "h": 1080
+        },
+        {
+          "src": "images/works/2021-tsuei/02.webp",
+          "w": 1600,
+          "h": 1735
+        },
+        {
+          "src": "images/works/2021-tsuei/03.webp",
+          "w": 1600,
+          "h": 1735
+        },
+        {
+          "src": "images/works/2021-tsuei/04.webp",
+          "w": 1080,
+          "h": 1080
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2020-lab22",
+      "title": "LAB22",
+      "subtitle": "LINE 廣告",
+      "year": 2020,
+      "category": "graphic",
+      "roles": [
+        "社群視覺"
+      ],
+      "tags": [
+        "LINE"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2020-lab22/01.webp",
+          "w": 1080,
+          "h": 1080
+        },
+        {
+          "src": "images/works/2020-lab22/02.webp",
+          "w": 1080,
+          "h": 1080
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2020-syntrend",
+      "title": "三創生活",
+      "subtitle": "Facebook 貼文",
+      "year": 2020,
+      "category": "graphic",
+      "roles": [
+        "社群視覺"
+      ],
+      "tags": [
+        "Facebook"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2020-syntrend/01.webp",
+          "w": 1200,
+          "h": 800
+        },
+        {
+          "src": "images/works/2020-syntrend/02.webp",
+          "w": 1200,
+          "h": 800
+        },
+        {
+          "src": "images/works/2020-syntrend/03.webp",
+          "w": 1200,
+          "h": 800
+        },
+        {
+          "src": "images/works/2020-syntrend/04.webp",
+          "w": 1200,
+          "h": 800
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2020-judicial",
+      "title": "司法院",
+      "subtitle": "Facebook 貼文與 LINE 圖文選單",
+      "year": 2020,
+      "category": "graphic",
+      "roles": [
+        "社群視覺"
+      ],
+      "tags": [
+        "Facebook",
+        "LINE"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2020-judicial/01.webp",
+          "w": 1200,
+          "h": 794
+        },
+        {
+          "src": "images/works/2020-judicial/02.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "images/works/2020-judicial/03.webp",
+          "w": 1200,
+          "h": 800
+        },
+        {
+          "src": "images/works/2020-judicial/04.webp",
+          "w": 1040,
+          "h": 1040
+        },
+        {
+          "src": "images/works/2020-judicial/05.webp",
+          "w": 1600,
+          "h": 1080
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2020-aurora",
+      "title": "震旦通訊",
+      "subtitle": "Facebook 貼文與輪播廣告",
+      "year": 2020,
+      "category": "graphic",
+      "roles": [
+        "社群視覺"
+      ],
+      "tags": [
+        "Facebook"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2020-aurora/01.webp",
+          "w": 1200,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2020-aurora/02.webp",
+          "w": 600,
+          "h": 600
+        },
+        {
+          "src": "images/works/2020-aurora/03.webp",
+          "w": 1200,
+          "h": 800
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2019-amazon",
+      "title": "Amazon 全球開店",
+      "subtitle": "Facebook 貼文與廣告",
+      "year": 2019,
+      "category": "graphic",
+      "roles": [
+        "社群視覺"
+      ],
+      "tags": [
+        "Facebook"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2019-amazon/01.webp",
+          "w": 1600,
+          "h": 1601
+        },
+        {
+          "src": "images/works/2019-amazon/02.webp",
+          "w": 1200,
+          "h": 794
+        },
+        {
+          "src": "images/works/2019-amazon/03.webp",
+          "w": 1600,
+          "h": 1600
+        },
+        {
+          "src": "images/works/2019-amazon/04.webp",
+          "w": 1200,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2019-amazon/05.webp",
+          "w": 509,
+          "h": 743
+        },
+        {
+          "src": "images/works/2019-amazon/06.webp",
+          "w": 939,
+          "h": 939
+        },
+        {
+          "src": "images/works/2019-amazon/07.webp",
+          "w": 1200,
+          "h": 794
+        },
+        {
+          "src": "images/works/2019-amazon/08.webp",
+          "w": 1200,
+          "h": 794
+        },
+        {
+          "src": "images/works/2019-amazon/09.webp",
+          "w": 1600,
+          "h": 1600
+        },
+        {
+          "src": "images/works/2019-amazon/10.webp",
+          "w": 1200,
+          "h": 800
+        },
+        {
+          "src": "images/works/2019-amazon/11.webp",
+          "w": 509,
+          "h": 743
+        },
+        {
+          "src": "images/works/2019-amazon/12.webp",
+          "w": 1200,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2019-amazon/13.webp",
+          "w": 509,
+          "h": 743
+        },
+        {
+          "src": "images/works/2019-amazon/14.webp",
+          "w": 1200,
+          "h": 800
+        },
+        {
+          "src": "images/works/2019-amazon/15.webp",
+          "w": 509,
+          "h": 743
+        },
+        {
+          "src": "images/works/2019-amazon/16.webp",
+          "w": 1200,
+          "h": 800
+        },
+        {
+          "src": "images/works/2019-amazon/17.webp",
+          "w": 1200,
+          "h": 800
+        },
+        {
+          "src": "images/works/2019-amazon/18.webp",
+          "w": 1200,
+          "h": 3000
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2019-haruharu",
+      "title": "haruharu",
+      "subtitle": "Facebook 貼文",
+      "year": 2019,
+      "category": "graphic",
+      "roles": [
+        "社群視覺"
+      ],
+      "tags": [
+        "Facebook"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2019-haruharu/01.webp",
+          "w": 1080,
+          "h": 1080
+        },
+        {
+          "src": "images/works/2019-haruharu/02.webp",
+          "w": 1200,
+          "h": 630
+        },
+        {
+          "src": "images/works/2019-haruharu/03.webp",
+          "w": 1200,
+          "h": 630
+        },
+        {
+          "src": "images/works/2019-haruharu/04.webp",
+          "w": 1080,
+          "h": 1080
+        },
+        {
+          "src": "images/works/2019-haruharu/05.webp",
+          "w": 1080,
+          "h": 1080
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2019-lantian",
+      "title": "藍田產後護理之家",
+      "subtitle": "Facebook 貼文",
+      "year": 2019,
+      "category": "graphic",
+      "roles": [
+        "社群視覺"
+      ],
+      "tags": [
+        "Facebook"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2019-lantian/01.webp",
+          "w": 509,
+          "h": 746
+        },
+        {
+          "src": "images/works/2019-lantian/02.webp",
+          "w": 509,
+          "h": 746
+        },
+        {
+          "src": "images/works/2019-lantian/03.webp",
+          "w": 509,
+          "h": 746
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2018-104-hmi",
+      "title": "104 微觀世界，科技之眼",
+      "subtitle": "RWD 品牌專題",
+      "year": 2018,
+      "category": "editorial",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2018-104-hmi/01.webp",
+          "w": 1280,
+          "h": 3493
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2018-cheers-csr",
+      "title": "Cheers 啟動在地幸福",
+      "subtitle": "CSR／USR 專題網站",
+      "year": 2018,
+      "category": "editorial",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2018-cheers-csr/01.webp",
+          "w": 1600,
+          "h": 832
+        },
+        {
+          "src": "images/works/2018-cheers-csr/02.webp",
+          "w": 1600,
+          "h": 1430
+        },
+        {
+          "src": "images/works/2018-cheers-csr/03.webp",
+          "w": 1600,
+          "h": 1064
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2018-bt-rpa",
+      "title": "今周刊 機器人流程自動化講座",
+      "subtitle": "研討會專題網站",
+      "year": 2018,
+      "category": "editorial",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2018-bt-rpa/01.webp",
+          "w": 1280,
+          "h": 2262
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2018-bt-air",
+      "title": "今周刊 紫不！測出健康綠",
+      "subtitle": "空污互動專題與測驗",
+      "year": 2018,
+      "category": "editorial",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD",
+        "互動測驗"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2018-bt-air/01.webp",
+          "w": 1600,
+          "h": 808
+        },
+        {
+          "src": "images/works/2018-bt-air/02.webp",
+          "w": 1600,
+          "h": 656
+        },
+        {
+          "src": "images/works/2018-bt-air/03.webp",
+          "w": 1600,
+          "h": 824
+        },
+        {
+          "src": "images/works/2018-bt-air/04.webp",
+          "w": 1600,
+          "h": 824
+        },
+        {
+          "src": "images/works/2018-bt-air/05.webp",
+          "w": 1600,
+          "h": 712
+        },
+        {
+          "src": "images/works/2018-bt-air/06.webp",
+          "w": 1600,
+          "h": 712
+        },
+        {
+          "src": "images/works/2018-bt-air/07.webp",
+          "w": 1600,
+          "h": 712
+        },
+        {
+          "src": "images/works/2018-bt-air/08.webp",
+          "w": 1600,
+          "h": 712
+        },
+        {
+          "src": "images/works/2018-bt-air/09.webp",
+          "w": 1600,
+          "h": 712
+        },
+        {
+          "src": "images/works/2018-bt-air/10.webp",
+          "w": 1600,
+          "h": 712
+        },
+        {
+          "src": "images/works/2018-bt-air/11.webp",
+          "w": 1600,
+          "h": 712
+        },
+        {
+          "src": "images/works/2018-bt-air/12.webp",
+          "w": 1600,
+          "h": 712
+        },
+        {
+          "src": "images/works/2018-bt-air/13.webp",
+          "w": 1600,
+          "h": 936
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2018-twm-fubon",
+      "title": "台灣大哥大 × 富邦產險",
+      "subtitle": "RWD 合作活動網站",
+      "year": 2018,
+      "category": "campaign",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2018-twm-fubon/01.webp",
+          "w": 1280,
+          "h": 2570
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2018-fetnet-sme",
+      "title": "遠傳 頭家輕鬆配",
+      "subtitle": "RWD 方案活動網站",
+      "year": 2018,
+      "category": "campaign",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2018-fetnet-sme/01.webp",
+          "w": 1280,
+          "h": 2245
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2017-edm",
+      "title": "e:dm",
+      "subtitle": "RWD 電子報平台",
+      "year": 2017,
+      "category": "platform",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2017-edm/01.webp",
+          "w": 1280,
+          "h": 5061
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2017-sogi-farm",
+      "title": "友善耕作圈系統",
+      "subtitle": "RWD 平台",
+      "year": 2017,
+      "category": "platform",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2017-sogi-farm/01.webp",
+          "w": 1280,
+          "h": 3162
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2017-cw-ctbc",
+      "title": "天下雜誌 × 中國信託",
+      "subtitle": "合作專題網站",
+      "year": 2017,
+      "category": "editorial",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2017-cw-ctbc/01.webp",
+          "w": 1600,
+          "h": 1887
+        },
+        {
+          "src": "images/works/2017-cw-ctbc/02.webp",
+          "w": 1600,
+          "h": 1887
+        },
+        {
+          "src": "images/works/2017-cw-ctbc/03.webp",
+          "w": 1600,
+          "h": 1064
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2017-ch-forum",
+      "title": "康健雜誌 Vision 2025 城市論壇",
+      "subtitle": "論壇專題網站",
+      "year": 2017,
+      "category": "editorial",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2017-ch-forum/01.webp",
+          "w": 1280,
+          "h": 694
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2017-luckyart",
+      "title": "蠟藝彩繪館",
+      "subtitle": "RWD 品牌官網",
+      "year": 2017,
+      "category": "corporate",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2017-luckyart/01.webp",
+          "w": 1280,
+          "h": 971
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2016-cheers-quiz",
+      "title": "Cheers 創業家測驗",
+      "subtitle": "互動測驗專題",
+      "year": 2016,
+      "category": "editorial",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2016-cheers-quiz/01.webp",
+          "w": 1600,
+          "h": 667
+        },
+        {
+          "src": "images/works/2016-cheers-quiz/02.webp",
+          "w": 1600,
+          "h": 667
+        },
+        {
+          "src": "images/works/2016-cheers-quiz/03.webp",
+          "w": 1600,
+          "h": 667
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2016-ego",
+      "title": "e-go 集團",
+      "subtitle": "集團、Driways、UPTOGO 三站",
+      "year": 2016,
+      "category": "corporate",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "https://steking1207.github.io/ego/group/desktop/index.html",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2016-ego/01.webp",
+          "w": 1600,
+          "h": 3838
+        },
+        {
+          "src": "images/works/2016-ego/02.webp",
+          "w": 1600,
+          "h": 2762
+        },
+        {
+          "src": "images/works/2016-ego/03.webp",
+          "w": 1600,
+          "h": 4190
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2015-cie",
+      "title": "中國工程師學會",
+      "subtitle": "RWD 學會官網（桌機／平板／手機）",
+      "year": 2015,
+      "category": "corporate",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "redesigned",
+      "url": "https://www.cie.org.tw/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2015-cie/01.webp",
+          "w": 1400,
+          "h": 1105
+        },
+        {
+          "src": "images/works/2015-cie/02.webp",
+          "w": 900,
+          "h": 1384
+        },
+        {
+          "src": "images/works/2015-cie/03.webp",
+          "w": 500,
+          "h": 1830
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2015-twm-office",
+      "title": "台灣大哥大 行動辦公室",
+      "subtitle": "企業內部 APP（手機＋平板）",
+      "year": 2015,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android",
+        "iOS"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2015-twm-office/01.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/02.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/03.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/04.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/05.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/06.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/07.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/08.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/09.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/10.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/11.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/12.webp",
+          "w": 750,
+          "h": 1334
+        },
+        {
+          "src": "images/works/2015-twm-office/13.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/14.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/15.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/16.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/17.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/18.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/19.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/20.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/21.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/22.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/23.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/24.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/25.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/26.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/27.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/28.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/29.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2015-twm-office/30.webp",
+          "w": 1400,
+          "h": 900
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2015-continental",
+      "title": "大陸工程",
+      "subtitle": "企業品牌官網",
+      "year": 2015,
+      "category": "corporate",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "redesigned",
+      "url": "https://www.continental-holdings.com/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2015-continental/01.webp",
+          "w": 1200,
+          "h": 2685
+        },
+        {
+          "src": "images/works/2015-continental/02.webp",
+          "w": 1200,
+          "h": 1902
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2014-tci",
+      "title": "TCI",
+      "subtitle": "企業資訊 APP",
+      "year": 2014,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android",
+        "iOS"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2014-tci/01.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2014-tci/02.webp",
+          "w": 1024,
+          "h": 1072
+        },
+        {
+          "src": "images/works/2014-tci/03.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2014-tci/04.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2014-tci/05.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2014-tci/06.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2014-tci/07.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2014-tci/08.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2014-tci/09.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2014-tci/10.webp",
+          "w": 720,
+          "h": 1280
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2013-aengin",
+      "title": "Aengin 研擎科技",
+      "subtitle": "電源控制 APP",
+      "year": 2013,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2013-aengin/01.webp",
+          "w": 768,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-aengin/02.webp",
+          "w": 580,
+          "h": 1466
+        },
+        {
+          "src": "images/works/2013-aengin/03.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2013-aengin/04.webp",
+          "w": 768,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-aengin/05.webp",
+          "w": 768,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-aengin/06.webp",
+          "w": 768,
+          "h": 1280
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2013-geasy",
+      "title": "GEasy",
+      "subtitle": "巡檢管理 APP",
+      "year": 2013,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2013-geasy/01.webp",
+          "w": 752,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-geasy/02.webp",
+          "w": 752,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-geasy/03.webp",
+          "w": 752,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-geasy/04.webp",
+          "w": 752,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-geasy/05.webp",
+          "w": 752,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-geasy/06.webp",
+          "w": 752,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-geasy/07.webp",
+          "w": 752,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-geasy/08.webp",
+          "w": 588,
+          "h": 1422
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2013-pgg",
+      "title": "PGG Game",
+      "subtitle": "高爾夫社群 APP",
+      "year": 2013,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android",
+        "iOS"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2013-pgg/01.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/02.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/03.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/04.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/05.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/06.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/07.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/08.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/09.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/10.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/11.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/12.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/13.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/14.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/15.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/16.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/17.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/18.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/19.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/20.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/21.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/22.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/23.webp",
+          "w": 1080,
+          "h": 1920
+        },
+        {
+          "src": "images/works/2013-pgg/24.webp",
+          "w": 1080,
+          "h": 1920
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2013-taipeiculture",
+      "title": "台北文創",
+      "subtitle": "文創大樓官網",
+      "year": 2013,
+      "category": "corporate",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2013-taipeiculture/01.webp",
+          "w": 1200,
+          "h": 960
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2013-sogi-shop",
+      "title": "手機王購物",
+      "subtitle": "電商平台",
+      "year": 2013,
+      "category": "platform",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "RWD"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2013-sogi-shop/01.webp",
+          "w": 1440,
+          "h": 2000
+        },
+        {
+          "src": "images/works/2013-sogi-shop/02.webp",
+          "w": 1280,
+          "h": 2658
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2013-filemanager",
+      "title": "檔案總管",
+      "subtitle": "Android 工具 APP",
+      "year": 2013,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2013-filemanager/01.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-filemanager/02.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2013-filemanager/03.webp",
+          "w": 720,
+          "h": 1280
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-asus-sonicmaster",
+      "title": "ASUS SonicMaster",
+      "subtitle": "HTML5＋CSS3 產品活動網站",
+      "year": 2012,
+      "category": "campaign",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [
+        "HTML5/CSS3"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-asus-sonicmaster/01.webp",
+          "w": 920,
+          "h": 508
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-anfish",
+      "title": "Anfish",
+      "subtitle": "Android APP",
+      "year": 2012,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-anfish/01.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-anfish/02.webp",
+          "w": 1280,
+          "h": 800
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-euro",
+      "title": "Euro 活動",
+      "subtitle": "活動版型",
+      "year": 2012,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-euro/01.webp",
+          "w": 1440,
+          "h": 1050
+        },
+        {
+          "src": "images/works/2012-euro/02.webp",
+          "w": 1440,
+          "h": 1050
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-ipcam",
+      "title": "IP Cam",
+      "subtitle": "客製化監控 APP",
+      "year": 2012,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-ipcam/01.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2012-ipcam/02.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2012-ipcam/03.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2012-ipcam/04.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2012-ipcam/05.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2012-ipcam/06.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2012-ipcam/07.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2012-ipcam/08.webp",
+          "w": 720,
+          "h": 1280
+        },
+        {
+          "src": "images/works/2012-ipcam/09.webp",
+          "w": 720,
+          "h": 1280
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-supernote",
+      "title": "SuperNote",
+      "subtitle": "筆記 APP",
+      "year": 2012,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-supernote/01.webp",
+          "w": 1280,
+          "h": 752
+        },
+        {
+          "src": "images/works/2012-supernote/02.webp",
+          "w": 1280,
+          "h": 752
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-taaze",
+      "title": "TAAZE 讀冊生活",
+      "subtitle": "電子書 APP 三款提案",
+      "year": 2012,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android",
+        "iOS"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-taaze/01.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/02.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/03.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/04.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/05.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/06.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/07.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/08.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/09.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/10.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/11.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/12.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/13.webp",
+          "w": 640,
+          "h": 960
+        },
+        {
+          "src": "images/works/2012-taaze/14.webp",
+          "w": 640,
+          "h": 960
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-toefl",
+      "title": "TOEFL 背單字遊戲",
+      "subtitle": "學習 APP",
+      "year": 2012,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-toefl/01.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-toefl/02.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-toefl/03.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-toefl/04.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-toefl/05.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-toefl/06.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-toefl/07.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-toefl/08.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-toefl/09.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-toefl/10.webp",
+          "w": 480,
+          "h": 800
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-dcplus",
+      "title": "dcplus 數位行銷實戰家",
+      "subtitle": "數位行銷公司官網",
+      "year": 2012,
+      "category": "corporate",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-dcplus/01.webp",
+          "w": 920,
+          "h": 600
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-ezform",
+      "title": "ezForm",
+      "subtitle": "行動表單 APP",
+      "year": 2012,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-ezform/01.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-ezform/02.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-ezform/03.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-ezform/04.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-ezform/05.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-ezform/06.webp",
+          "w": 876,
+          "h": 572
+        },
+        {
+          "src": "images/works/2012-ezform/07.webp",
+          "w": 512,
+          "h": 512
+        },
+        {
+          "src": "images/works/2012-ezform/08.webp",
+          "w": 512,
+          "h": 512
+        },
+        {
+          "src": "images/works/2012-ezform/09.webp",
+          "w": 512,
+          "h": 512
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-secedu",
+      "title": "中等教育資訊網",
+      "subtitle": "教育資訊平台",
+      "year": 2012,
+      "category": "platform",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-secedu/01.webp",
+          "w": 1280,
+          "h": 1750
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-cht",
+      "title": "中華電信",
+      "subtitle": "自適應官網（隨裝置變化排版）",
+      "year": 2012,
+      "category": "corporate",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [
+        "RWD",
+        "HTML5/CSS3"
+      ],
+      "status": "redesigned",
+      "url": "https://www.cht.com.tw/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-cht/01.webp",
+          "w": 1000,
+          "h": 1135
+        },
+        {
+          "src": "images/works/2012-cht/02.webp",
+          "w": 1280,
+          "h": 1333
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-qnavi",
+      "title": "休息一夏",
+      "subtitle": "旅遊導覽 APP",
+      "year": 2012,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-qnavi/01.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-qnavi/02.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-qnavi/03.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-qnavi/04.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-qnavi/05.webp",
+          "w": 480,
+          "h": 800
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-pts-bus",
+      "title": "公視紀錄片 載他去想去的地方",
+      "subtitle": "滿版影片專題網站",
+      "year": 2012,
+      "category": "editorial",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "HTML5"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-pts-bus/01.webp",
+          "w": 920,
+          "h": 504
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-tsu",
+      "title": "台灣團結聯盟",
+      "subtitle": "政黨官網",
+      "year": 2012,
+      "category": "corporate",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [],
+      "status": "redesigned",
+      "url": "https://www.tsu.org.tw/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-tsu/01.webp",
+          "w": 1400,
+          "h": 1300
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-nac",
+      "title": "國農化工",
+      "subtitle": "企業品牌官網",
+      "year": 2012,
+      "category": "corporate",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-nac/01.webp",
+          "w": 1280,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-nac/02.webp",
+          "w": 1280,
+          "h": 800
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-intledu",
+      "title": "國際教育資訊網",
+      "subtitle": "教育資訊平台",
+      "year": 2012,
+      "category": "platform",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-intledu/01.webp",
+          "w": 1400,
+          "h": 1400
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-yilan-gift",
+      "title": "宜蘭伴手禮",
+      "subtitle": "iOS APP",
+      "year": 2012,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "iOS"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-yilan-gift/01.webp",
+          "w": 920,
+          "h": 600
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-home-control",
+      "title": "居家控制",
+      "subtitle": "客製化智慧家庭 APP",
+      "year": 2012,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-home-control/01.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-home-control/02.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2012-home-control/03.webp",
+          "w": 876,
+          "h": 1656
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-ysykitchen",
+      "title": "悅湘園餐廳",
+      "subtitle": "餐廳官網",
+      "year": 2012,
+      "category": "corporate",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-ysykitchen/01.webp",
+          "w": 920,
+          "h": 500
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-wenshui",
+      "title": "文水藝文中心",
+      "subtitle": "藝文空間官網",
+      "year": 2012,
+      "category": "corporate",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-wenshui/01.webp",
+          "w": 1600,
+          "h": 1029
+        },
+        {
+          "src": "images/works/2012-wenshui/02.webp",
+          "w": 1600,
+          "h": 1029
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-echotaitung",
+      "title": "臺東聚落回聲",
+      "subtitle": "行動版網站",
+      "year": 2012,
+      "category": "corporate",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [
+        "行動版"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-echotaitung/01.webp",
+          "w": 920,
+          "h": 492
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-nyc",
+      "title": "行政院青輔會",
+      "subtitle": "機關網站改版提案",
+      "year": 2012,
+      "category": "corporate",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-nyc/01.webp",
+          "w": 1600,
+          "h": 833
+        },
+        {
+          "src": "images/works/2012-nyc/02.webp",
+          "w": 1600,
+          "h": 833
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-epaper",
+      "title": "電子報設計",
+      "subtitle": "高教基金會、師大、台聯",
+      "year": 2012,
+      "category": "advertising",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "EDM"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-epaper/01.webp",
+          "w": 900,
+          "h": 755
+        },
+        {
+          "src": "images/works/2012-epaper/02.webp",
+          "w": 900,
+          "h": 1780
+        },
+        {
+          "src": "images/works/2012-epaper/03.webp",
+          "w": 900,
+          "h": 1000
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2012-fichet",
+      "title": "高等教育國際合作基金會",
+      "subtitle": "基金會官網",
+      "year": 2012,
+      "category": "corporate",
+      "roles": [
+        "視覺設計",
+        "前端開發"
+      ],
+      "tags": [],
+      "status": "redesigned",
+      "url": "https://www.fichet.org.tw/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2012-fichet/01.webp",
+          "w": 1360,
+          "h": 1604
+        },
+        {
+          "src": "images/works/2012-fichet/02.webp",
+          "w": 1360,
+          "h": 1800
+        },
+        {
+          "src": "images/works/2012-fichet/03.webp",
+          "w": 1360,
+          "h": 1800
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2011-ehome",
+      "title": "E-HOME 御宅神",
+      "subtitle": "智慧家庭 APP（手機、平板、機上盒）",
+      "year": 2011,
+      "category": "app",
+      "roles": [
+        "APP 介面設計"
+      ],
+      "tags": [
+        "Android"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2011-ehome/01.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/02.webp",
+          "w": 1600,
+          "h": 940
+        },
+        {
+          "src": "images/works/2011-ehome/03.webp",
+          "w": 1600,
+          "h": 900
+        },
+        {
+          "src": "images/works/2011-ehome/04.webp",
+          "w": 1600,
+          "h": 900
+        },
+        {
+          "src": "images/works/2011-ehome/05.webp",
+          "w": 1280,
+          "h": 752
+        },
+        {
+          "src": "images/works/2011-ehome/06.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/07.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/08.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/09.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/10.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/11.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/12.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/13.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/14.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/15.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/16.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/17.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/18.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/19.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/20.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/21.webp",
+          "w": 800,
+          "h": 480
+        },
+        {
+          "src": "images/works/2011-ehome/22.webp",
+          "w": 800,
+          "h": 480
+        },
+        {
+          "src": "images/works/2011-ehome/23.webp",
+          "w": 480,
+          "h": 800
+        },
+        {
+          "src": "images/works/2011-ehome/24.webp",
+          "w": 480,
+          "h": 800
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2011-naturalization",
+      "title": "歸化國籍系統民調",
+      "subtitle": "線上問卷系統",
+      "year": 2011,
+      "category": "app",
+      "roles": [
+        "UI 設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2011-naturalization/01.webp",
+          "w": 1200,
+          "h": 1400
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2011-hanchiu",
+      "title": "涵秋坊",
+      "subtitle": "餐飲品牌官網",
+      "year": 2011,
+      "category": "corporate",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2011-hanchiu/01.webp",
+          "w": 1200,
+          "h": 650
+        },
+        {
+          "src": "images/works/2011-hanchiu/02.webp",
+          "w": 1200,
+          "h": 1108
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-gogobox",
+      "title": "GOGOBOX",
+      "subtitle": "檔案分享平台",
+      "year": 2010,
+      "category": "platform",
+      "roles": [
+        "監製"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-gogobox/01.webp",
+          "w": 1050,
+          "h": 1127
+        },
+        {
+          "src": "images/works/2010-gogobox/02.webp",
+          "w": 240,
+          "h": 258
+        },
+        {
+          "src": "images/works/2010-gogobox/03.webp",
+          "w": 1420,
+          "h": 1127
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-gogobox-events",
+      "title": "GOGOBOX 活動",
+      "subtitle": "開賣、團購、首購活動",
+      "year": 2010,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-gogobox-events/01.webp",
+          "w": 1200,
+          "h": 700
+        },
+        {
+          "src": "images/works/2010-gogobox-events/02.webp",
+          "w": 1200,
+          "h": 866
+        },
+        {
+          "src": "images/works/2010-gogobox-events/03.webp",
+          "w": 1100,
+          "h": 700
+        },
+        {
+          "src": "images/works/2010-gogobox-events/04.webp",
+          "w": 1000,
+          "h": 990
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-msi",
+      "title": "MSI 微星科技",
+      "subtitle": "產品網站前端",
+      "year": 2010,
+      "category": "corporate",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [
+        "HTML/CSS"
+      ],
+      "status": "redesigned",
+      "url": "https://www.msi.com/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-msi/01.webp",
+          "w": 1280,
+          "h": 1024
+        },
+        {
+          "src": "images/works/2010-msi/02.webp",
+          "w": 1280,
+          "h": 1024
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-sogi",
+      "title": "Sogi! 手機王",
+      "subtitle": "官網改版、迷你店鋪、APP 頻道",
+      "year": 2010,
+      "category": "platform",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "redesigned",
+      "url": "https://www.sogi.com.tw/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-sogi/01.webp",
+          "w": 1050,
+          "h": 2100
+        },
+        {
+          "src": "images/works/2010-sogi/02.webp",
+          "w": 240,
+          "h": 480
+        },
+        {
+          "src": "images/works/2010-sogi/03.webp",
+          "w": 1050,
+          "h": 2100
+        },
+        {
+          "src": "images/works/2010-sogi/04.webp",
+          "w": 1200,
+          "h": 1192
+        },
+        {
+          "src": "images/works/2010-sogi/05.webp",
+          "w": 1076,
+          "h": 1866
+        },
+        {
+          "src": "images/works/2010-sogi/06.webp",
+          "w": 240,
+          "h": 160
+        },
+        {
+          "src": "images/works/2010-sogi/07.webp",
+          "w": 1076,
+          "h": 1866
+        },
+        {
+          "src": "images/works/2010-sogi/08.webp",
+          "w": 1076,
+          "h": 1866
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-sogofun",
+      "title": "SogoFun",
+      "subtitle": "娛樂資訊平台",
+      "year": 2010,
+      "category": "platform",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-sogofun/01.webp",
+          "w": 1020,
+          "h": 764
+        },
+        {
+          "src": "images/works/2010-sogofun/02.webp",
+          "w": 1020,
+          "h": 1022
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-trengo",
+      "title": "Trengo",
+      "subtitle": "空間設計品牌官網",
+      "year": 2010,
+      "category": "corporate",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-trengo/01.webp",
+          "w": 1100,
+          "h": 800
+        },
+        {
+          "src": "images/works/2010-trengo/02.webp",
+          "w": 1100,
+          "h": 800
+        },
+        {
+          "src": "images/works/2010-trengo/03.webp",
+          "w": 1100,
+          "h": 782
+        },
+        {
+          "src": "images/works/2010-trengo/04.webp",
+          "w": 1200,
+          "h": 900
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-hidotv",
+      "title": "hido.tv",
+      "subtitle": "影音平台介面",
+      "year": 2010,
+      "category": "app",
+      "roles": [
+        "UI 設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-hidotv/01.webp",
+          "w": 1024,
+          "h": 634
+        },
+        {
+          "src": "images/works/2010-hidotv/02.webp",
+          "w": 1024,
+          "h": 634
+        },
+        {
+          "src": "images/works/2010-hidotv/03.webp",
+          "w": 1024,
+          "h": 634
+        },
+        {
+          "src": "images/works/2010-hidotv/04.webp",
+          "w": 1024,
+          "h": 634
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-kptel",
+      "title": "先進電訊 KPTel",
+      "subtitle": "通訊企業官網",
+      "year": 2010,
+      "category": "corporate",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-kptel/01.webp",
+          "w": 1440,
+          "h": 600
+        },
+        {
+          "src": "images/works/2010-kptel/02.webp",
+          "w": 1440,
+          "h": 600
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-cks-park",
+      "title": "兩蔣文化園區部落格",
+      "subtitle": "部落格切版",
+      "year": 2010,
+      "category": "advertising",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-cks-park/01.webp",
+          "w": 1280,
+          "h": 1900
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-grandhoyal",
+      "title": "台北豪園飯店",
+      "subtitle": "飯店官網前端",
+      "year": 2010,
+      "category": "corporate",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [
+        "HTML/CSS"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-grandhoyal/01.webp",
+          "w": 1280,
+          "h": 700
+        },
+        {
+          "src": "images/works/2010-grandhoyal/02.webp",
+          "w": 1280,
+          "h": 1370
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-cungo",
+      "title": "存果空間設計",
+      "subtitle": "室內設計作品官網",
+      "year": 2010,
+      "category": "corporate",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-cungo/01.webp",
+          "w": 1200,
+          "h": 900
+        },
+        {
+          "src": "images/works/2010-cungo/02.webp",
+          "w": 1200,
+          "h": 900
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-fashion",
+      "title": "時尚精品",
+      "subtitle": "精品資訊網",
+      "year": 2010,
+      "category": "platform",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-fashion/01.webp",
+          "w": 1360,
+          "h": 1718
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-sinopac-edm",
+      "title": "永豐銀行信用卡 EDM",
+      "subtitle": "電子報",
+      "year": 2010,
+      "category": "advertising",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "EDM"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-sinopac-edm/01.webp",
+          "w": 900,
+          "h": 1000
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2010-trend-mazuu",
+      "title": "趨勢科技 MAZUU",
+      "subtitle": "產品介面與 UI 樣式",
+      "year": 2010,
+      "category": "app",
+      "roles": [
+        "UI 設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2010-trend-mazuu/01.webp",
+          "w": 850,
+          "h": 550
+        },
+        {
+          "src": "images/works/2010-trend-mazuu/02.webp",
+          "w": 850,
+          "h": 550
+        },
+        {
+          "src": "images/works/2010-trend-mazuu/03.webp",
+          "w": 850,
+          "h": 550
+        },
+        {
+          "src": "images/works/2010-trend-mazuu/04.webp",
+          "w": 1500,
+          "h": 920
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2009-benq",
+      "title": "BenQ 產品網站",
+      "subtitle": "CUKV、LCD、Projector 產品頁",
+      "year": 2009,
+      "category": "corporate",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [
+        "HTML/CSS"
+      ],
+      "status": "redesigned",
+      "url": "https://www.benq.com/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2009-benq/01.webp",
+          "w": 1280,
+          "h": 697
+        },
+        {
+          "src": "images/works/2009-benq/02.webp",
+          "w": 1280,
+          "h": 848
+        },
+        {
+          "src": "images/works/2009-benq/03.webp",
+          "w": 1200,
+          "h": 1186
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2009-dynasafe",
+      "title": "Dynasafe",
+      "subtitle": "企業品牌官網",
+      "year": 2009,
+      "category": "corporate",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2009-dynasafe/01.webp",
+          "w": 950,
+          "h": 550
+        },
+        {
+          "src": "images/works/2009-dynasafe/02.webp",
+          "w": 950,
+          "h": 550
+        },
+        {
+          "src": "images/works/2009-dynasafe/03.webp",
+          "w": 950,
+          "h": 550
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2009-intel",
+      "title": "Intel 互動廣告",
+      "subtitle": "地震篇、貼紙篇",
+      "year": 2009,
+      "category": "advertising",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2009-intel/01.webp",
+          "w": 350,
+          "h": 200
+        },
+        {
+          "src": "images/works/2009-intel/02.webp",
+          "w": 300,
+          "h": 250
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2009-nextlink",
+      "title": "NEXTLiNK CDN",
+      "subtitle": "網路服務企業官網",
+      "year": 2009,
+      "category": "corporate",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2009-nextlink/01.webp",
+          "w": 1200,
+          "h": 700
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2009-smartpay",
+      "title": "Smartpay",
+      "subtitle": "活動網站與小遊戲",
+      "year": 2009,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2009-smartpay/01.webp",
+          "w": 1400,
+          "h": 800
+        },
+        {
+          "src": "images/works/2009-smartpay/02.webp",
+          "w": 1400,
+          "h": 800
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2009-yahoo",
+      "title": "Yahoo! 搜尋舊情人",
+      "subtitle": "互動活動網站前端",
+      "year": 2009,
+      "category": "campaign",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2009-yahoo/01.webp",
+          "w": 1280,
+          "h": 1710
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2009-nutrimate",
+      "title": "你滋美得 互動廣告",
+      "subtitle": "Expando、LREC 等 4 支",
+      "year": 2009,
+      "category": "advertising",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2009-nutrimate/01.webp",
+          "w": 420,
+          "h": 80
+        },
+        {
+          "src": "images/works/2009-nutrimate/02.webp",
+          "w": 150,
+          "h": 150
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2009-binmusic",
+      "title": "相信音樂 BINmusic",
+      "subtitle": "唱片品牌官網切版",
+      "year": 2009,
+      "category": "corporate",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [
+        "HTML/CSS"
+      ],
+      "status": "redesigned",
+      "url": "https://www.bin-music.com.tw/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2009-binmusic/01.webp",
+          "w": 1024,
+          "h": 1070
+        },
+        {
+          "src": "images/works/2009-binmusic/02.webp",
+          "w": 1024,
+          "h": 1030
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2008-mjib",
+      "title": "調查局多媒體管理系統",
+      "subtitle": "內部系統介面",
+      "year": 2008,
+      "category": "app",
+      "roles": [
+        "UI 設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2008-mjib/01.webp",
+          "w": 240,
+          "h": 160
+        },
+        {
+          "src": "images/works/2008-mjib/02.webp",
+          "w": 950,
+          "h": 585
+        },
+        {
+          "src": "images/works/2008-mjib/03.webp",
+          "w": 950,
+          "h": 585
+        },
+        {
+          "src": "images/works/2008-mjib/04.webp",
+          "w": 950,
+          "h": 585
+        },
+        {
+          "src": "images/works/2008-mjib/05.webp",
+          "w": 950,
+          "h": 585
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2007-guclub",
+      "title": "GUClub",
+      "subtitle": "社群娛樂平台",
+      "year": 2007,
+      "category": "platform",
+      "roles": [
+        "監製"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2007-guclub/01.webp",
+          "w": 950,
+          "h": 1270
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2007-htc-touch",
+      "title": "HTC Touch 一點觸動",
+      "subtitle": "產品上市活動網站",
+      "year": 2007,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2007-htc-touch/01.webp",
+          "w": 1149,
+          "h": 659
+        },
+        {
+          "src": "images/works/2007-htc-touch/02.webp",
+          "w": 1280,
+          "h": 1200
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2007-nokia6100",
+      "title": "NOKIA 6100",
+      "subtitle": "產品活動網站",
+      "year": 2007,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2007-nokia6100/01.webp",
+          "w": 1280,
+          "h": 580
+        },
+        {
+          "src": "images/works/2007-nokia6100/02.webp",
+          "w": 1280,
+          "h": 580
+        },
+        {
+          "src": "images/works/2007-nokia6100/03.webp",
+          "w": 1280,
+          "h": 580
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2007-cthouse-3pigs",
+      "title": "中信房屋 三隻小豬",
+      "subtitle": "互動活動網站",
+      "year": 2007,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2007-cthouse-3pigs/01.webp",
+          "w": 770,
+          "h": 550
+        },
+        {
+          "src": "images/works/2007-cthouse-3pigs/02.webp",
+          "w": 770,
+          "h": 550
+        },
+        {
+          "src": "images/works/2007-cthouse-3pigs/03.webp",
+          "w": 770,
+          "h": 550
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2007-familymart-husky",
+      "title": "全家 Husky",
+      "subtitle": "集點活動網站",
+      "year": 2007,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2007-familymart-husky/01.webp",
+          "w": 950,
+          "h": 550
+        },
+        {
+          "src": "images/works/2007-familymart-husky/02.webp",
+          "w": 1000,
+          "h": 924
+        },
+        {
+          "src": "images/works/2007-familymart-husky/03.webp",
+          "w": 1000,
+          "h": 1572
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2007-familymart-keroro",
+      "title": "全家 Keroro 好運一番過新年",
+      "subtitle": "新年活動網站 I／II",
+      "year": 2007,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2007-familymart-keroro/01.webp",
+          "w": 1260,
+          "h": 648
+        },
+        {
+          "src": "images/works/2007-familymart-keroro/02.webp",
+          "w": 1260,
+          "h": 648
+        },
+        {
+          "src": "images/works/2007-familymart-keroro/03.webp",
+          "w": 1260,
+          "h": 648
+        },
+        {
+          "src": "images/works/2007-familymart-keroro/04.webp",
+          "w": 1259,
+          "h": 870
+        },
+        {
+          "src": "images/works/2007-familymart-keroro/05.webp",
+          "w": 1259,
+          "h": 1011
+        },
+        {
+          "src": "images/works/2007-familymart-keroro/06.webp",
+          "w": 1259,
+          "h": 946
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2007-taishin",
+      "title": "台新銀行 大富翁卡位戰",
+      "subtitle": "Flash 互動遊戲",
+      "year": 2007,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [],
+      "hidden": true
+    },
+    {
+      "id": "2007-twm",
+      "title": "台灣大哥大官網",
+      "subtitle": "電信入口網站",
+      "year": 2007,
+      "category": "platform",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "redesigned",
+      "url": "https://www.taiwanmobile.com/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2007-twm/01.webp",
+          "w": 995,
+          "h": 720
+        },
+        {
+          "src": "images/works/2007-twm/02.webp",
+          "w": 995,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2007-twm/03.webp",
+          "w": 995,
+          "h": 1200
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2007-smec",
+      "title": "會宇多媒體 SMEC",
+      "subtitle": "企業官網與 EyeMagic 產品網站",
+      "year": 2007,
+      "category": "corporate",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2007-smec/01.webp",
+          "w": 240,
+          "h": 147
+        },
+        {
+          "src": "images/works/2007-smec/02.webp",
+          "w": 950,
+          "h": 580
+        },
+        {
+          "src": "images/works/2007-smec/03.webp",
+          "w": 950,
+          "h": 580
+        },
+        {
+          "src": "images/works/2007-smec/04.webp",
+          "w": 950,
+          "h": 580
+        },
+        {
+          "src": "images/works/2007-smec/05.webp",
+          "w": 950,
+          "h": 580
+        },
+        {
+          "src": "images/works/2007-smec/06.webp",
+          "w": 950,
+          "h": 580
+        },
+        {
+          "src": "images/works/2007-smec/07.webp",
+          "w": 950,
+          "h": 580
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2007-funcooking",
+      "title": "瘋作菜 Fun at Cooking",
+      "subtitle": "品牌部落格",
+      "year": 2007,
+      "category": "advertising",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2007-funcooking/01.webp",
+          "w": 950,
+          "h": 1475
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-annasui",
+      "title": "ANNA SUI 部落格",
+      "subtitle": "品牌部落格",
+      "year": 2006,
+      "category": "advertising",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-annasui/01.webp",
+          "w": 900,
+          "h": 1070
+        },
+        {
+          "src": "images/works/2006-annasui/02.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-airwaves",
+      "title": "Airwaves 買一百送伍佰",
+      "subtitle": "促銷活動網站",
+      "year": 2006,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-airwaves/01.webp",
+          "w": 1000,
+          "h": 621
+        },
+        {
+          "src": "images/works/2006-airwaves/02.webp",
+          "w": 1000,
+          "h": 621
+        },
+        {
+          "src": "images/works/2006-airwaves/03.webp",
+          "w": 1000,
+          "h": 621
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-benq-sl75",
+      "title": "BenQ SL75 部落格",
+      "subtitle": "產品部落格",
+      "year": 2006,
+      "category": "advertising",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-benq-sl75/01.webp",
+          "w": 1264,
+          "h": 1668
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-mri",
+      "title": "MRI 廣告",
+      "subtitle": "網路廣告",
+      "year": 2006,
+      "category": "advertising",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-mri/01.webp",
+          "w": 640,
+          "h": 800
+        },
+        {
+          "src": "images/works/2006-mri/02.webp",
+          "w": 840,
+          "h": 630
+        },
+        {
+          "src": "images/works/2006-mri/03.webp",
+          "w": 840,
+          "h": 630
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-ni-drt",
+      "title": "NI DRT",
+      "subtitle": "產品活動網站",
+      "year": 2006,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-ni-drt/01.webp",
+          "w": 1280,
+          "h": 805
+        },
+        {
+          "src": "images/works/2006-ni-drt/02.webp",
+          "w": 1280,
+          "h": 805
+        },
+        {
+          "src": "images/works/2006-ni-drt/03.webp",
+          "w": 1280,
+          "h": 805
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-nissan",
+      "title": "NISSAN 選配件展示中心",
+      "subtitle": "Flash 互動展示",
+      "year": 2006,
+      "category": "platform",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-nissan/01.webp",
+          "w": 240,
+          "h": 170
+        },
+        {
+          "src": "images/works/2006-nissan/02.webp",
+          "w": 770,
+          "h": 545
+        },
+        {
+          "src": "images/works/2006-nissan/03.webp",
+          "w": 770,
+          "h": 545
+        },
+        {
+          "src": "images/works/2006-nissan/04.webp",
+          "w": 770,
+          "h": 545
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-sony-alpha",
+      "title": "SONY α 記者會開場動畫",
+      "subtitle": "動態影像",
+      "year": 2006,
+      "category": "advertising",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-sony-alpha/01.webp",
+          "w": 240,
+          "h": 180
+        },
+        {
+          "src": "images/works/2006-sony-alpha/02.webp",
+          "w": 1024,
+          "h": 768
+        },
+        {
+          "src": "images/works/2006-sony-alpha/03.webp",
+          "w": 1024,
+          "h": 768
+        },
+        {
+          "src": "images/works/2006-sony-alpha/04.webp",
+          "w": 1024,
+          "h": 768
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-seednet",
+      "title": "Seednet 全年度活動",
+      "subtitle": "年度促銷活動系列",
+      "year": 2006,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-seednet/01.webp",
+          "w": 800,
+          "h": 600
+        },
+        {
+          "src": "images/works/2006-seednet/02.webp",
+          "w": 1264,
+          "h": 805
+        },
+        {
+          "src": "images/works/2006-seednet/03.webp",
+          "w": 1264,
+          "h": 1103
+        },
+        {
+          "src": "images/works/2006-seednet/04.webp",
+          "w": 1264,
+          "h": 614
+        },
+        {
+          "src": "images/works/2006-seednet/05.webp",
+          "w": 1264,
+          "h": 916
+        },
+        {
+          "src": "images/works/2006-seednet/06.webp",
+          "w": 1264,
+          "h": 614
+        },
+        {
+          "src": "images/works/2006-seednet/07.webp",
+          "w": 1264,
+          "h": 1258
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-cthouse",
+      "title": "中信房屋",
+      "subtitle": "房仲品牌入口網站",
+      "year": 2006,
+      "category": "platform",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "redesigned",
+      "url": "https://www.cthouse.com.tw/",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-cthouse/01.webp",
+          "w": 240,
+          "h": 259
+        },
+        {
+          "src": "images/works/2006-cthouse/02.webp",
+          "w": 900,
+          "h": 978
+        },
+        {
+          "src": "images/works/2006-cthouse/03.webp",
+          "w": 900,
+          "h": 978
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-highq",
+      "title": "亞培 HighQ",
+      "subtitle": "品牌活動網站",
+      "year": 2006,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-highq/01.webp",
+          "w": 778,
+          "h": 508
+        },
+        {
+          "src": "images/works/2006-highq/02.webp",
+          "w": 778,
+          "h": 508
+        },
+        {
+          "src": "images/works/2006-highq/03.webp",
+          "w": 778,
+          "h": 508
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-familymart-wang",
+      "title": "全家便利商店",
+      "subtitle": "fm_wang 活動網站",
+      "year": 2006,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-familymart-wang/01.webp",
+          "w": 1264,
+          "h": 500
+        },
+        {
+          "src": "images/works/2006-familymart-wang/02.webp",
+          "w": 1264,
+          "h": 1355
+        },
+        {
+          "src": "images/works/2006-familymart-wang/03.webp",
+          "w": 1264,
+          "h": 778
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-twm-music",
+      "title": "台灣大哥大 音樂達人",
+      "subtitle": "音樂活動網站",
+      "year": 2006,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-twm-music/01.webp",
+          "w": 900,
+          "h": 1554
+        },
+        {
+          "src": "images/works/2006-twm-music/02.webp",
+          "w": 995,
+          "h": 720
+        },
+        {
+          "src": "images/works/2006-twm-music/03.webp",
+          "w": 995,
+          "h": 1200
+        },
+        {
+          "src": "images/works/2006-twm-music/04.webp",
+          "w": 995,
+          "h": 1200
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2006-foxconn",
+      "title": "鴻海 Foxconn",
+      "subtitle": "Computex 與 Super 活動網站",
+      "year": 2006,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2006-foxconn/01.webp",
+          "w": 1003,
+          "h": 600
+        },
+        {
+          "src": "images/works/2006-foxconn/02.webp",
+          "w": 1003,
+          "h": 600
+        },
+        {
+          "src": "images/works/2006-foxconn/03.webp",
+          "w": 1003,
+          "h": 600
+        },
+        {
+          "src": "images/works/2006-foxconn/04.webp",
+          "w": 1024,
+          "h": 600
+        },
+        {
+          "src": "images/works/2006-foxconn/05.webp",
+          "w": 1024,
+          "h": 600
+        },
+        {
+          "src": "images/works/2006-foxconn/06.webp",
+          "w": 1024,
+          "h": 600
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2005-nokia6630",
+      "title": "NOKIA 6630",
+      "subtitle": "產品活動網站・入圍金手指獎",
+      "year": 2005,
+      "category": "campaign",
+      "roles": [
+        "視覺設計"
+      ],
+      "tags": [
+        "Flash"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2005-nokia6630/01.webp",
+          "w": 1280,
+          "h": 621
+        },
+        {
+          "src": "images/works/2005-nokia6630/02.webp",
+          "w": 1280,
+          "h": 621
+        },
+        {
+          "src": "images/works/2005-nokia6630/03.webp",
+          "w": 1280,
+          "h": 621
+        }
+      ],
+      "hidden": false
+    }
+  ],
+  "featured": [
+    "2016-ego",
+    "2018-bt-air",
+    "2015-twm-office",
+    "2019-amazon",
+    "2012-cht",
+    "2012-taaze"
+  ]
+}
