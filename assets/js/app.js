@@ -88,7 +88,7 @@ function frameOf(w, img) {
    --------------------------------------------------------- */
 function renderHero() {
   const { site } = state.data;
-  $$('[data-site-name]').forEach((el) => { el.textContent = site.name || 'SK2'; });
+  $$('[data-site-name]').forEach((el) => { el.textContent = site.name || 'SK DESIGN'; });
   $('[data-site-intro]').textContent = site.intro || '';
   $('[data-year]').textContent = new Date().getFullYear();
   $$('[data-count-total]').forEach((el) => { el.textContent = state.works.length; });
@@ -369,7 +369,7 @@ function renderDetail(w) {
     <div class="d-gallery">${galleryHTML(w)}</div>
     ${next && next.id !== w.id ? `<a class="d-next" href="${workHref(next)}" data-swap="${esc(next.id)}"><span class="d-next__label">Next project — ${esc(catName(next.category))} · ${next.year}</span><span class="d-next__title"><span>${esc(next.title)}</span><span aria-hidden="true">→</span></span></a>` : ''}`;
   dScroll.scrollTop = 0;
-  document.title = `${w.title} — ${state.data.site.name || 'SK2'}`;
+  document.title = `${w.title} — ${state.data.site.name || 'SK DESIGN'}`;
 }
 
 function openDetail(id, { push = true } = {}) {
