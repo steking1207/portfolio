@@ -23,7 +23,7 @@
     },
     {
       "id": "platform",
-      "name": "入口與平台",
+      "name": "入口平台",
       "en": "Platforms",
       "desc": "媒體入口、影音／社群平台、電商、資訊網"
     },
@@ -41,57 +41,24 @@
     },
     {
       "id": "app",
-      "name": "APP 與系統介面",
+      "name": "APP、系統介面",
       "en": "Apps & UI",
       "desc": "Android／iOS APP、後台與系統介面"
     },
     {
       "id": "graphic",
-      "name": "社群與平面設計",
+      "name": "社群平面設計",
       "en": "Social & Print",
       "desc": "FB／IG／LINE 素材、名片、平面物"
     },
     {
       "id": "advertising",
-      "name": "網路廣告、EDM 與部落格",
+      "name": "網路廣告",
       "en": "Ads & EDM",
       "desc": "Banner、電子報、品牌部落格、動畫"
     }
   ],
   "works": [
-    {
-      "id": "2024-jctprovider",
-      "title": "榮宗科技",
-      "subtitle": "",
-      "year": 2024,
-      "category": "corporate",
-      "roles": [
-        "視覺設計",
-        "前端開發"
-      ],
-      "tags": [
-        "RWD"
-      ],
-      "status": "live",
-      "url": "https://jctprovider.com.tw/",
-      "demo": "",
-      "summary": "",
-      "images": [
-        {
-          "src": "images/works/2026-work/mvzblf7r0.webp",
-          "thumb": "images/works/2026-work/mvzblf7r0-t.webp",
-          "w": 1074,
-          "h": 2634
-        },
-        {
-          "src": "images/works/2026-work/mvzblffh1.webp",
-          "thumb": "images/works/2026-work/mvzblffh1-t.webp",
-          "w": 1074,
-          "h": 2615
-        }
-      ],
-      "hidden": false
-    },
     {
       "id": "2023-mrcharger",
       "title": "Mr.Charger 充電先生",
