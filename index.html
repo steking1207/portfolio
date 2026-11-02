@@ -1,154 +1,182 @@
 <!doctype html>
-<html>
+<html lang="zh-Hant-TW">
 <head>
-<meta charset="utf-8">
-<title>SK2 Design</title>
-<link rel="shortcut icon" href="../favicon.ico" />
-<link href="../css/reset.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-body {font-size:13px; line-height:1.6; color:#666}
-a:link,
-a:visited {color:#369}
-a:hover {text-decoration:none}
-img {display:block}
-#container {position:relative}
-header {position:fixed; left:0; top:0; width:100%; background:rgba(0,0,0,0.8); text-align:center; font:16px/2 "微軟正黑體", "Microsoft JhengHei";
--webkit-box-shadow:0 0 5px 0 rgba(0,0,0,0.8);
-        box-shadow:0 0 5px 0 rgba(0,0,0,0.8)}
-h1 {margin-right:30px; color:#fff; display:inline-block}
-.mainnav {display:inline-block}
-.mainnav li {display:inline-block; margin:5px 10px}
-.mainnav li a:link,
-.mainnav li a:visited {color:#fff}
-#main section {padding-top:45px}
-#main .project {; margin:0 auto; width:920px; margin-bottom:30px}
-#main .project img {
-  -webkit-box-shadow:0 0 5px 0 rgba(0,0,0,0.8);
-          box-shadow:0 0 5px 0 rgba(0,0,0,0.8)
-}
-#main .project img.noshadow {
-  -webkit-box-shadow:none;
-          box-shadow:none
-}
-#main h2 {display:block; margin-bottom:20px; padding:0 15px; border-bottom:2px solid #333; font:18px/2 "微軟正黑體", "Microsoft JhengHei"}
-#main h3 {display:block; margin:5px 0; font-weight:bold; font-size:13px; color:#000}
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>
-	function goToByScroll(id){
-		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
-	}
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SK2 — 網頁、介面與數位視覺設計作品集</title>
+  <meta name="description" content="SK2 的網頁、介面與數位視覺設計作品集：企業官網、品牌活動、媒體專題、APP 介面與社群視覺，2005 年至今。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SK2 — 網頁、介面與數位視覺設計作品集">
+  <meta property="og:description" content="企業官網、品牌活動、媒體專題、APP 介面與社群視覺，2005 年至今。">
+  <meta property="og:image" content="https://steking1207.github.io/portfolio/images/og.jpg">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#EEEBE4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141413'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='26' text-anchor='middle' fill='%23EEEBE4'%3ESK%3C/text%3E%3Ccircle cx='50' cy='16' r='5' fill='%23FF4A1C'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('sk2:theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        if (!sessionStorage.getItem('sk2:seen')) document.documentElement.classList.add('is-first');
+      } catch (e) {}
+      document.documentElement.classList.add('js');
+    })();
+  </script>
 </head>
-
 <body>
-<div id="container">
-<header>
-<h1>SK2's Portfolio</h1>
-<ul class="mainnav">
-	<li><a href="#s1" onClick="goToByScroll('s1')">視覺設計+前端開發 (4)</a></li>
-    <li><a href="#s2" onClick="goToByScroll('s2')">前端開發 (5)</a></li>
-    <li><a href="#s3" onClick="goToByScroll('s3')">APP設計 (9)</a></li>
-</ul>
-</header>
-<div id="main">
-	<section id="s1">
-    <h2>視覺設計+前端開發</h2>
-        <div class="project">
-        <img src="img/2012-dcplus.jpg">
-        <h3>dcplus 數位行銷實戰家 (<a href="http://www.dcplus.com.tw/" target="_blank">上線中</a>)</h3>
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="loader__label">SK2 / Archive</span>
+      <span class="loader__year" data-loader-year>2005</span>
+      <span class="loader__bar"><i></i></span>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#works">跳到作品索引</a>
+
+  <header class="nav" data-nav>
+    <a class="nav__logo" href="#top" aria-label="SK2 回到頂端" data-cursor="Top">
+      <span class="nav__mark">SK2</span>
+      <span class="nav__dot" aria-hidden="true"></span>
+    </a>
+    <nav class="nav__links" aria-label="主要導覽">
+      <a href="#featured" data-magnetic><span>精選</span></a>
+      <a href="#works" data-magnetic><span>作品</span><sup data-count-total></sup></a>
+      <a href="#about" data-magnetic><span>關於</span></a>
+    </nav>
+    <div class="nav__tools">
+      <span class="nav__clock mono" data-clock aria-label="台北時間">TPE --:--</span>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切換深淺色">
+        <span class="theme-toggle__icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__coords mono" aria-hidden="true" data-coords>X 0000 · Y 0000</div>
+      <div class="container hero__inner">
+        <p class="eyebrow hero__eyebrow" data-reveal>
+          <span class="eyebrow__dot"></span> <span data-site-name>SK2</span> — Web, Interface &amp; Visual Design
+        </p>
+        <h1 class="hero__title" id="hero-title" data-hero-title>
+          <span class="line"><span>把品牌</span></span>
+          <span class="line"><span>放進<em class="hero__accent">螢幕</em>裡</span></span>
+        </h1>
+        <div class="hero__foot">
+          <p class="hero__intro" data-site-intro data-reveal></p>
+          <dl class="hero__stats" data-stats data-reveal></dl>
         </div>
-        <div class="project">
-        <img src="img/2012-fichet1.jpg">
-        <h3>高等教育國際合作基金會 (<a href="http://www.fichet.org.tw/" target="_blank">上線中</a>)</h3>
-        </div>
-        <div class="project">
-        <img src="img/2012-nac.jpg">
-        <h3>國農化工 (<a href="http://www.nationalagricultural.com" target="_blank">上線中</a>)</h3>
-        </div>
-        <div class="project">
-        <img src="img/2012-wenshui.jpg">
-        <h3>文水藝文中心 (<a href="http://www.wenshui.com.tw/" target="_blank">上線中</a>)</h3>
-        </div>
-    </section>
-    <section id="s2">
-    <h2>前端開發</h2>
-    	<div class="project">
-        <img src="img/2012-cht.jpg" class="noshadow">
-        <h3>中華電信 (<a href="http://www.cht.com.tw/" target="_blank">上線中</a>)</h3>
-        <p>自適應網站 (隨裝置變化排版)</p>
-        </div>
-        <div class="project">
-        <img src="img/2012-echo-taitung.jpg">
-        <h3>臺東聚落回聲 (<a href="http://www.echotaitung.net/" target="_blank">上線中</a>)</h3>
-        <p>行動版最佳化</p>
-        </div>
-        <div class="project">
-        <img src="img/2012-ysykitchen.jpg">
-        <h3>悅湘園餐廳 (<a href="http://www.ysykitchen.com.tw/" target="_blank">上線中</a>)</h3>
-        <p>滿版式設計</p>
-        </div>
-        <div class="project">
-        <img src="img/2012-ASUS-SonicMaster.jpg">
-        <h3>ASUS SonicMaster (<a href="http://sonicmaster.asus.com/" target="_blank">上線中</a>)</h3>
-        <p>HTML5+CSS3</p>
-        </div>
-        <div class="project">
-        <img src="img/2012-pts.jpg">
-        <h3>公視紀錄片 載他去想去的地方 (<a href="http://bus.pts.org.tw/" target="_blank">上線中</a>)</h3>
-        <p>滿版背景影片</p>
-        </div>
-    </section>
-    <section id="s3">
-    <h2>APP設計</h2>
-    	<div class="project">
-        <img src="img/2012-taaze-icon.jpg">
-        <img src="img/2012-taaze-screen.jpg">
-        <h3>TAAZE讀冊 (<a href="https://itunes.apple.com/us/app/id555230285?mt=8" target="_blank">iOS</a>)</h3>
       </div>
-      	<div class="project">
-        <img src="img/2012-ilan.jpg">
-        <h3>宜蘭伴手禮 (<a href="http://itunes.apple.com/tw/app/yi-lan-ban-shou-li/id532508667?mt=8" target="_blank">iOS</a>)</h3>
-      	</div>
-        <div class="project">
-        <img src="img/2012-ipcam.jpg">
-        <h3>IP CAM (Android)</h3>
-        <p>客製化APP</p>
-        </div>
-        <div class="project">
-        <img src="img/2012-home-control.jpg">
-        <h3>居家控制 (Android)</h3>
-        <p>客製化APP</p>
-        </div>
-        <div class="project">
-        <img src="img/2012-gokimo.jpg">
-        <h3>休息一夏 (<a href="https://play.google.com/store/apps/details?id=com.gokimo.qk.qNavi" target="_blank">Android</a>)</h3>
-        </div>
-        <div class="project">
-        <img src="img/2012-anfish.jpg">
-        <h3>Anfish (<a href="https://play.google.com/store/apps/details?id=com.a0soft.gphone.aTruffleHog" target="_blank">Android</a>)</h3>
-        <p>線上仍是舊版</p>
-        </div>
-        <div class="project">
-        <img src="img/2012-sabuz-toefl.jpg">
-        <h3>TOEFL遊戲 (Android)</h3>
-        <p>未上線</p>
-        </div>
-        <div class="project">
-        <img src="img/2012-supernote-main.jpg">
-        <img src="img/2012-supernote-detail.jpg">
-        <h3>SuperNote (Android)</h3>
-        <p>未上線</p>
-        </div>
-        <div class="project">
-        <img src="img/2011_sapuz_ehome-mobile_01.jpg">
-        <img src="img/2011_sapuz_ehome-tablet_01.jpg">
-        <img src="img/2011_sapuz_ehome-tablet_03.jpg">
-        <h3>E-Home御宅神智慧家庭 (Android)</h3>
-        <p>客製化APP</p>
-        </div>
+      <div class="strip" aria-label="作品速覽" data-strip>
+        <div class="strip__track" data-strip-track></div>
+      </div>
     </section>
-</div>
-</div>
+
+    <section class="featured" id="featured" aria-labelledby="featured-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-head__index mono">01</p>
+          <h2 class="section-head__title" id="featured-title" data-reveal>精選作品<span class="section-head__en">Selected Works</span></h2>
+          <p class="section-head__note" data-reveal>捲動時，畫面裡的網頁會跟著往下讀。點進去看完整截圖。</p>
+        </header>
+        <div class="featured__list" data-featured></div>
+      </div>
+    </section>
+
+    <section class="archive" id="works" aria-labelledby="works-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-head__index mono">02</p>
+          <h2 class="section-head__title" id="works-title" data-reveal>作品索引<span class="section-head__en">Index</span></h2>
+          <p class="section-head__note" data-reveal>依作品類型分類，也可以點下方的年份長條，只看某一年。</p>
+        </header>
+
+        <div class="timeline" data-timeline aria-label="依年份篩選"></div>
+
+        <div class="toolbar" data-toolbar>
+          <div class="filters" role="tablist" aria-label="作品分類" data-filters></div>
+          <div class="toolbar__right">
+            <label class="search">
+              <span class="visually-hidden">搜尋作品或客戶</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+              <input type="search" placeholder="搜尋作品或客戶" data-search autocomplete="off">
+            </label>
+            <div class="view-toggle" role="group" aria-label="檢視方式">
+              <button type="button" data-view="grid" aria-pressed="true" aria-label="格狀檢視"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg></button>
+              <button type="button" data-view="list" aria-pressed="false" aria-label="列表檢視"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <p class="result-line mono" data-result-line aria-live="polite"></p>
+        <div class="works" data-works data-view-mode="grid"></div>
+        <div class="more-wrap"><button type="button" class="more" data-more data-magnetic hidden></button></div>
+        <p class="works__empty" data-empty hidden>沒有符合條件的作品。<button type="button" class="link-btn" data-clear>清除篩選</button></p>
+      </div>
+      <div class="hover-preview" data-hover-preview aria-hidden="true"><img alt=""></div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-head__index mono">03</p>
+          <h2 class="section-head__title" id="about-title" data-reveal>關於<span class="section-head__en">About</span></h2>
+        </header>
+        <p class="about__statement" data-statement></p>
+        <ol class="disciplines" data-disciplines></ol>
+        <div class="contact" data-contact>
+          <p class="eyebrow"><span class="eyebrow__dot"></span> 有專案想聊聊？</p>
+          <a class="contact__cta" data-contact-link href="#" data-cursor="Hello">
+            <span class="contact__text">一起合作</span>
+            <span class="contact__arrow" aria-hidden="true">↗</span>
+          </a>
+          <ul class="contact__links" data-links></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner mono">
+      <span>© <span data-year></span> <span data-site-name>SK2</span></span>
+      <span class="footer__mid">Hand-coded · Hosted on GitHub Pages</span>
+      <a href="#top" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="detail" data-detail role="dialog" aria-modal="true" aria-labelledby="detail-title" hidden>
+    <div class="detail__bar">
+      <button type="button" class="detail__close" data-close aria-label="關閉作品頁 (Esc)"><span></span><span></span></button>
+      <span class="detail__count mono" data-detail-count></span>
+      <div class="detail__nav">
+        <button type="button" data-prev aria-label="上一件作品">←</button>
+        <button type="button" data-next aria-label="下一件作品">→</button>
+      </div>
+    </div>
+    <div class="detail__scroll" data-detail-scroll>
+      <article class="detail__body container" data-detail-body></article>
+    </div>
+    <div class="detail__progress" aria-hidden="true"><i data-detail-progress></i></div>
+  </div>
+
+  <div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-label="圖片放大檢視">
+    <button type="button" class="lightbox__close" data-lightbox-close aria-label="關閉放大圖">×</button>
+    <div class="lightbox__stage" data-lightbox-stage></div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><span class="cursor__label" data-cursor-label></span></span></div>
+
+  <div class="preview-banner" data-preview-banner hidden>預覽模式：顯示的是後台尚未發佈的草稿 <a href="./">離開預覽</a></div>
+
+  <noscript><p class="noscript">這個作品集需要啟用 JavaScript 才能瀏覽。</p></noscript>
+  <script type="module" src="assets/js/app.js"></script>
 </body>
 </html>
