@@ -19,6 +19,10 @@ const STATUS = {
 };
 
 const PAGE = 24;
+// A project may span years: year = start, yearEnd = last year (optional).
+const endYear = (w) => (w.yearEnd > w.year ? w.yearEnd : w.year);
+const yearsOf = (w) => { const out = []; for (let y = w.year; y <= endYear(w); y++) out.push(y); return out; };
+const yearLabel = (w) => (endYear(w) > w.year ? `${w.year}–${endYear(w)}` : `${w.year}`);
 const state = { limit: PAGE, data: null, works: [], byId: new Map(), cat: 'all', year: null, q: '', view: store.get('sk2:view') || 'grid', lastFocus: null, current: null };
 
 /* ---------------------------------------------------------
@@ -48,9 +52,9 @@ function prepare(data) {
   state.works = data.works
     .filter((w) => !w.hidden && w.images && w.images.length)
     .map((w, i) => ({ ...w, _i: i }))
-    .sort((a, b) => b.year - a.year || a._i - b._i);
+    .sort((a, b) => endYear(b) - endYear(a) || b.year - a.year || a._i - b._i);
   state.works.forEach((w) => state.byId.set(w.id, w));
-  state.years = state.works.map((w) => w.year);
+  state.years = state.works.flatMap(yearsOf);
   state.minYear = Math.min(...state.years);
   state.maxYear = Math.max(...state.years);
 }
@@ -105,7 +109,7 @@ function renderHero() {
   for (let r = 0; picks.length < 18 && r < 6; r++) buckets.forEach((b) => { if (b[r] && picks.length < 18) picks.push(b[r]); });
   const item = (w, dup) => `<a class="strip__item" href="${workHref(w)}" data-open="${esc(w.id)}" data-cursor="View" ${dup ? 'aria-hidden="true" tabindex="-1"' : ''}>
       <img src="${esc(thumbOf(w.images[0]))}" alt="${dup ? '' : esc(w.title)}" width="${Math.round(w.images[0].w)}" height="${Math.round(Math.min(w.images[0].h, w.images[0].w * 1.5))}" loading="lazy" decoding="async">
-      <figcaption>${esc(w.title)} · ${w.year}</figcaption></a>`;
+      <figcaption>${esc(w.title)} · ${yearLabel(w)}</figcaption></a>`;
   $('[data-strip-track]').innerHTML = picks.map((w) => item(w)).join('') + picks.map((w) => item(w, true)).join('');
 }
 
@@ -142,7 +146,7 @@ function renderFeatured() {
         <h3 class="feature__title" data-reveal style="--d:.06s"><a href="${workHref(w)}" data-open="${esc(w.id)}">${esc(w.title)}</a></h3>
         <p class="feature__sub" data-reveal style="--d:.12s">${esc(w.subtitle || '')}</p>
         <div class="feature__meta" data-reveal style="--d:.18s">
-          <span class="chip chip--solid">${w.year}</span><span class="chip">${esc(catName(w.category))}</span>${(w.roles || []).map((r) => `<span class="chip">${esc(r)}</span>`).join('')}${statusBadge(w)}
+          <span class="chip chip--solid">${yearLabel(w)}</span><span class="chip">${esc(catName(w.category))}</span>${(w.roles || []).map((r) => `<span class="chip">${esc(r)}</span>`).join('')}${statusBadge(w)}
         </div>
         <a class="feature__open" href="${workHref(w)}" data-open="${esc(w.id)}" data-reveal style="--d:.24s" data-magnetic>看完整作品 <i aria-hidden="true">→</i></a>
       </div>
@@ -157,9 +161,9 @@ function filtered({ ignoreYear = false, ignoreCat = false } = {}) {
   const q = state.q.trim().toLowerCase();
   return state.works.filter((w) => {
     if (!ignoreCat && state.cat !== 'all' && w.category !== state.cat) return false;
-    if (!ignoreYear && state.year && w.year !== state.year) return false;
+    if (!ignoreYear && state.year && !yearsOf(w).includes(state.year)) return false;
     if (q) {
-      const hay = [w.title, w.subtitle, w.summary, catName(w.category), ...(w.roles || []), ...(w.tags || []), w.year].join(' ').toLowerCase();
+      const hay = [w.title, w.subtitle, w.summary, catName(w.category), ...(w.roles || []), ...(w.tags || []), ...yearsOf(w)].join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -177,9 +181,9 @@ function renderTimeline() {
   const base = filtered({ ignoreYear: true });
   const counts = {};
   for (let y = state.minYear; y <= state.maxYear; y++) counts[y] = 0;
-  base.forEach((w) => { counts[w.year] += 1; });
+  base.forEach((w) => yearsOf(w).forEach((y) => { counts[y] += 1; }));
   const allCounts = {};
-  state.works.forEach((w) => { allCounts[w.year] = (allCounts[w.year] || 0) + 1; });
+  state.works.forEach((w) => yearsOf(w).forEach((y) => { allCounts[y] = (allCounts[y] || 0) + 1; }));
   const max = Math.max(...Object.values(allCounts), 1);
   const el = $('[data-timeline]');
   el.innerHTML = Object.entries(counts).map(([y, c], i) => `
@@ -203,7 +207,7 @@ function cardHTML(w, i) {
     </div>
     <div class="card__body">
       <h3 class="card__title"><a href="${workHref(w)}" data-open="${esc(w.id)}" data-cursor="View">${esc(w.title)}</a></h3>
-      <span class="card__year">${w.year}</span>
+      <span class="card__year">${yearLabel(w)}</span>
       <p class="card__sub">${esc(w.subtitle || catName(w.category))}</p>
       ${w.status && STATUS[w.status] ? `<div class="card__foot">${statusBadge(w, { small: true })}</div>` : ''}
     </div>
@@ -212,7 +216,7 @@ function cardHTML(w, i) {
 
 function rowHTML(w, i) {
   return `<article class="row is-entering" style="--i:${Math.min(i, 30)}" data-thumb="${esc(thumbOf(w.images[0]))}">
-    <span class="row__year">${w.year}</span>
+    <span class="row__year">${yearLabel(w)}</span>
     <h3 class="row__title"><a href="${workHref(w)}" data-open="${esc(w.id)}">${esc(w.title)}<small>${esc(w.subtitle || '')}</small></a></h3>
     <span class="row__cat">${esc(catName(w.category))}</span>
     <span class="row__roles">${esc((w.roles || []).join('、'))}</span>
@@ -374,7 +378,7 @@ function renderDetail(w) {
   $('[data-detail-count]').textContent = `${pad(idx + 1)} / ${pad(list.length)}`;
   const chips = (arr) => arr.map((t) => `<span class="chip">${esc(t)}</span>`).join('');
   const meta = [
-    ['Year', `<span>${w.year}</span>`],
+    ['Year', `<span>${yearLabel(w)}</span>`],
     ['Category', `<span>${esc(catName(w.category))}</span>`],
     ['Role', chips(w.roles || []) || '<span>—</span>'],
   ];
@@ -382,14 +386,14 @@ function renderDetail(w) {
   if (statusBadge(w)) meta.push(['Online', statusBadge(w)]);
   $('[data-detail-body]').innerHTML = `
     <header class="d-head">
-      <p class="eyebrow"><span class="eyebrow__dot"></span>${esc(catName(w.category))} · ${w.year}</p>
+      <p class="eyebrow"><span class="eyebrow__dot"></span>${esc(catName(w.category))} · ${yearLabel(w)}</p>
       <h2 class="d-title" id="detail-title">${esc(w.title)}</h2>
       ${w.subtitle ? `<p class="d-sub">${esc(w.subtitle)}</p>` : ''}
     </header>
     <dl class="d-meta" style="--n:${meta.length}">${meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
     ${w.summary ? `<p class="d-summary">${esc(w.summary)}</p>` : ''}
     ${sitesHTML(w)}
-    ${next && next.id !== w.id ? `<a class="d-next" href="${workHref(next)}" data-swap="${esc(next.id)}"><span class="d-next__label">Next project — ${esc(catName(next.category))} · ${next.year}</span><span class="d-next__title"><span>${esc(next.title)}</span><span aria-hidden="true">→</span></span></a>` : ''}`;
+    ${next && next.id !== w.id ? `<a class="d-next" href="${workHref(next)}" data-swap="${esc(next.id)}"><span class="d-next__label">Next project — ${esc(catName(next.category))} · ${yearLabel(next)}</span><span class="d-next__title"><span>${esc(next.title)}</span><span aria-hidden="true">→</span></span></a>` : ''}`;
   dScroll.scrollTop = 0;
   document.title = `${w.title} — ${state.data.site.name || 'SK DESIGN'}`;
 }

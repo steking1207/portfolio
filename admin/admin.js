@@ -41,6 +41,8 @@ function pickerHTML(w, key, label, placeholder) {
     <input class="pick-add" data-pick-add="${key}" placeholder="${placeholder}" aria-label="新增${label}">
   </div></div>`;
 }
+const endYear = (w) => (w.yearEnd > w.year ? w.yearEnd : w.year);
+const yearLabel = (w) => (endYear(w) > w.year ? `${w.year}–${endYear(w)}` : `${w.year}`);
 const STATUS = [['', '不標示（已下線或無網址）'], ['live', '上線中（網站仍是這個設計）'], ['redesigned', '已改版（網站還在，設計已換）']];
 
 const state = {
@@ -241,6 +243,7 @@ function validate() {
     if (ids.has(w.id)) out.push(`作品代號重複：${w.id}`);
     ids.add(w.id);
     if (!w.year || w.year < 1990 || w.year > 2100) out.push(`作品「${w.title}」的年份不正確。`);
+    if (w.yearEnd && w.yearEnd < w.year) out.push(`作品「${w.title}」的結束年份比開始年份早。`);
     if (w.status && !w.url) out.push(`作品「${w.title}」標了${w.status === 'live' ? '上線中' : '已改版'}，但沒有填網址。`);
     (w.sites || []).forEach((st) => {
       if (!st.name) out.push(`作品「${w.title}」有一個其他網站沒有填名稱。`);
@@ -313,7 +316,7 @@ async function processFile(file, dir, index, w) {
 // Year filter lists only years that have works, newest first, with counts; rebuilt as works change.
 function renderYearFilter() {
   const sel = $('[data-fyear]'); if (!sel) return;
-  const n = {}; state.data.works.forEach((w) => { n[w.year] = (n[w.year] || 0) + 1; });
+  const n = {}; state.data.works.forEach((w) => { for (let y = w.year; y <= endYear(w); y++) n[y] = (n[y] || 0) + 1; });
   if (state.fyear && !n[state.fyear]) state.fyear = '';
   sel.innerHTML = `<option value="">全部年份</option>${Object.keys(n).sort((a, b) => b - a).map((y) => `<option value="${y}" ${y === state.fyear ? 'selected' : ''}>${y}（${n[y]}）</option>`).join('')}`;
 }
@@ -322,8 +325,8 @@ function renderList() {
   const q = state.q.toLowerCase();
   const items = state.data.works
     .map((w, i) => ({ w, i }))
-    .filter(({ w }) => (!state.fcat || w.category === state.fcat) && (!state.fyear || String(w.year) === state.fyear) && (!q || `${w.title} ${w.subtitle} ${w.year} ${w.id}`.toLowerCase().includes(q)))
-    .sort((a, b) => b.w.year - a.w.year || a.i - b.i);
+    .filter(({ w }) => (!state.fcat || w.category === state.fcat) && (!state.fyear || (+state.fyear >= w.year && +state.fyear <= endYear(w))) && (!q || `${w.title} ${w.subtitle} ${yearLabel(w)} ${w.id}`.toLowerCase().includes(q)))
+    .sort((a, b) => endYear(b.w) - endYear(a.w) || b.w.year - a.w.year || a.i - b.i);
   const shown = state.data.works.filter((w) => !w.hidden).length;
   $('[data-count]').textContent = `共 ${state.data.works.length} 件・顯示中 ${shown} 件・下架 ${state.data.works.length - shown} 件`;
   $('[data-list]').innerHTML = items.map(({ w }) => {
@@ -331,7 +334,7 @@ function renderList() {
     const feat = (state.data.featured || []).includes(w.id);
     return `<li data-id="${esc(w.id)}" class="${state.selected === w.id ? 'is-active' : ''}">
       ${im ? `<img src="${esc(imgURL(thumbOf(im)))}" alt="" loading="lazy">` : '<span class="noimg"></span>'}
-      <div><div class="list__title">${esc(w.title || '（未命名）')}</div><div class="list__meta">${w.year} · ${esc(catName(w.category))}</div></div>
+      <div><div class="list__title">${esc(w.title || '（未命名）')}</div><div class="list__meta">${yearLabel(w)} · ${esc(catName(w.category))}</div></div>
       <div class="list__flags">${w._new ? '<span class="flag flag--new">新</span>' : ''}${feat ? '<span class="flag flag--featured">精選</span>' : ''}${w.hidden ? '<span class="flag flag--hidden">下架</span>' : ''}</div>
     </li>`;
   }).join('');
@@ -349,7 +352,7 @@ function renderEditor() {
     <div class="ed-head"><h1>${esc(w.title || '新作品')}</h1>${w._new ? '' : `<a href="../#/work/${encodeURIComponent(w.id)}" target="_blank" rel="noopener">在網站上查看 ↗</a>`}</div>
     <div class="grid">
       <label class="field c4"><span>標題</span><input class="input" data-f="title" value="${esc(w.title)}" placeholder="例：今周刊 ESG 專題" required></label>
-      <label class="field c2"><span>年份</span><input class="input" data-f="year" type="number" min="1990" max="2100" value="${w.year}"></label>
+      <label class="field c2"><span>年份 <small class="hint">跨年度填起訖</small></span><span class="yr"><input class="input" data-f="year" type="number" min="1990" max="2100" value="${w.year}" aria-label="開始年份"><span aria-hidden="true">–</span><input class="input" data-f="yearEnd" type="number" min="1990" max="2100" value="${w.yearEnd || ''}" placeholder="結束（選填）" aria-label="結束年份（選填）"></span></label>
       <label class="field c4"><span>副標（一句話說明）</span><input class="input" data-f="subtitle" value="${esc(w.subtitle || '')}" placeholder="例：RWD 互動專題與測驗"></label>
       <label class="field c2"><span>分類</span><select class="input" data-f="category">${state.data.categories.map((c) => `<option value="${c.id}" ${c.id === w.category ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></label>
       ${pickerHTML(w, 'roles', '角色', '＋ 其他角色，按 Enter')}
@@ -402,6 +405,7 @@ function onField(e) {
   const f = e.target.dataset.f; if (!f) return;
   let v = e.target.value;
   if (f === 'year') v = parseInt(v, 10) || w.year;
+  if (f === 'yearEnd') { const n = parseInt(v, 10); if (n >= 1990 && n <= 2100) w.yearEnd = n; else delete w.yearEnd; setDirty(); renderList(); return; }
   if (f === 'roles' || f === 'tags') v = v.split(/[、,，]/).map((x) => x.trim()).filter(Boolean);
   if (f === 'id') {
     v = v.toLowerCase().replace(/[^a-z0-9-]/g, '-');
@@ -532,11 +536,11 @@ function renderFeatured() {
       ${f.map((id, i) => { const w = byId.get(id); const im = (w.images || [])[0]; return `<li class="feat__item" draggable="true" data-fi="${i}">
         <span class="feat__no mono">${i + 1}</span>
         ${im ? `<img src="${esc(imgURL(thumbOf(im)))}" alt="">` : '<span class="noimg"></span>'}
-        <div class="feat__text"><div class="list__title">${esc(w.title || '（未命名）')}</div><div class="list__meta">${w.year} · ${esc(catName(w.category))}${w.hidden ? ' · <b class="feat__warn">已下架，不會顯示</b>' : ''}</div></div>
+        <div class="feat__text"><div class="list__title">${esc(w.title || '（未命名）')}</div><div class="list__meta">${yearLabel(w)} · ${esc(catName(w.category))}${w.hidden ? ' · <b class="feat__warn">已下架，不會顯示</b>' : ''}</div></div>
         <span class="feat__btns"><button type="button" class="btn" data-fmv="${i}:-1" aria-label="往上" ${i ? '' : 'disabled'}>↑</button><button type="button" class="btn" data-fmv="${i}:1" aria-label="往下" ${i < f.length - 1 ? '' : 'disabled'}>↓</button><button type="button" class="btn" data-fdel="${i}" aria-label="移出精選">×</button></span>
       </li>`; }).join('') || '<li class="empty">還沒有精選作品。</li>'}
     </ol>
-    <label class="field" style="margin-top:20px"><span>加入精選</span><select class="input" data-feat-add><option value="">選一件作品加到最後…</option>${rest.map((w) => `<option value="${esc(w.id)}">${w.year}・${esc(w.title || w.id)}${w.hidden ? '（已下架）' : ''}</option>`).join('')}</select></label>`;
+    <label class="field" style="margin-top:20px"><span>加入精選</span><select class="input" data-feat-add><option value="">選一件作品加到最後…</option>${rest.map((w) => `<option value="${esc(w.id)}">${yearLabel(w)}・${esc(w.title || w.id)}${w.hidden ? '（已下架）' : ''}</option>`).join('')}</select></label>`;
 }
 function moveFeatured(from, to) {
   const f = state.data.featured;
