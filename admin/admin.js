@@ -242,6 +242,10 @@ function validate() {
     ids.add(w.id);
     if (!w.year || w.year < 1990 || w.year > 2100) out.push(`作品「${w.title}」的年份不正確。`);
     if (w.status && !w.url) out.push(`作品「${w.title}」標了${w.status === 'live' ? '上線中' : '已改版'}，但沒有填網址。`);
+    (w.sites || []).forEach((st) => {
+      if (!st.name) out.push(`作品「${w.title}」有一個其他網站沒有填名稱。`);
+      if (st.status && !st.url) out.push(`作品「${w.title}」的「${st.name}」標了${st.status === 'live' ? '上線中' : '已改版'}，但沒有填網址。`);
+    });
   });
   return out;
 }
@@ -359,6 +363,16 @@ function renderEditor() {
         <label class="field c4"><span>網站網址（上線中／已改版時必填）</span><input class="input" data-f="url" type="url" value="${esc(w.url || '')}" placeholder="https://"></label>
         <label class="field"><span>Demo 網址（選填，自己架的可操作版本）</span><input class="input" data-f="demo" type="url" value="${esc(w.demo || '')}" placeholder="https://steking1207.github.io/..."></label>
       </div>
+      <h3 class="sub">其他網站 <small class="hint">同一個專案還有產品網站、活動網站時加在這裡；上面的網址是主網站。圖片可在下方指定屬於哪個網站。</small></h3>
+      <div class="sites">
+        ${(w.sites || []).map((st) => `<div class="site-row">
+          <input class="input" data-sf="${esc(st.key)}:name" value="${esc(st.name || '')}" placeholder="網站名稱，例：產品網站" aria-label="網站名稱">
+          <select class="input" data-sf="${esc(st.key)}:status" aria-label="狀態">${STATUS.map(([v, l]) => `<option value="${v}" ${v === (st.status || '') ? 'selected' : ''}>${l.replace(/（.*）/, '')}</option>`).join('')}</select>
+          <input class="input" data-sf="${esc(st.key)}:url" type="url" value="${esc(st.url || '')}" placeholder="https://" aria-label="網址">
+          <button type="button" class="btn" data-site-del="${esc(st.key)}" aria-label="刪除這個網站">×</button>
+        </div>`).join('')}
+        <button type="button" class="btn" data-site-add>＋ 新增網站</button>
+      </div>
     </div>
 
     <div class="section"><h2>顯示</h2>
@@ -370,7 +384,7 @@ function renderEditor() {
 
     <div class="section"><h2>圖片 <small class="hint">${(w.images || []).length} 張・第一張是封面・拖曳排序・每張可選外框</small></h2>
       <div class="images" data-images>
-        ${(w.images || []).map((im, i) => `<div class="img" draggable="true" data-i="${i}"><div class="img__pic"><img src="${esc(imgURL(thumbOf(im)))}" alt=""><span class="img__no">${i + 1}</span><button type="button" class="img__del" data-del="${i}" aria-label="移除第 ${i + 1} 張">×</button><span class="img__move"><button type="button" data-mv="${i}:-1" aria-label="往前">←</button><button type="button" data-mv="${i}:1" aria-label="往後">→</button></span></div><select class="img__frame" data-frame="${i}" aria-label="第 ${i + 1} 張的外框" title="網站上顯示這張圖時的外框">${FRAMES.map(([v, l]) => `<option value="${v}" ${v === frameOf(w, im) ? 'selected' : ''}>${l}</option>`).join('')}</select></div>`).join('')}
+        ${(w.images || []).map((im, i) => `<div class="img" draggable="true" data-i="${i}"><div class="img__pic"><img src="${esc(imgURL(thumbOf(im)))}" alt=""><span class="img__no">${i + 1}</span><button type="button" class="img__del" data-del="${i}" aria-label="移除第 ${i + 1} 張">×</button><span class="img__move"><button type="button" data-mv="${i}:-1" aria-label="往前">←</button><button type="button" data-mv="${i}:1" aria-label="往後">→</button></span></div><select class="img__frame" data-frame="${i}" aria-label="第 ${i + 1} 張的外框" title="網站上顯示這張圖時的外框">${FRAMES.map(([v, l]) => `<option value="${v}" ${v === frameOf(w, im) ? 'selected' : ''}>${l}</option>`).join('')}</select>${(w.sites || []).length ? `<select class="img__frame" data-site="${i}" aria-label="第 ${i + 1} 張屬於哪個網站" title="這張圖屬於哪個網站"><option value="">主網站</option>${w.sites.map((st) => `<option value="${esc(st.key)}" ${st.key === im.site ? 'selected' : ''}>${esc(st.name || '未命名網站')}</option>`).join('')}</select>` : ''}</div>`).join('')}
         <label class="drop" data-drop><b>＋</b>拖曳圖片到這裡<br>或點擊選擇<input type="file" accept="image/*" multiple hidden data-file></label>
       </div>
       <p class="hint">上傳時會自動縮成網頁用尺寸（最寬 2000px）並產生縮圖，原檔不會上傳。</p>
@@ -447,6 +461,12 @@ function bindEditor() {
       const pos = Math.max(1, Math.min(f.length + 1, parseInt(e.target.value, 10) || 1)) - 1;
       f.splice(pos, 0, w.id); state.data.featured = f; setDirty(); renderEditor();
     }
+    if (e.target.matches('[data-site]')) { const im = w.images[+e.target.dataset.site]; if (im) { if (e.target.value) im.site = e.target.value; else delete im.site; setDirty(); } return; }
+    if (e.target.matches('[data-sf]')) {
+      const [key, f] = e.target.dataset.sf.split(':'); const st = (w.sites || []).find((x) => x.key === key);
+      if (st) { st[f] = e.target.value.trim(); setDirty(); if (f === 'name') renderEditor(); }
+      return;
+    }
     if (e.target.matches('[data-frame]')) { const im = w.images[+e.target.dataset.frame]; if (im) { im.frame = e.target.value; setDirty(); } return; }
     if (e.target.matches('[data-file]')) { addFiles(e.target.files); e.target.value = ''; }
   });
@@ -460,6 +480,18 @@ function bindEditor() {
       const arr = w[key] || []; w[key] = arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v];
       pk.classList.toggle('is-on', w[key].includes(v)); pk.setAttribute('aria-pressed', w[key].includes(v));
       setDirty(); return;
+    }
+    if (e.target.closest('[data-site-add]')) {
+      w.sites = w.sites || []; w.sites.push({ key: `s${Date.now().toString(36)}`, name: '', status: '', url: '' });
+      setDirty(); renderEditor(); const ins = $$('[data-sf$=":name"]'); if (ins.length) ins[ins.length - 1].focus(); return;
+    }
+    const sd = e.target.closest('[data-site-del]');
+    if (sd) {
+      const key = sd.dataset.siteDel; const st = (w.sites || []).find((x) => x.key === key);
+      if (!confirm(`刪除網站「${(st && st.name) || '未命名網站'}」？屬於它的圖片會改回主網站（圖片不會刪除）。`)) return;
+      w.sites = w.sites.filter((x) => x.key !== key); if (!w.sites.length) delete w.sites;
+      (w.images || []).forEach((im) => { if (im.site === key) delete im.site; });
+      setDirty(); renderEditor(); return;
     }
     const mv = e.target.closest('[data-mv]');
     if (mv) { const [i, d] = mv.dataset.mv.split(':').map(Number); moveImage(i, i + d); return; }
