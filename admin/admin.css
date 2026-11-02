@@ -94,7 +94,9 @@ textarea.input { height: auto; min-height: 110px; padding: 10px 12px; resize: ve
 .hint { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
 
 .images { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
-.img { position: relative; border-radius: 10px; overflow: hidden; background: var(--line); aspect-ratio: 4 / 3; cursor: grab; border: 2px solid transparent; }
+.img { position: relative; border-radius: 10px; overflow: hidden; background: var(--line); cursor: grab; border: 2px solid transparent; display: flex; flex-direction: column; }
+.img__pic { position: relative; aspect-ratio: 4 / 3; }
+.img__frame { width: 100%; height: 30px; border: 0; border-top: 1px solid var(--line); background: var(--panel, var(--bg)); color: inherit; font: inherit; font-size: 12px; padding: 0 6px; cursor: pointer; }
 .img:first-child { border-color: var(--accent); }
 .img:first-child::before { content: "封面"; position: absolute; left: 6px; top: 6px; z-index: 1; font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--accent); color: #fff; }
 .img img { width: 100%; height: 100%; object-fit: cover; object-position: top; pointer-events: none; }

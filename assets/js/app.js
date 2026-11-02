@@ -73,7 +73,15 @@ const hostOf = (w) => {
   if (u) { try { return new URL(u).host.replace(/^www\./, ''); } catch (e) { /* noop */ } }
   return `sk2.archive/${w.id}`;
 };
-const isPhone = (img) => img.h / img.w >= 1.3 && img.w <= 1100;
+// Each image picks its own frame in the admin: 'browser' | 'phone' | 'none'.
+// Images saved before that setting existed fall back to the old automatic guess.
+const FRAMES = ['browser', 'phone', 'none'];
+function frameOf(w, img) {
+  if (FRAMES.includes(img.frame)) return img.frame;
+  if (w.category === 'graphic') return 'none';
+  if (img.h / img.w >= 1.3 && img.w <= 1100) return 'phone';
+  return w.category === 'app' || img.w < 700 ? 'none' : 'browser';
+}
 
 /* ---------------------------------------------------------
    Hero
@@ -106,14 +114,19 @@ function renderHero() {
    --------------------------------------------------------- */
 function mediaFor(w) {
   const imgs = w.images;
-  if (w.category === 'graphic') {
+  if (w.category === 'graphic' && imgs.every((im) => frameOf(w, im) === 'none')) {
     return `<div class="collage">${imgs.slice(0, 3).map((im) => `<img src="${esc(thumbOf(im))}" alt="" loading="lazy" decoding="async">`).join('')}</div>`;
   }
-  const phones = imgs.filter(isPhone);
-  if (w.category === 'app' && phones.length >= 3) {
-    return `<div class="phones">${phones.slice(0, 3).map((im) => `<div class="phone"><img src="${esc(thumbOf(im))}" alt="" loading="lazy" decoding="async"></div>`).join('')}</div>`;
-  }
+  const phones = imgs.filter((im) => frameOf(w, im) === 'phone');
   const im = imgs[0];
+  const f = frameOf(w, im);
+  if ((w.category === 'app' && phones.length >= 3) || f === 'phone') {
+    const pick = phones.length >= 3 ? phones.slice(0, 3) : [im];
+    return `<div class="phones">${pick.map((p) => `<div class="phone"><img src="${esc(thumbOf(p))}" alt="" loading="lazy" decoding="async"></div>`).join('')}</div>`;
+  }
+  if (f === 'none') {
+    return `<div class="frame frame--bare"><div class="frame__view" data-scrollshot data-ratio="${im.h / im.w}"><img src="${esc(im.src)}" alt="" width="${im.w}" height="${im.h}" loading="lazy" decoding="async"></div></div>`;
+  }
   return `<div class="frame"><div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">${esc(hostOf(w))}</span></div>
     <div class="frame__view" data-scrollshot data-ratio="${im.h / im.w}"><img src="${esc(im.src)}" alt="" width="${im.w}" height="${im.h}" loading="lazy" decoding="async"></div></div>`;
 }
@@ -179,7 +192,7 @@ function renderTimeline() {
 
 function cardHTML(w, i) {
   const im = w.images[0];
-  const kind = w.category === 'graphic' ? 'is-graphic' : (isPhone(im) ? 'is-app' : '');
+  const kind = w.category === 'graphic' ? 'is-graphic' : (frameOf(w, im) === 'phone' ? 'is-app' : '');
   return `<article class="card is-entering" style="--i:${Math.min(i, 12)}">
     <div class="card__thumb ${kind}">
       <img src="${esc(thumbOf(im))}" alt="" width="760" height="570" loading="lazy" decoding="async" onload="this.classList.add('is-loaded')">
@@ -308,11 +321,11 @@ function navList() { return state.current && state.list && state.list.some((w) =
 function galleryHTML(w) {
   const imgs = w.images;
   const shot = (im, i, cls = 'd-shot') => `<button type="button" class="${cls}" data-zoom="${esc(im.src)}" aria-label="放大第 ${i + 1} 張圖"><img src="${esc(im.src)}" alt="${esc(w.title)} 截圖 ${i + 1}" width="${im.w}" height="${im.h}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async"></button>`;
-  if (w.category === 'graphic') return `<div class="d-graphics">${imgs.map((im, i) => shot(im, i)).join('')}</div>`;
-  // group consecutive phone-shaped screenshots into horizontal strips
+  if (w.category === 'graphic' && imgs.every((im) => frameOf(w, im) === 'none')) return `<div class="d-graphics">${imgs.map((im, i) => shot(im, i)).join('')}</div>`;
+  // group consecutive phone-framed screenshots into horizontal strips
   const groups = [];
   imgs.forEach((im, i) => {
-    const kind = isPhone(im) ? 'phone' : 'wide';
+    const kind = frameOf(w, im) === 'phone' ? 'phone' : 'wide';
     const last = groups[groups.length - 1];
     if (last && last.kind === 'phone' && kind === 'phone') last.items.push([im, i]);
     else groups.push({ kind, items: [[im, i]] });
@@ -320,7 +333,7 @@ function galleryHTML(w) {
   return groups.map((g) => {
     if (g.kind === 'phone') return `<div class="d-phones">${g.items.map(([im, i]) => `<button type="button" class="phone" data-zoom="${esc(im.src)}" aria-label="放大第 ${i + 1} 張圖"><img src="${esc(im.src)}" alt="${esc(w.title)} 畫面 ${i + 1}" width="${im.w}" height="${im.h}" loading="lazy" decoding="async"></button>`).join('')}</div>`;
     const [im, i] = g.items[0];
-    if (w.category === 'app' || im.w < 700) return `<figure>${shot(im, i, 'd-shot d-wide')}</figure>`;
+    if (frameOf(w, im) === 'none') return `<figure>${shot(im, i, 'd-shot d-wide')}</figure>`;
     return `<figure class="frame d-shot-wrap"><div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">${esc(hostOf(w))}</span></div><div class="frame__view">${shot(im, i)}</div></figure>`;
   }).join('');
 }
