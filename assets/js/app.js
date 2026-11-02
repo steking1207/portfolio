@@ -188,6 +188,9 @@ function renderTimeline() {
       <span class="tl-bar__fill ${c ? '' : 'is-empty'}" style="--h:${(c / max).toFixed(3)}"></span>
       <span class="tl-bar__year">${String(y).slice(2)}</span>
     </button>`).join('');
+  $('[data-year-ctrl]').innerHTML = state.year
+    ? `<span class="year-pill is-current">${state.year} 年</span><button type="button" class="year-pill is-clear" data-year-reset aria-label="清除年份，顯示全部年份"><span class="x" aria-hidden="true">×</span> 全部年份</button>`
+    : `<button type="button" class="year-pill" data-year-reset aria-pressed="true">全部年份</button>`;
 }
 
 function cardHTML(w, i) {
@@ -248,6 +251,10 @@ function bindArchive() {
   $('[data-timeline]').addEventListener('click', (e) => {
     const b = e.target.closest('[data-year]'); if (!b) return;
     const y = +b.dataset.year; state.year = state.year === y ? null : y; refreshArchive();
+  });
+  $('[data-year-ctrl]').addEventListener('click', (e) => {
+    if (!e.target.closest('[data-year-reset]') || !state.year) return;
+    state.year = null; refreshArchive();
   });
   let t;
   $('[data-search]').addEventListener('input', (e) => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value; refreshArchive(); }, 140); });
