@@ -3089,10 +3089,11 @@
       "id": "2010-sogi",
       "title": "Sogi! 手機王",
       "subtitle": "官網改版、迷你店鋪、APP 頻道",
-      "year": 2010,
+      "year": 2024,
       "category": "platform",
       "roles": [
-        "視覺設計"
+        "視覺設計",
+        "前端開發"
       ],
       "tags": [],
       "status": "redesigned",
@@ -3101,52 +3102,18 @@
       "summary": "",
       "images": [
         {
-          "src": "images/works/2010-sogi/01.webp",
-          "w": 1050,
-          "h": 2100,
-          "frame": "phone"
-        },
-        {
-          "src": "images/works/2010-sogi/02.webp",
-          "w": 240,
-          "h": 480,
-          "frame": "phone"
-        },
-        {
-          "src": "images/works/2010-sogi/03.webp",
-          "w": 1050,
-          "h": 2100,
-          "frame": "phone"
-        },
-        {
-          "src": "images/works/2010-sogi/04.webp",
-          "w": 1200,
-          "h": 1192,
+          "src": "images/works/2010-sogi/mvzf21ls0.webp",
+          "thumb": "images/works/2010-sogi/mvzf21ls0-t.webp",
+          "w": 1328,
+          "h": 12037,
           "frame": "browser"
         },
         {
-          "src": "images/works/2010-sogi/05.webp",
-          "w": 1076,
-          "h": 1866,
-          "frame": "phone"
-        },
-        {
-          "src": "images/works/2010-sogi/06.webp",
-          "w": 240,
-          "h": 160,
-          "frame": "none"
-        },
-        {
-          "src": "images/works/2010-sogi/07.webp",
-          "w": 1076,
-          "h": 1866,
-          "frame": "phone"
-        },
-        {
-          "src": "images/works/2010-sogi/08.webp",
-          "w": 1076,
-          "h": 1866,
-          "frame": "phone"
+          "src": "images/works/2010-sogi/mvzf223c1.webp",
+          "thumb": "images/works/2010-sogi/mvzf223c1-t.webp",
+          "w": 1728,
+          "h": 5594,
+          "frame": "browser"
         }
       ],
       "hidden": false
