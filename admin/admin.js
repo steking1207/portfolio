@@ -233,6 +233,7 @@ function summarize() {
   if (removed) parts.push(`刪除 ${removed} 件`);
   if (JSON.stringify(state.original.site) !== JSON.stringify(state.data.site) || JSON.stringify(state.original.categories) !== JSON.stringify(state.data.categories)) parts.push('網站資訊');
   if (JSON.stringify(state.original.featured) !== JSON.stringify(state.data.featured)) parts.push('精選');
+  if (!added && !removed && state.original.works.map((w) => w.id).join() !== state.data.works.map((w) => w.id).join()) parts.push('排序');
   return parts.join('、') || '資料整理';
 }
 function validate() {
@@ -320,19 +321,41 @@ function renderYearFilter() {
   if (state.fyear && !n[state.fyear]) state.fyear = '';
   sel.innerHTML = `<option value="">全部年份</option>${Object.keys(n).sort((a, b) => b - a).map((y) => `<option value="${y}" ${y === state.fyear ? 'selected' : ''}>${y}（${n[y]}）</option>`).join('')}`;
 }
+/* ---------------- order within the same year ----------------
+   Works sort newest first (by end year, then start year); works in the same year keep their order
+   in works.json, which is what these controls change. The site uses the same rule. */
+const byOrder = (a, b) => endYear(b.w) - endYear(a.w) || b.w.year - a.w.year || a.i - b.i;
+const sameYear = (a, b) => endYear(a) === endYear(b) && a.year === b.year;
+function placeWork(w, target, after) {
+  const arr = state.data.works;
+  arr.splice(arr.indexOf(w), 1);
+  arr.splice(arr.indexOf(target) + (after ? 1 : 0), 0, w);
+  setDirty(); renderList(); if (state.selected === w.id) renderEditor();
+}
+function moveInYear(w, dir) {
+  const sorted = state.data.works.map((x, i) => ({ w: x, i })).sort(byOrder).map((x) => x.w);
+  const nb = sorted[sorted.indexOf(w) + dir];
+  if (!nb || !sameYear(nb, w)) { toast(dir < 0 ? '已經是這個年份的第一件' : '已經是這個年份的最後一件'); return; }
+  placeWork(w, nb, dir > 0);
+}
+function yearPos(w) {
+  const grp = state.data.works.map((x, i) => ({ w: x, i })).filter((x) => sameYear(x.w, w)).sort(byOrder).map((x) => x.w);
+  return [grp.indexOf(w) + 1, grp.length];
+}
+
 function renderList() {
   renderYearFilter();
   const q = state.q.toLowerCase();
   const items = state.data.works
     .map((w, i) => ({ w, i }))
     .filter(({ w }) => (!state.fcat || w.category === state.fcat) && (!state.fyear || (+state.fyear >= w.year && +state.fyear <= endYear(w))) && (!q || `${w.title} ${w.subtitle} ${yearLabel(w)} ${w.id}`.toLowerCase().includes(q)))
-    .sort((a, b) => endYear(b.w) - endYear(a.w) || b.w.year - a.w.year || a.i - b.i);
+    .sort(byOrder);
   const shown = state.data.works.filter((w) => !w.hidden).length;
   $('[data-count]').textContent = `共 ${state.data.works.length} 件・顯示中 ${shown} 件・下架 ${state.data.works.length - shown} 件`;
   $('[data-list]').innerHTML = items.map(({ w }) => {
     const im = (w.images || [])[0];
     const feat = (state.data.featured || []).includes(w.id);
-    return `<li data-id="${esc(w.id)}" class="${state.selected === w.id ? 'is-active' : ''}">
+    return `<li data-id="${esc(w.id)}" draggable="true" title="同年份的作品可拖曳排序" class="${state.selected === w.id ? 'is-active' : ''}">
       ${im ? `<img src="${esc(imgURL(thumbOf(im)))}" alt="" loading="lazy">` : '<span class="noimg"></span>'}
       <div><div class="list__title">${esc(w.title || '（未命名）')}</div><div class="list__meta">${yearLabel(w)} · ${esc(catName(w.category))}</div></div>
       <div class="list__flags">${w._new ? '<span class="flag flag--new">新</span>' : ''}${feat ? '<span class="flag flag--featured">精選</span>' : ''}${w.hidden ? '<span class="flag flag--hidden">下架</span>' : ''}</div>
@@ -349,7 +372,7 @@ function renderEditor() {
   state.selectedWork = w;
   const featIdx = (state.data.featured || []).indexOf(w.id);
   el.innerHTML = `
-    <div class="ed-head"><h1>${esc(w.title || '新作品')}</h1>${w._new ? '' : `<a href="../#/work/${encodeURIComponent(w.id)}" target="_blank" rel="noopener">在網站上查看 ↗</a>`}</div>
+    <div class="ed-head"><h1>${esc(w.title || '新作品')}</h1>${(() => { const [n, t] = yearPos(w); return t > 1 ? `<span class="order" title="同年份的作品排序，也可以在左側清單直接拖曳"><span class="hint">${yearLabel(w)} 第 ${n} / ${t} 件</span><button type="button" class="btn" data-yr-mv="-1" aria-label="同年份往前" ${n > 1 ? '' : 'disabled'}>↑</button><button type="button" class="btn" data-yr-mv="1" aria-label="同年份往後" ${n < t ? '' : 'disabled'}>↓</button></span>` : ''; })()}${w._new ? '' : `<a href="../#/work/${encodeURIComponent(w.id)}" target="_blank" rel="noopener">在網站上查看 ↗</a>`}</div>
     <div class="grid">
       <label class="field c4"><span>標題</span><input class="input" data-f="title" value="${esc(w.title)}" placeholder="例：今周刊 ESG 專題" required></label>
       <label class="field c2"><span>年份 <small class="hint">跨年度填起訖</small></span><span class="yr"><input class="input" data-f="year" type="number" min="1990" max="2100" value="${w.year}" aria-label="開始年份"><span aria-hidden="true">–</span><input class="input" data-f="yearEnd" type="number" min="1990" max="2100" value="${w.yearEnd || ''}" placeholder="結束（選填）" aria-label="結束年份（選填）"></span></label>
@@ -478,6 +501,8 @@ function bindEditor() {
     const w = current(); if (!w) return;
     const del = e.target.closest('[data-del]');
     if (del) { w.images.splice(+del.dataset.del, 1); setDirty(); renderEditor(); renderList(); return; }
+    const ym = e.target.closest('[data-yr-mv]');
+    if (ym) { moveInYear(w, +ym.dataset.yrMv); return; }
     const pk = e.target.closest('[data-pick]');
     if (pk) {
       const key = pk.closest('[data-picks]').dataset.picks; const v = pk.dataset.pick;
@@ -675,6 +700,23 @@ async function boot() {
   $('[data-fcat]').innerHTML += state.data.categories.map((c) => `<option value="${c.id}">${esc(c.name)}</option>`).join('');
   renderList(); renderSite();
 
+  {
+    const list = $('[data-list]'); let drag = null;
+    const workOf = (li) => state.data.works.find((x) => x.id === li.dataset.id);
+    list.addEventListener('dragstart', (e) => { const li = e.target.closest('[data-id]'); if (!li) return; drag = workOf(li); li.classList.add('is-drag'); e.dataTransfer.effectAllowed = 'move'; });
+    list.addEventListener('dragend', () => { drag = null; $$('[data-id]', list).forEach((x) => x.classList.remove('is-drag', 'is-over', 'is-no')); });
+    list.addEventListener('dragover', (e) => {
+      const li = e.target.closest('[data-id]'); if (!li || !drag) return;
+      const ok = sameYear(workOf(li), drag); if (ok) e.preventDefault();
+      $$('[data-id]', list).forEach((x) => { x.classList.toggle('is-over', x === li && ok); x.classList.toggle('is-no', x === li && !ok); });
+    });
+    list.addEventListener('drop', (e) => {
+      const li = e.target.closest('[data-id]'); if (!li || !drag) return; e.preventDefault();
+      const t = workOf(li); if (t === drag) return;
+      if (!sameYear(t, drag)) { toast('只能在同一個年份內排序'); return; }
+      const lis = $$('[data-id]', list); placeWork(drag, t, lis.indexOf(li) > lis.findIndex((x) => x.dataset.id === drag.id));
+    });
+  }
   $('[data-list]').addEventListener('click', (e) => { const li = e.target.closest('[data-id]'); if (!li) return; state.selected = li.dataset.id; renderList(); renderEditor(); if (innerWidth < 900) $('[data-editor]').scrollIntoView(); });
   $('[data-q]').addEventListener('input', (e) => { state.q = e.target.value; renderList(); });
   $('[data-fcat]').addEventListener('change', (e) => { state.fcat = e.target.value; renderList(); });
