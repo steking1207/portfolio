@@ -475,11 +475,12 @@ a.status:hover { transform: translateY(-2px); }
 .cursor { display: none; }
 @media (pointer: fine) and (hover: hover) {
   .has-cursor .cursor { display: block; position: fixed; left: 0; top: 0; z-index: 400; pointer-events: none; }
-  .cursor__dot { position: fixed; left: 0; top: 0; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--accent); transform: translate3d(var(--x), var(--y), 0); }
-  .cursor__ring { position: fixed; left: 0; top: 0; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%; border: 1px solid var(--line-strong); transform: translate3d(var(--rx), var(--ry), 0) scale(var(--s, 1)); transition: width .45s var(--ease-out), height .45s var(--ease-out), margin .45s var(--ease-out), background-color .3s, border-color .3s; display: grid; place-items: center; }
+  .cursor__ring { position: fixed; left: 0; top: 0; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%; border: 1px solid var(--line-strong); transform: translate3d(var(--rx), var(--ry), 0) scale(var(--s, 1)); transition: width .45s var(--ease-out), height .45s var(--ease-out), margin .45s var(--ease-out), background-color .3s, border-color .3s, opacity .3s; display: grid; place-items: center; }
   .cursor.is-label .cursor__ring { width: 88px; height: 88px; margin: -44px 0 0 -44px; background: var(--accent); border-color: var(--accent); }
   .cursor__label { font-size: 13px; font-weight: 600; color: var(--accent-ink); opacity: 0; transition: opacity .3s; white-space: nowrap; }
   .cursor.is-label .cursor__label { opacity: 1; }
+  .cursor.is-link .cursor__ring { width: 52px; height: 52px; margin: -26px 0 0 -26px; border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  .cursor.is-text .cursor__ring { opacity: 0; }
   .cursor.is-down .cursor__ring { --s: .8; }
   .cursor.is-hidden { opacity: 0; }
 }

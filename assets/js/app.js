@@ -582,6 +582,8 @@ function bindCursor() {
   document.addEventListener('mouseover', (e) => {
     const t = e.target.closest('[data-cursor]');
     if (t) { label.textContent = t.dataset.cursor; c.classList.add('is-label'); } else c.classList.remove('is-label');
+    c.classList.toggle('is-link', !t && !!e.target.closest('a, button, [role="button"], label, select'));
+    c.classList.toggle('is-text', !!e.target.closest('input, textarea, [contenteditable="true"]'));
   });
   const loop = () => {
     rx += (x - rx) * 0.18; ry += (y - ry) * 0.18;
