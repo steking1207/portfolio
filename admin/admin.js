@@ -33,13 +33,26 @@ function vocab(key) {
   (state.data.works || []).forEach((x) => (x[key] || []).forEach((v) => n.set(v, (n.get(v) || 0) + 1)));
   return [...n.keys()].sort((a, b) => n.get(b) - n.get(a) || a.localeCompare(b, 'zh-Hant'));
 }
-function pickerHTML(w, key, label, placeholder) {
+// Preset choices for 技術與工具 (stored as work.tags). Anything typed in that isn't here lands in 其他.
+const TECH_GROUPS = [
+  ['前端', ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'RWD', 'SCSS', 'Bootstrap', 'Tailwind CSS', 'Vue', 'React', 'GSAP', 'WordPress', 'PHP', 'Flash']],
+  ['設計', ['Photoshop', 'Illustrator', 'Figma', 'Adobe XD', 'After Effects', '平面']],
+  ['平台', ['iOS', 'Android', 'LINE', 'Facebook', 'Instagram', 'EDM']],
+];
+function pickerHTML(w, key, label, placeholder, groups = null) {
   const cur = w[key] || [];
+  const btn = (v) => `<button type="button" class="pick ${cur.includes(v) ? 'is-on' : ''}" data-pick="${esc(v)}" aria-pressed="${cur.includes(v)}">${esc(v)}</button>`;
   const all = [...new Set([...vocab(key), ...cur])];
-  return `<div class="field"><span>${label}<small class="hint">（點選套用，再點一次取消）</small></span><div class="picks" data-picks="${key}">
-    ${all.map((v) => `<button type="button" class="pick ${cur.includes(v) ? 'is-on' : ''}" data-pick="${esc(v)}" aria-pressed="${cur.includes(v)}">${esc(v)}</button>`).join('')}
-    <input class="pick-add" data-pick-add="${key}" placeholder="${placeholder}" aria-label="新增${label}">
-  </div></div>`;
+  let body;
+  if (groups) {
+    const preset = new Set(groups.flatMap(([, items]) => items));
+    const rest = all.filter((v) => !preset.has(v));
+    body = groups.map(([g, items]) => `<div class="picks__row"><span class="picks__group">${g}</span><span class="picks__items">${items.map(btn).join('')}</span></div>`).join('')
+      + `<div class="picks__row"><span class="picks__group">其他</span><span class="picks__items">${rest.map(btn).join('')}<input class="pick-add" data-pick-add="${key}" placeholder="${placeholder}" aria-label="新增${label}"></span></div>`;
+  } else {
+    body = `${all.map(btn).join('')}<input class="pick-add" data-pick-add="${key}" placeholder="${placeholder}" aria-label="新增${label}">`;
+  }
+  return `<div class="field"><span>${label}<small class="hint">（點選套用，再點一次取消，可複選）</small></span><div class="picks ${groups ? 'picks--grouped' : ''}" data-picks="${key}">${body}</div></div>`;
 }
 const endYear = (w) => (w.yearEnd > w.year ? w.yearEnd : w.year);
 const yearLabel = (w) => (endYear(w) > w.year ? `${w.year}–${endYear(w)}` : `${w.year}`);
@@ -436,7 +449,7 @@ function renderEditor() {
       <label class="field c4"><span>副標（一句話說明）</span><input class="input" data-f="subtitle" value="${esc(w.subtitle || '')}" placeholder="例：RWD 互動專題與測驗"></label>
       <label class="field c2"><span>分類</span><select class="input" data-f="category">${state.data.categories.map((c) => `<option value="${c.id}" ${c.id === w.category ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select></label>
       ${pickerHTML(w, 'roles', '角色', '＋ 其他角色，按 Enter')}
-      ${pickerHTML(w, 'tags', '標籤', '＋ 其他標籤，按 Enter')}
+      ${pickerHTML(w, 'tags', '技術與工具', '＋ 其他技術或工具，按 Enter', TECH_GROUPS)}
       <label class="field"><span>作品說明（選填）</span><textarea class="input" data-f="summary" placeholder="專案背景、你負責的部分、成果……">${esc(w.summary || '')}</textarea></label>
     </div>
 
