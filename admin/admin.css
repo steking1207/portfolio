@@ -169,7 +169,7 @@ textarea.input { height: auto; min-height: 110px; padding: 10px 12px; resize: ve
 [data-featured-editor] .ed-head, [data-featured-editor] .field { max-width: 760px; }
 .sub { margin: 24px 0 10px; font-size: 15px; }
 .sites { display: grid; gap: 8px; justify-items: start; }
-.site-row { display: grid; grid-template-columns: minmax(0, 1.2fr) 96px 130px minmax(0, 2fr) 38px; gap: 8px; width: 100%; }
+.site-row { display: grid; grid-template-columns: auto minmax(0, 1.2fr) 96px 130px minmax(0, 2fr) 38px; gap: 8px; width: 100%; }
 .site-row .btn { padding: 0; }
 @media (max-width: 720px) { .site-row { grid-template-columns: 1fr 1fr; } }
 .yr { display: grid; grid-template-columns: 1fr auto 1fr; gap: 6px; align-items: center; }
@@ -183,3 +183,5 @@ textarea.input { height: auto; min-height: 110px; padding: 10px 12px; resize: ve
 .img-group__head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; min-height: 38px; }
 .img-group__head.site-row { display: grid; }
 .add-site { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+.site-order { display: flex; gap: 4px; }
+.site-order .btn { width: 34px; height: 38px; padding: 0; }

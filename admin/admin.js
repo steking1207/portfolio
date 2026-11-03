@@ -382,7 +382,8 @@ function imageGroupsHTML(w) {
   const main = imgs.filter(([im]) => !keys.has(im.site));
   if (!sites.length) return grid('', main);
   return `<div class="img-group"><div class="img-group__head"><b>主網站</b><span class="hint">${esc(w.url ? w.url.replace(/^https?:\/\//, '') : '網址填在上方「線上狀態」')}</span></div>${grid('', main)}</div>
-    ${sites.map((st) => `<div class="img-group"><div class="img-group__head site-row">
+    ${sites.map((st, si) => `<div class="img-group"><div class="img-group__head site-row">
+      <span class="site-order"><button type="button" class="btn" data-site-mv="${si}:-1" aria-label="網站往上" ${si ? '' : 'disabled'}>↑</button><button type="button" class="btn" data-site-mv="${si}:1" aria-label="網站往下" ${si < sites.length - 1 ? '' : 'disabled'}>↓</button></span>
       <input class="input" data-sf="${esc(st.key)}:name" value="${esc(st.name || '')}" placeholder="網站名稱，例：產品網站" aria-label="網站名稱">
       <input class="input" data-sf="${esc(st.key)}:year" type="number" min="1990" max="2100" value="${st.year || ''}" placeholder="年份" aria-label="這個網站的年份（選填）">
       <select class="input" data-sf="${esc(st.key)}:status" aria-label="狀態">${STATUS.map(([v, l]) => `<option value="${v}" ${v === (st.status || '') ? 'selected' : ''}>${l.replace(/（.*）/, '')}</option>`).join('')}</select>
@@ -537,7 +538,20 @@ function bindEditor() {
       setDirty(); renderEditor(); return;
     }
     const mv = e.target.closest('[data-mv]');
-    if (mv) { const [i, d] = mv.dataset.mv.split(':').map(Number); moveImage(i, i + d); return; }
+    if (mv) {
+      // move within the image's own site block: swap with the previous/next image of the same site
+      const [i, d] = mv.dataset.mv.split(':').map(Number);
+      const keys = new Set((w.sites || []).map((x) => x.key)); const g = (im) => (keys.has(im.site) ? im.site : '');
+      let j = i + d; while (j >= 0 && j < w.images.length && g(w.images[j]) !== g(w.images[i])) j += d;
+      if (j >= 0 && j < w.images.length) moveImage(i, j);
+      return;
+    }
+    const smv = e.target.closest('[data-site-mv]');
+    if (smv) {
+      const [i, d] = smv.dataset.siteMv.split(':').map(Number); const a = w.sites;
+      if (i + d < 0 || i + d >= a.length) return;
+      [a[i], a[i + d]] = [a[i + d], a[i]]; setDirty(); renderEditor(); return;
+    }
     if (e.target.closest('[data-delete]')) {
       if (!confirm(`確定刪除「${w.title}」？發佈後無法復原（git 歷史仍保留）。只想暫時隱藏請改用「下架」。`)) return;
       state.data.works = state.data.works.filter((x) => x !== w);
