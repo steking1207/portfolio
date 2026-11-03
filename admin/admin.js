@@ -366,6 +366,32 @@ function renderList() {
 /* ---------------- editor ---------------- */
 function current() { return state.data.works.find((w) => w.id === state.selected); }
 
+// Images grouped by site: the main site (the work's own URL) first, then one block per extra site
+// with its name/year/status/URL in the block header. Tiles keep their index in w.images.
+function tileHTML(w, im, i) {
+  return `<div class="img ${i === 0 ? 'is-cover' : ''}" draggable="true" data-i="${i}"><div class="img__pic"><img src="${esc(imgURL(thumbOf(im)))}" alt=""><span class="img__no">${i + 1}</span><button type="button" class="img__del" data-del="${i}" aria-label="移除第 ${i + 1} 張">×</button><span class="img__move"><button type="button" data-mv="${i}:-1" aria-label="往前">←</button><button type="button" data-mv="${i}:1" aria-label="往後">→</button></span></div><select class="img__frame" data-frame="${i}" aria-label="第 ${i + 1} 張的外框" title="網站上顯示這張圖時的外框">${FRAMES.map(([v, l]) => `<option value="${v}" ${v === frameOf(w, im) ? 'selected' : ''}>${l}</option>`).join('')}</select></div>`;
+}
+function imageGroupsHTML(w) {
+  const sites = w.sites || [];
+  const keys = new Set(sites.map((st) => st.key));
+  const imgs = (w.images || []).map((im, i) => [im, i]);
+  const grid = (key, pairs) => `<div class="images" data-images data-group="${esc(key)}">
+    ${pairs.map(([im, i]) => tileHTML(w, im, i)).join('')}
+    <label class="drop" data-drop><b>＋</b>拖曳圖片到這裡<br>或點擊選擇<input type="file" accept="image/*" multiple hidden data-file></label>
+  </div>`;
+  const main = imgs.filter(([im]) => !keys.has(im.site));
+  if (!sites.length) return grid('', main);
+  return `<div class="img-group"><div class="img-group__head"><b>主網站</b><span class="hint">${esc(w.url ? w.url.replace(/^https?:\/\//, '') : '網址填在上方「線上狀態」')}</span></div>${grid('', main)}</div>
+    ${sites.map((st) => `<div class="img-group"><div class="img-group__head site-row">
+      <input class="input" data-sf="${esc(st.key)}:name" value="${esc(st.name || '')}" placeholder="網站名稱，例：產品網站" aria-label="網站名稱">
+      <input class="input" data-sf="${esc(st.key)}:year" type="number" min="1990" max="2100" value="${st.year || ''}" placeholder="年份" aria-label="這個網站的年份（選填）">
+      <select class="input" data-sf="${esc(st.key)}:status" aria-label="狀態">${STATUS.map(([v, l]) => `<option value="${v}" ${v === (st.status || '') ? 'selected' : ''}>${l.replace(/（.*）/, '')}</option>`).join('')}</select>
+      <input class="input" data-sf="${esc(st.key)}:url" type="url" value="${esc(st.url || '')}" placeholder="https://" aria-label="網址">
+      <button type="button" class="btn" data-site-del="${esc(st.key)}" aria-label="刪除這個網站">×</button>
+    </div>${grid(st.key, imgs.filter(([im]) => im.site === st.key))}</div>`).join('')}`;
+}
+function setImageSite(im, key) { if (key) im.site = key; else delete im.site; }
+
 function renderEditor() {
   const w = current(); const el = $('[data-editor]');
   if (!w) { el.innerHTML = '<div class="empty">從左側選一件作品編輯，或按「新增作品」。</div>'; return; }
@@ -389,17 +415,6 @@ function renderEditor() {
         <label class="field c4"><span>網站網址（上線中／已改版時必填）</span><input class="input" data-f="url" type="url" value="${esc(w.url || '')}" placeholder="https://"></label>
         <label class="field"><span>Demo 網址（選填，自己架的可操作版本）</span><input class="input" data-f="demo" type="url" value="${esc(w.demo || '')}" placeholder="https://steking1207.github.io/..."></label>
       </div>
-      <h3 class="sub">其他網站 <small class="hint">同一個專案還有產品網站、活動網站時加在這裡；上面的網址是主網站。圖片可在下方指定屬於哪個網站。</small></h3>
-      <div class="sites">
-        ${(w.sites || []).map((st) => `<div class="site-row">
-          <input class="input" data-sf="${esc(st.key)}:name" value="${esc(st.name || '')}" placeholder="網站名稱，例：產品網站" aria-label="網站名稱">
-          <input class="input" data-sf="${esc(st.key)}:year" type="number" min="1990" max="2100" value="${st.year || ''}" placeholder="年份" aria-label="這個網站的年份（選填）">
-          <select class="input" data-sf="${esc(st.key)}:status" aria-label="狀態">${STATUS.map(([v, l]) => `<option value="${v}" ${v === (st.status || '') ? 'selected' : ''}>${l.replace(/（.*）/, '')}</option>`).join('')}</select>
-          <input class="input" data-sf="${esc(st.key)}:url" type="url" value="${esc(st.url || '')}" placeholder="https://" aria-label="網址">
-          <button type="button" class="btn" data-site-del="${esc(st.key)}" aria-label="刪除這個網站">×</button>
-        </div>`).join('')}
-        <button type="button" class="btn" data-site-add>＋ 新增網站</button>
-      </div>
     </div>
 
     <div class="section"><h2>顯示</h2>
@@ -409,11 +424,9 @@ function renderEditor() {
       </div>
     </div>
 
-    <div class="section"><h2>圖片 <small class="hint">${(w.images || []).length} 張・第一張是封面・拖曳排序・每張可選外框</small></h2>
-      <div class="images" data-images>
-        ${(w.images || []).map((im, i) => `<div class="img" draggable="true" data-i="${i}"><div class="img__pic"><img src="${esc(imgURL(thumbOf(im)))}" alt=""><span class="img__no">${i + 1}</span><button type="button" class="img__del" data-del="${i}" aria-label="移除第 ${i + 1} 張">×</button><span class="img__move"><button type="button" data-mv="${i}:-1" aria-label="往前">←</button><button type="button" data-mv="${i}:1" aria-label="往後">→</button></span></div><select class="img__frame" data-frame="${i}" aria-label="第 ${i + 1} 張的外框" title="網站上顯示這張圖時的外框">${FRAMES.map(([v, l]) => `<option value="${v}" ${v === frameOf(w, im) ? 'selected' : ''}>${l}</option>`).join('')}</select>${(w.sites || []).length ? `<select class="img__frame" data-site="${i}" aria-label="第 ${i + 1} 張屬於哪個網站" title="這張圖屬於哪個網站"><option value="">主網站</option>${w.sites.map((st) => `<option value="${esc(st.key)}" ${st.key === im.site ? 'selected' : ''}>${esc(st.name || '未命名網站')}</option>`).join('')}</select>` : ''}</div>`).join('')}
-        <label class="drop" data-drop><b>＋</b>拖曳圖片到這裡<br>或點擊選擇<input type="file" accept="image/*" multiple hidden data-file></label>
-      </div>
+    <div class="section"><h2>圖片 <small class="hint">${(w.images || []).length} 張・第一張是封面・拖曳排序・每張可選外框${(w.sites || []).length ? '・可拖到其他網站的區塊' : ''}</small></h2>
+      ${imageGroupsHTML(w)}
+      <div class="add-site"><button type="button" class="btn" data-site-add>＋ 新增網站</button><span class="hint">同一個專案還有產品網站、活動網站時，新增一區放它的名稱、年份、網址和圖片。</span></div>
       <p class="hint">上傳時會自動縮成網頁用尺寸（最寬 2000px）並產生縮圖，原檔不會上傳。</p>
     </div>
 
@@ -450,14 +463,14 @@ function moveImage(from, to) {
   setDirty(); renderEditor(); renderList();
 }
 
-async function addFiles(files) {
+async function addFiles(files, group = '') {
   const w = current(); if (!w) return;
   const list = [...files].filter((f) => f.type.startsWith('image/'));
   if (!list.length) return;
   toast(`處理 ${list.length} 張圖片…`);
   w.images = w.images || [];
   for (let i = 0; i < list.length; i++) {
-    try { w.images.push(await processFile(list[i], `images/works/${w.id}`, i, w)); } catch (e) { toast(`「${list[i].name}」無法讀取`, 'error'); }
+    try { const im = await processFile(list[i], `images/works/${w.id}`, i, w); setImageSite(im, group); w.images.push(im); } catch (e) { toast(`「${list[i].name}」無法讀取`, 'error'); }
   }
   setDirty(); renderEditor(); renderList(); toast(`已加入 ${list.length} 張圖片，記得按「發佈到 GitHub」。`);
 }
@@ -489,7 +502,6 @@ function bindEditor() {
       const pos = Math.max(1, Math.min(f.length + 1, parseInt(e.target.value, 10) || 1)) - 1;
       f.splice(pos, 0, w.id); state.data.featured = f; setDirty(); renderEditor();
     }
-    if (e.target.matches('[data-site]')) { const im = w.images[+e.target.dataset.site]; if (im) { if (e.target.value) im.site = e.target.value; else delete im.site; setDirty(); } return; }
     if (e.target.matches('[data-sf]')) {
       const [key, f] = e.target.dataset.sf.split(':'); const st = (w.sites || []).find((x) => x.key === key);
       if (st && f === 'year') { const n = parseInt(e.target.value, 10); if (n >= 1990 && n <= 2100) st.year = n; else delete st.year; setDirty(); }
@@ -497,7 +509,7 @@ function bindEditor() {
       return;
     }
     if (e.target.matches('[data-frame]')) { const im = w.images[+e.target.dataset.frame]; if (im) { im.frame = e.target.value; setDirty(); } return; }
-    if (e.target.matches('[data-file]')) { addFiles(e.target.files); e.target.value = ''; }
+    if (e.target.matches('[data-file]')) { addFiles(e.target.files, e.target.closest('[data-group]')?.dataset.group || ''); e.target.value = ''; }
   });
   el.addEventListener('click', (e) => {
     const w = current(); if (!w) return;
@@ -544,8 +556,18 @@ function bindEditor() {
   el.addEventListener('drop', (e) => {
     const it = e.target.closest('.img, [data-drop]'); if (!it) return;
     e.preventDefault(); it.classList.remove('is-over');
-    if (e.dataTransfer.files && e.dataTransfer.files.length) { addFiles(e.dataTransfer.files); return; }
-    if (dragI !== null && it.classList.contains('img')) moveImage(dragI, +it.dataset.i);
+    const group = it.closest('[data-group]')?.dataset.group || '';
+    if (e.dataTransfer.files && e.dataTransfer.files.length) { addFiles(e.dataTransfer.files, group); return; }
+    if (dragI === null) return;
+    const w = current(); const im = w.images[dragI]; if (!im) return;
+    const moved = (im.site || '') !== group; setImageSite(im, group);
+    if (it.classList.contains('img')) { if (+it.dataset.i !== dragI) { moveImage(dragI, +it.dataset.i); return; } }
+    else {
+      // dropped on a block's "+" tile: put it after that block's last image
+      const idx = $$('.img', it.closest('[data-group]')).map((x) => +x.dataset.i).filter((x) => x !== dragI);
+      if (idx.length) { const last = Math.max(...idx); moveImage(dragI, dragI < last ? last : last + 1); return; }
+    }
+    if (moved) { setDirty(); renderEditor(); }
   });
 }
 
