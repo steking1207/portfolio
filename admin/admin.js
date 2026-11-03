@@ -393,6 +393,7 @@ function renderEditor() {
       <div class="sites">
         ${(w.sites || []).map((st) => `<div class="site-row">
           <input class="input" data-sf="${esc(st.key)}:name" value="${esc(st.name || '')}" placeholder="網站名稱，例：產品網站" aria-label="網站名稱">
+          <input class="input" data-sf="${esc(st.key)}:year" type="number" min="1990" max="2100" value="${st.year || ''}" placeholder="年份" aria-label="這個網站的年份（選填）">
           <select class="input" data-sf="${esc(st.key)}:status" aria-label="狀態">${STATUS.map(([v, l]) => `<option value="${v}" ${v === (st.status || '') ? 'selected' : ''}>${l.replace(/（.*）/, '')}</option>`).join('')}</select>
           <input class="input" data-sf="${esc(st.key)}:url" type="url" value="${esc(st.url || '')}" placeholder="https://" aria-label="網址">
           <button type="button" class="btn" data-site-del="${esc(st.key)}" aria-label="刪除這個網站">×</button>
@@ -491,7 +492,8 @@ function bindEditor() {
     if (e.target.matches('[data-site]')) { const im = w.images[+e.target.dataset.site]; if (im) { if (e.target.value) im.site = e.target.value; else delete im.site; setDirty(); } return; }
     if (e.target.matches('[data-sf]')) {
       const [key, f] = e.target.dataset.sf.split(':'); const st = (w.sites || []).find((x) => x.key === key);
-      if (st) { st[f] = e.target.value.trim(); setDirty(); if (f === 'name') renderEditor(); }
+      if (st && f === 'year') { const n = parseInt(e.target.value, 10); if (n >= 1990 && n <= 2100) st.year = n; else delete st.year; setDirty(); }
+      else if (st) { st[f] = e.target.value.trim(); setDirty(); if (f === 'name') renderEditor(); }
       return;
     }
     if (e.target.matches('[data-frame]')) { const im = w.images[+e.target.dataset.frame]; if (im) { im.frame = e.target.value; setDirty(); } return; }
