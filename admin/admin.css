@@ -186,7 +186,7 @@ textarea.input { height: auto; min-height: 110px; padding: 10px 12px; resize: ve
 .site-order { display: flex; gap: 4px; }
 .site-order .btn { width: 34px; height: 38px; padding: 0; }
 .picks--grouped { display: grid; gap: 8px; }
-.picks__row { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 8px; align-items: start; }
+.picks__row { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 8px; align-items: start; }
 .picks__items { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .picks__row .picks__group { padding-top: 9px; }
-.picks__group { width: 40px; flex: none; font-size: 12px; font-weight: 600; color: var(--muted); }
+.picks__group { width: 56px; flex: none; font-size: 12px; font-weight: 600; color: var(--muted); }

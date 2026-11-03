@@ -35,7 +35,8 @@ function vocab(key) {
 }
 // Preset choices for 技術與工具 (stored as work.tags). Anything typed in that isn't here lands in 其他.
 const TECH_GROUPS = [
-  ['前端', ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'RWD', 'SCSS', 'Bootstrap', 'Tailwind CSS', 'Vue', 'React', 'GSAP', 'WordPress', 'PHP', 'Flash']],
+  // named by what it does so non-technical visitors understand; the tech name sits in brackets
+  ['網站開發', ['響應式網頁（RWD）', '網頁切版（HTML / CSS）', '互動與動畫（JavaScript）', '互動遊戲／測驗', '網站架設與後台（WordPress）', '網站框架開發（Vue / Nuxt.js）', '線上金流串接（Stripe）', 'Flash 動畫']],
   ['設計', ['Photoshop', 'Illustrator', 'Figma', 'Adobe XD', 'After Effects', '平面']],
   ['平台', ['iOS', 'Android', 'LINE', 'Facebook', 'Instagram', 'EDM']],
 ];
