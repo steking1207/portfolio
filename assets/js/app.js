@@ -310,14 +310,14 @@ function renderAbout() {
     state.cat = b.dataset.gotoCat; state.year = null; refreshArchive();
     $('#works').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
   });
-  const cta = $('[data-contact-link]');
-  const links = site.links || [];
-  if (site.email) cta.href = `mailto:${site.email}`;
-  else if (links[0]) { cta.href = links[0].url; cta.target = '_blank'; cta.rel = 'noopener'; }
-  else $('[data-contact]').hidden = true;
+  // 「一起合作」區塊：後台沒填 email 就整塊隱藏
+  const email = (site.email || '').trim();
+  $('[data-contact]').hidden = !email;
+  if (!email) return;
+  $('[data-contact-link]').href = `mailto:${email}`;
   $('[data-links]').innerHTML = [
-    ...(site.email ? [{ label: site.email, url: `mailto:${site.email}` }] : []),
-    ...links,
+    { label: email, url: `mailto:${email}` },
+    ...(site.links || []),
   ].map((l) => `<li><a href="${esc(l.url)}" ${l.url.startsWith('mailto:') ? '' : 'target="_blank" rel="noopener"'}>${esc(l.label)}</a></li>`).join('');
 }
 
