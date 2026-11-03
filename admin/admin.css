@@ -97,8 +97,8 @@ textarea.input { height: auto; min-height: 110px; padding: 10px 12px; resize: ve
 .img { position: relative; border-radius: 10px; overflow: hidden; background: var(--line); cursor: grab; border: 2px solid transparent; display: flex; flex-direction: column; }
 .img__pic { position: relative; aspect-ratio: 4 / 3; }
 .img__frame { width: 100%; height: 30px; border: 0; border-top: 1px solid var(--line); background: var(--panel, var(--bg)); color: inherit; font: inherit; font-size: 12px; padding: 0 6px; cursor: pointer; }
-.img:first-child { border-color: var(--accent); }
-.img:first-child::before { content: "封面"; position: absolute; left: 6px; top: 6px; z-index: 1; font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--accent); color: #fff; }
+.img.is-cover { border-color: var(--accent); }
+.img.is-cover::before { content: "封面"; position: absolute; left: 6px; top: 6px; z-index: 1; font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--accent); color: #fff; }
 .img img { width: 100%; height: 100%; object-fit: cover; object-position: top; pointer-events: none; }
 .img.is-drag { opacity: .4; }
 .img.is-over { outline: 2px dashed var(--accent); outline-offset: 2px; }
@@ -179,3 +179,7 @@ textarea.input { height: auto; min-height: 110px; padding: 10px 12px; resize: ve
 .list li.is-drag { opacity: .4; }
 .list li.is-over { outline: 2px dashed var(--accent); outline-offset: -2px; }
 .list li.is-no { cursor: not-allowed; }
+.img-group { border: 1px solid var(--line-strong); border-radius: 12px; padding: 12px; margin-bottom: 12px; }
+.img-group__head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; min-height: 38px; }
+.img-group__head.site-row { display: grid; }
+.add-site { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
