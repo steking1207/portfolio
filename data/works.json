@@ -62,8 +62,8 @@
     {
       "id": "2025-ionex",
       "title": "Ionex光陽電動車",
-      "subtitle": "官網、產品網站、活動網站前端開發",
-      "year": 2023,
+      "subtitle": "產品網站、活動網站前端開發",
+      "year": 2022,
       "category": "corporate",
       "roles": [
         "前端開發"
@@ -75,61 +75,113 @@
       "summary": "",
       "images": [
         {
-          "src": "images/works/2025-ionex/mvzgdu3c6.webp",
-          "thumb": "images/works/2025-ionex/mvzgdu3c6-t.webp",
-          "w": 1259,
-          "h": 12697,
-          "frame": "browser"
+          "src": "images/works/2025-ionex/mvzgdrva4.webp",
+          "thumb": "images/works/2025-ionex/mvzgdrva4-t.webp",
+          "w": 1552,
+          "h": 10305,
+          "frame": "browser",
+          "site": "smw02gknm"
         },
         {
           "src": "images/works/2025-ionex/mvzgdquv3.webp",
           "thumb": "images/works/2025-ionex/mvzgdquv3-t.webp",
           "w": 960,
           "h": 7733,
-          "frame": "browser"
+          "frame": "browser",
+          "site": "smvzgga1j"
         },
         {
-          "src": "images/works/2025-ionex/mvzgdrva4.webp",
-          "thumb": "images/works/2025-ionex/mvzgdrva4-t.webp",
-          "w": 1552,
-          "h": 10305,
-          "frame": "browser"
+          "src": "images/works/2025-ionex/mvzgdu3c6.webp",
+          "thumb": "images/works/2025-ionex/mvzgdu3c6-t.webp",
+          "w": 1259,
+          "h": 12697,
+          "frame": "browser",
+          "site": "smvzgfeb7"
         },
         {
           "src": "images/works/2025-ionex/mvzgdt265.webp",
           "thumb": "images/works/2025-ionex/mvzgdt265-t.webp",
           "w": 1210,
           "h": 13217,
-          "frame": "browser"
+          "frame": "browser",
+          "site": "smw02pj48"
         },
         {
           "src": "images/works/2025-ionex/mvzgdpad1.webp",
           "thumb": "images/works/2025-ionex/mvzgdpad1-t.webp",
           "w": 1336,
           "h": 11965,
-          "frame": "browser"
+          "frame": "browser",
+          "site": "smw02iox5"
+        },
+        {
+          "src": "images/works/2025-ionex/mw02mm6v0.webp",
+          "thumb": "images/works/2025-ionex/mw02mm6v0-t.webp",
+          "w": 1337,
+          "h": 11954,
+          "frame": "browser",
+          "site": "smvzgguyh"
+        },
+        {
+          "src": "images/works/2025-ionex/mw02og9q0.webp",
+          "thumb": "images/works/2025-ionex/mw02og9q0-t.webp",
+          "w": 1038,
+          "h": 15389,
+          "frame": "browser",
+          "site": "smw02oo6e"
         }
       ],
       "hidden": false,
       "yearEnd": 2025,
       "sites": [
         {
+          "key": "smw02gknm",
+          "name": "s7 Pro",
+          "status": "",
+          "url": "",
+          "year": 2022
+        },
+        {
           "key": "smvzgfeb7",
           "name": "Ionex換電網路",
           "status": "live",
-          "url": "https://batteryevent.ionex.com.tw/"
+          "url": "https://batteryevent.ionex.com.tw/",
+          "year": 2023
         },
         {
-          "key": "smvzgga1j",
-          "name": "MiG 9",
-          "status": "live",
-          "url": "https://products.ionex.com.tw/mig9/"
+          "key": "smw02pj48",
+          "name": "i-One 彩光特仕版",
+          "status": "",
+          "url": "",
+          "year": 2023
+        },
+        {
+          "key": "smw02iox5",
+          "name": "Ionex 智慧車聯網",
+          "status": "",
+          "url": "",
+          "year": 2024
         },
         {
           "key": "smvzgguyh",
           "name": "Many Macaron",
           "status": "redesigned",
-          "url": "https://products.ionex.com.tw/many-macaron/"
+          "url": "https://products.ionex.com.tw/many-macaron/",
+          "year": 2024
+        },
+        {
+          "key": "smvzgga1j",
+          "name": "MiG 9",
+          "status": "live",
+          "url": "https://products.ionex.com.tw/mig9/",
+          "year": 2025
+        },
+        {
+          "key": "smw02oo6e",
+          "name": "i-One Fly Techno",
+          "status": "live",
+          "url": "https://products.ionex.com.tw/ione-fly-techno/",
+          "year": 2025
         }
       ]
     },
@@ -162,41 +214,6 @@
           "w": 1728,
           "h": 1778,
           "frame": "browser"
-        }
-      ],
-      "hidden": false
-    },
-    {
-      "id": "2025-medisana",
-      "title": "medisana 德國健康管理專家",
-      "subtitle": "momo網站活動",
-      "year": 2025,
-      "category": "campaign",
-      "roles": [
-        "前端開發"
-      ],
-      "tags": [
-        "RWD",
-        "HTML/CSS"
-      ],
-      "status": "",
-      "url": "",
-      "demo": "",
-      "summary": "",
-      "images": [
-        {
-          "src": "images/works/2025-medisana/mvzf4iov0.webp",
-          "thumb": "images/works/2025-medisana/mvzf4iov0-t.webp",
-          "w": 1680,
-          "h": 5974,
-          "frame": "browser"
-        },
-        {
-          "src": "images/works/2025-medisana/mvzf4ivl1.webp",
-          "thumb": "images/works/2025-medisana/mvzf4ivl1-t.webp",
-          "w": 375,
-          "h": 6828,
-          "frame": "phone"
         }
       ],
       "hidden": false
@@ -236,6 +253,41 @@
           "w": 2000,
           "h": 5170,
           "frame": "browser"
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": "2025-medisana",
+      "title": "medisana 德國健康管理專家",
+      "subtitle": "momo網站活動",
+      "year": 2025,
+      "category": "campaign",
+      "roles": [
+        "前端開發"
+      ],
+      "tags": [
+        "RWD",
+        "HTML/CSS"
+      ],
+      "status": "",
+      "url": "",
+      "demo": "",
+      "summary": "",
+      "images": [
+        {
+          "src": "images/works/2025-medisana/mvzf4iov0.webp",
+          "thumb": "images/works/2025-medisana/mvzf4iov0-t.webp",
+          "w": 1680,
+          "h": 5974,
+          "frame": "browser"
+        },
+        {
+          "src": "images/works/2025-medisana/mvzf4ivl1.webp",
+          "thumb": "images/works/2025-medisana/mvzf4ivl1-t.webp",
+          "w": 375,
+          "h": 6828,
+          "frame": "phone"
         }
       ],
       "hidden": false
