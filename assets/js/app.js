@@ -365,7 +365,7 @@ function sitesHTML(w) {
     if (!pairs.length && !badge) return;
     let host = hostOf(w);
     if (st.url) { try { host = new URL(st.url).host.replace(/^www\./, ''); } catch (e) { /* noop */ } }
-    html += `<section class="d-site"><header class="d-site__head"><h3 class="d-site__name">${esc(st.name || '網站')}</h3>${badge}</header>
+    html += `<section class="d-site"><header class="d-site__head"><h3 class="d-site__name">${esc(st.name || '網站')}</h3>${st.year ? `<span class="d-site__year">${st.year}</span>` : ''}${badge}</header>
       ${pairs.length ? `<div class="d-gallery">${galleryHTML(w, pairs, host)}</div>` : ''}</section>`;
   });
   return html;
