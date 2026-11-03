@@ -389,7 +389,7 @@ function renderDetail(w) {
     ['Category', `<span>${esc(catName(w.category))}</span>`],
     ['Role', chips(w.roles || []) || '<span>—</span>'],
   ];
-  if ((w.tags || []).length) meta.push(['Tags', chips(w.tags)]);
+  if ((w.tags || []).length) meta.push(['Tech', chips(w.tags)]);
   if (statusBadge(w)) meta.push(['Online', statusBadge(w)]);
   $('[data-detail-body]').innerHTML = `
     <header class="d-head">
