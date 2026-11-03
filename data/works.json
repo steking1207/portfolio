@@ -135,41 +135,6 @@
       "yearEnd": 2025,
       "sites": [
         {
-          "key": "smw02gknm",
-          "name": "s7 Pro",
-          "status": "",
-          "url": "",
-          "year": 2022
-        },
-        {
-          "key": "smvzgfeb7",
-          "name": "Ionex換電網路",
-          "status": "live",
-          "url": "https://batteryevent.ionex.com.tw/",
-          "year": 2023
-        },
-        {
-          "key": "smw02pj48",
-          "name": "i-One 彩光特仕版",
-          "status": "",
-          "url": "",
-          "year": 2023
-        },
-        {
-          "key": "smw02iox5",
-          "name": "Ionex 智慧車聯網",
-          "status": "",
-          "url": "",
-          "year": 2024
-        },
-        {
-          "key": "smvzgguyh",
-          "name": "Many Macaron",
-          "status": "redesigned",
-          "url": "https://products.ionex.com.tw/many-macaron/",
-          "year": 2024
-        },
-        {
           "key": "smvzgga1j",
           "name": "MiG 9",
           "status": "live",
@@ -182,6 +147,41 @@
           "status": "live",
           "url": "https://products.ionex.com.tw/ione-fly-techno/",
           "year": 2025
+        },
+        {
+          "key": "smvzgguyh",
+          "name": "Many Macaron",
+          "status": "redesigned",
+          "url": "https://products.ionex.com.tw/many-macaron/",
+          "year": 2024
+        },
+        {
+          "key": "smw02iox5",
+          "name": "Ionex 智慧車聯網",
+          "status": "",
+          "url": "",
+          "year": 2024
+        },
+        {
+          "key": "smw02pj48",
+          "name": "i-One 彩光特仕版",
+          "status": "",
+          "url": "",
+          "year": 2023
+        },
+        {
+          "key": "smvzgfeb7",
+          "name": "Ionex換電網路",
+          "status": "live",
+          "url": "https://batteryevent.ionex.com.tw/",
+          "year": 2023
+        },
+        {
+          "key": "smw02gknm",
+          "name": "s7 Pro",
+          "status": "",
+          "url": "",
+          "year": 2022
         }
       ]
     },
