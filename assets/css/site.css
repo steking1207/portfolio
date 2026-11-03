@@ -550,3 +550,7 @@ a.status:hover { transform: translateY(-2px); }
 .d-site__name { margin: 0; font-size: var(--step-1, 1.25rem); font-weight: 700; }
 .d-site .d-gallery { margin-top: clamp(24px, 4vw, 48px); }
 .d-site__year { font-size: 14px; font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
+.stack { display: block; }
+.stack img { display: block; width: 100%; height: auto; }
+.frame__view .stack img { position: static; transform: none; }
+.lightbox__stage .stack { max-width: 100%; margin-inline: auto; }

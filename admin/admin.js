@@ -174,6 +174,12 @@ async function publish() {
         const to = dir + path.split('/').pop();
         state.pending.set(to, state.pending.get(path)); state.pending.delete(path); im[k] = to;
       });
+      (im.slices || []).forEach((sl, i) => {
+        if (i === 0) { sl.src = im.src; return; }
+        if (!state.pending.has(sl.src) || sl.src.startsWith(dir)) return;
+        const to = dir + sl.src.split('/').pop();
+        state.pending.set(to, state.pending.get(sl.src)); state.pending.delete(sl.src); sl.src = to;
+      });
     }));
     const used = referencedPaths(state.data);
     let n = 0;
@@ -213,7 +219,7 @@ async function publish() {
 const clone = (o) => JSON.parse(JSON.stringify(o));
 function referencedPaths(data) {
   const set = new Set();
-  (data.works || []).forEach((w) => (w.images || []).forEach((im) => { set.add(im.src); set.add(thumbOf(im)); }));
+  (data.works || []).forEach((w) => (w.images || []).forEach((im) => { set.add(im.src); set.add(thumbOf(im)); (im.slices || []).forEach((sl) => set.add(sl.src)); }));
   return set;
 }
 function cleanData(d) {
@@ -280,37 +286,61 @@ function canvasBlob(canvas, quality) {
 }
 // Scale the top sw×sh of the source to dw×dh. Halving in steps (instead of one big drawImage)
 // avoids the blurry/jagged result browsers give when shrinking a very large image in one go.
-function resample(src, sw, sh, dw, dh) {
-  let cur = src; let cw = sw; let ch = sh;
+function resample(src, sw, sh, dw, dh, sy = 0) {
+  // scale the source rows sy..sy+sh (full width sw) to dw×dh
+  let cur = src; let cw = sw; let ch = sh; let oy = sy;
   while (cw / 2 >= dw * 1.05) {
-    const nw = Math.round(cw / 2); const nh = Math.round(ch / 2);
+    const nw = Math.round(cw / 2); const nh = Math.max(1, Math.round(ch / 2));
     const c = document.createElement('canvas'); c.width = nw; c.height = nh;
     const x = c.getContext('2d'); x.imageSmoothingEnabled = true; x.imageSmoothingQuality = 'high';
-    x.drawImage(cur, 0, 0, cw, ch, 0, 0, nw, nh);
-    cur = c; cw = nw; ch = nh;
+    x.drawImage(cur, 0, oy, cw, ch, 0, 0, nw, nh);
+    cur = c; cw = nw; ch = nh; oy = 0;
   }
   const out = document.createElement('canvas'); out.width = dw; out.height = dh;
   const x = out.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, dw, dh);
   x.imageSmoothingEnabled = true; x.imageSmoothingQuality = 'high';
-  x.drawImage(cur, 0, 0, cw, ch, 0, 0, dw, dh);
+  x.drawImage(cur, 0, oy, cw, ch, 0, 0, dw, dh);
   return out;
 }
 const MAX_W = 2000; // sharp on high-DPI screens at the site's widest image size
-const MAX_AREA = 16e6; // Safari refuses canvases larger than ~16.7M pixels
+const SLICE_H = 4000; // tall captures are stored as stacked slices: keeps every canvas small
+// (Safari ~16.7M px limit) and every file under WebP's 16383px limit, without shrinking the width
+function resampleSlice(img, W, H, fw, fh, y0, y1) {
+  // render output rows y0..y1 with a few rows of overlap so slice edges blend seamlessly
+  const k = W / fw;
+  const top = Math.min(16, y0); const bottom = Math.min(16, fh - y1);
+  const a = y0 - top; const b = y1 + bottom;
+  const c = resample(img, W, Math.min(H, Math.round(b * k)) - Math.round(a * k), fw, b - a, Math.round(a * k));
+  if (!top && !bottom) return c;
+  const out = document.createElement('canvas'); out.width = fw; out.height = y1 - y0;
+  out.getContext('2d').drawImage(c, 0, top, fw, y1 - y0, 0, 0, fw, y1 - y0);
+  return out;
+}
 async function processFile(file, dir, index, w) {
   const img = await toImage(file);
   const W = img.width; const H = img.height;
-  // very tall captures get a narrower width rather than being cut off; crop only past that
-  const fw = Math.min(W, MAX_W, Math.max(1000, Math.floor(Math.sqrt(MAX_AREA * W / H))));
-  const fh = Math.min(Math.round(H * fw / W), Math.floor(MAX_AREA / fw));
-  const full = await canvasBlob(resample(img, W, Math.round(fh * W / fw), fw, fh), 0.9);
+  const fw = Math.min(W, MAX_W); const fh = Math.round(H * fw / W);
+  const stamp = `${Date.now().toString(36)}${index}`;
+  const put = (path, b) => state.pending.set(path, { blob: b.blob, url: URL.createObjectURL(b.blob) });
+  const out = { w: fw, h: fh, frame: guessFrame(w, W, H) };
+  if (fh <= SLICE_H * 1.5) {
+    const full = await canvasBlob(resample(img, W, H, fw, fh), 0.9);
+    out.src = `${dir}/${stamp}.${full.ext}`; put(out.src, full);
+  } else {
+    out.slices = [];
+    const n = Math.ceil(fh / SLICE_H);
+    for (let k = 0; k < n; k++) {
+      const y0 = k * SLICE_H; const y1 = Math.min(fh, y0 + SLICE_H);
+      const part = await canvasBlob(resampleSlice(img, W, H, fw, fh, y0, y1), 0.9);
+      const path = `${dir}/${stamp}${k ? `-${k + 1}` : ''}.${part.ext}`; put(path, part);
+      out.slices.push({ src: path, h: y1 - y0 });
+    }
+    out.src = out.slices[0].src;
+  }
   const tw = Math.min(760, W); const th = Math.min(Math.round(H * tw / W), Math.round(tw * 1.5));
   const thumb = await canvasBlob(resample(img, W, Math.round(th * W / tw), tw, th), 0.82);
-  const stamp = `${Date.now().toString(36)}${index}`;
-  const src = `${dir}/${stamp}.${full.ext}`; const tsrc = `${dir}/${stamp}-t.${thumb.ext}`;
-  state.pending.set(src, { blob: full.blob, url: URL.createObjectURL(full.blob) });
-  state.pending.set(tsrc, { blob: thumb.blob, url: URL.createObjectURL(thumb.blob) });
-  return { src, thumb: tsrc, w: fw, h: fh, frame: guessFrame(w, W, H) };
+  out.thumb = `${dir}/${stamp}-t.${thumb.ext}`; put(out.thumb, thumb);
+  return out;
 }
 
 /* ---------------- list ---------------- */
@@ -690,6 +720,8 @@ async function preview() {
       const p = state.pending.get(im.src); const pt = state.pending.get(thumbOf(im));
       if (p) im.src = await toData(p.blob);
       if (pt) im.thumb = await toData(pt.blob); else if (!im.thumb) im.thumb = thumbOf({ src: im.src });
+      for (const sl of im.slices || []) { const ps = state.pending.get(sl.src); sl.src = ps ? await toData(ps.blob) : sl.src; }
+      if (im.slices) im.slices[0].src = im.src;
     }
   }
   if (!LS.set('sk2:draft', JSON.stringify(d))) {

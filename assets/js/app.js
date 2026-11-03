@@ -329,10 +329,17 @@ const dScroll = $('[data-detail-scroll]');
 
 function navList() { return state.current && state.list && state.list.some((w) => w.id === state.current.id) ? state.list : state.works; }
 
+// Very tall screenshots are stored as stacked slices (im.slices); render them as one seamless column.
+function imgHTML(im, alt, loading = 'lazy') {
+  if (!im.slices || im.slices.length < 2) return `<img src="${esc(im.src)}" alt="${esc(alt)}" width="${im.w}" height="${im.h}" loading="${loading}" decoding="async">`;
+  return `<span class="stack" role="img" aria-label="${esc(alt)}">${im.slices.map((sl, k) => `<img src="${esc(sl.src)}" alt="" width="${im.w}" height="${sl.h}" loading="${k ? 'lazy' : loading}" decoding="async">`).join('')}</span>`;
+}
+const zoomAttrs = (im) => `data-zoom="${esc(im.src)}"${im.slices && im.slices.length > 1 ? ` data-zoom-parts="${esc(im.slices.map((sl) => sl.src).join('|'))}"` : ''}`;
+
 // pairs: [[image, indexInWork]]; host: what the browser frame's address bar shows
 function galleryHTML(w, pairs = w.images.map((im, i) => [im, i]), host = hostOf(w)) {
   const imgs = pairs.map(([im]) => im);
-  const shot = (im, i, cls = 'd-shot') => `<button type="button" class="${cls}" data-zoom="${esc(im.src)}" aria-label="放大第 ${i + 1} 張圖"><img src="${esc(im.src)}" alt="${esc(w.title)} 截圖 ${i + 1}" width="${im.w}" height="${im.h}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async"></button>`;
+  const shot = (im, i, cls = 'd-shot') => `<button type="button" class="${cls}" ${zoomAttrs(im)} aria-label="放大第 ${i + 1} 張圖">${imgHTML(im, `${w.title} 截圖 ${i + 1}`, i < 2 ? 'eager' : 'lazy')}</button>`;
   if (w.category === 'graphic' && imgs.every((im) => frameOf(w, im) === 'none')) return `<div class="d-graphics">${pairs.map(([im, i]) => shot(im, i)).join('')}</div>`;
   // group consecutive phone-framed screenshots into horizontal strips
   const groups = [];
@@ -343,7 +350,7 @@ function galleryHTML(w, pairs = w.images.map((im, i) => [im, i]), host = hostOf(
     else groups.push({ kind, items: [[im, i]] });
   });
   return groups.map((g) => {
-    if (g.kind === 'phone') return `<div class="d-phones">${g.items.map(([im, i]) => `<button type="button" class="phone" data-zoom="${esc(im.src)}" aria-label="放大第 ${i + 1} 張圖"><img src="${esc(im.src)}" alt="${esc(w.title)} 畫面 ${i + 1}" width="${im.w}" height="${im.h}" loading="lazy" decoding="async"></button>`).join('')}</div>`;
+    if (g.kind === 'phone') return `<div class="d-phones">${g.items.map(([im, i]) => `<button type="button" class="phone" ${zoomAttrs(im)} aria-label="放大第 ${i + 1} 張圖">${imgHTML(im, `${w.title} 畫面 ${i + 1}`)}</button>`).join('')}</div>`;
     const [im, i] = g.items[0];
     if (frameOf(w, im) === 'none') return `<figure>${shot(im, i, 'd-shot d-wide')}</figure>`;
     return `<figure class="frame d-shot-wrap"><div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">${esc(host)}</span></div><div class="frame__view">${shot(im, i)}</div></figure>`;
@@ -450,7 +457,7 @@ function bindDetail() {
     const s = e.target.closest('[data-swap]');
     if (s) { e.preventDefault(); openDetail(s.dataset.swap); return; }
     const z = e.target.closest('[data-zoom]');
-    if (z) { openLightbox(z.dataset.zoom, $('img', z).alt); }
+    if (z) { openLightbox(z.dataset.zoom, ($('[aria-label]', z) || $('img', z)).getAttribute('aria-label') || $('img', z).alt, z.dataset.zoomParts); }
   });
   $('[data-close]').addEventListener('click', () => closeDetail());
   $('[data-prev]').addEventListener('click', () => step(-1));
@@ -489,9 +496,11 @@ function trapFocus(e, root) {
 /* Lightbox */
 const lb = $('[data-lightbox]');
 let lbFocus = null;
-function openLightbox(src, alt = '') {
+function openLightbox(src, alt = '', parts = '') {
   lbFocus = document.activeElement;
-  $('[data-lightbox-stage]').innerHTML = `<img src="${esc(src)}" alt="${esc(alt)}">`;
+  $('[data-lightbox-stage]').innerHTML = parts
+    ? `<span class="stack" role="img" aria-label="${esc(alt)}">${parts.split('|').map((p) => `<img src="${esc(p)}" alt="">`).join('')}</span>`
+    : `<img src="${esc(src)}" alt="${esc(alt)}">`;
   lb.hidden = false;
   $('[data-lightbox-close]').focus();
 }
