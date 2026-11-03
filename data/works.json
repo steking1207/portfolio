@@ -75,60 +75,238 @@
       "summary": "",
       "images": [
         {
-          "src": "images/works/2025-ionex/mvzgdrva4.webp",
-          "thumb": "images/works/2025-ionex/mvzgdrva4-t.webp",
-          "w": 1552,
-          "h": 10305,
+          "w": 1917,
+          "h": 24249,
           "frame": "browser",
-          "site": "smw02gknm"
-        },
-        {
-          "src": "images/works/2025-ionex/mvzgdquv3.webp",
-          "thumb": "images/works/2025-ionex/mvzgdquv3-t.webp",
-          "w": 960,
-          "h": 7733,
-          "frame": "browser",
+          "slices": [
+            {
+              "src": "images/works/2025-ionex/mw037ist0.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037ist0-2.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037ist0-3.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037ist0-4.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037ist0-5.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037ist0-6.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037ist0-7.webp",
+              "h": 249
+            }
+          ],
+          "src": "images/works/2025-ionex/mw037ist0.webp",
+          "thumb": "images/works/2025-ionex/mw037ist0-t.webp",
           "site": "smvzgga1j"
         },
         {
-          "src": "images/works/2025-ionex/mvzgdu3c6.webp",
-          "thumb": "images/works/2025-ionex/mvzgdu3c6-t.webp",
-          "w": 1259,
-          "h": 12697,
+          "w": 1917,
+          "h": 28420,
           "frame": "browser",
-          "site": "smvzgfeb7"
+          "slices": [
+            {
+              "src": "images/works/2025-ionex/mw037r5d0.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037r5d0-2.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037r5d0-3.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037r5d0-4.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037r5d0-5.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037r5d0-6.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037r5d0-7.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037r5d0-8.webp",
+              "h": 420
+            }
+          ],
+          "src": "images/works/2025-ionex/mw037r5d0.webp",
+          "thumb": "images/works/2025-ionex/mw037r5d0-t.webp",
+          "site": "smw02oo6e"
         },
         {
-          "src": "images/works/2025-ionex/mvzgdt265.webp",
-          "thumb": "images/works/2025-ionex/mvzgdt265-t.webp",
-          "w": 1210,
-          "h": 13217,
+          "w": 2000,
+          "h": 17882,
           "frame": "browser",
-          "site": "smw02pj48"
-        },
-        {
-          "src": "images/works/2025-ionex/mvzgdpad1.webp",
-          "thumb": "images/works/2025-ionex/mvzgdpad1-t.webp",
-          "w": 1336,
-          "h": 11965,
-          "frame": "browser",
-          "site": "smw02iox5"
-        },
-        {
-          "src": "images/works/2025-ionex/mw02mm6v0.webp",
-          "thumb": "images/works/2025-ionex/mw02mm6v0-t.webp",
-          "w": 1337,
-          "h": 11954,
-          "frame": "browser",
+          "slices": [
+            {
+              "src": "images/works/2025-ionex/mw037xe90.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037xe90-2.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037xe90-3.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037xe90-4.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw037xe90-5.webp",
+              "h": 1882
+            }
+          ],
+          "src": "images/works/2025-ionex/mw037xe90.webp",
+          "thumb": "images/works/2025-ionex/mw037xe90-t.webp",
           "site": "smvzgguyh"
         },
         {
-          "src": "images/works/2025-ionex/mw02og9q0.webp",
-          "thumb": "images/works/2025-ionex/mw02og9q0-t.webp",
-          "w": 1038,
-          "h": 15389,
+          "w": 2000,
+          "h": 17912,
           "frame": "browser",
-          "site": "smw02oo6e"
+          "slices": [
+            {
+              "src": "images/works/2025-ionex/mw0381jn0.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw0381jn0-2.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw0381jn0-3.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw0381jn0-4.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw0381jn0-5.webp",
+              "h": 1912
+            }
+          ],
+          "src": "images/works/2025-ionex/mw0381jn0.webp",
+          "thumb": "images/works/2025-ionex/mw0381jn0-t.webp",
+          "site": "smw02iox5"
+        },
+        {
+          "w": 2000,
+          "h": 21846,
+          "frame": "browser",
+          "slices": [
+            {
+              "src": "images/works/2025-ionex/mw03856l0.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw03856l0-2.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw03856l0-3.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw03856l0-4.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw03856l0-5.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw03856l0-6.webp",
+              "h": 1846
+            }
+          ],
+          "src": "images/works/2025-ionex/mw03856l0.webp",
+          "thumb": "images/works/2025-ionex/mw03856l0-t.webp",
+          "site": "smw02pj48"
+        },
+        {
+          "w": 2000,
+          "h": 20171,
+          "frame": "browser",
+          "slices": [
+            {
+              "src": "images/works/2025-ionex/mw0389cn0.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw0389cn0-2.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw0389cn0-3.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw0389cn0-4.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw0389cn0-5.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw0389cn0-6.webp",
+              "h": 171
+            }
+          ],
+          "src": "images/works/2025-ionex/mw0389cn0.webp",
+          "thumb": "images/works/2025-ionex/mw0389cn0-t.webp",
+          "site": "smvzgfeb7"
+        },
+        {
+          "w": 2000,
+          "h": 13280,
+          "frame": "browser",
+          "slices": [
+            {
+              "src": "images/works/2025-ionex/mw038luo0.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw038luo0-2.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw038luo0-3.webp",
+              "h": 4000
+            },
+            {
+              "src": "images/works/2025-ionex/mw038luo0-4.webp",
+              "h": 1280
+            }
+          ],
+          "src": "images/works/2025-ionex/mw038luo0.webp",
+          "thumb": "images/works/2025-ionex/mw038luo0-t.webp",
+          "site": "smw02gknm"
         }
       ],
       "hidden": false,
