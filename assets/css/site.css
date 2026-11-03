@@ -403,6 +403,7 @@ a.status:hover { transform: translateY(-2px); }
 .contact__cta:hover .contact__text { background-size: 100% .06em; }
 .contact__arrow { display: inline-block; color: var(--accent); font-family: var(--f-sans); font-weight: 400; transition: transform .6s var(--ease-out); }
 .contact__cta:hover .contact__arrow { transform: translate(.08em, -.08em) rotate(45deg); }
+.contact[hidden] { display: none; }
 .contact__links { display: flex; flex-wrap: wrap; gap: 8px; }
 .contact__links a { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line-strong); font-size: 14px; font-weight: 500; transition: background-color .3s, color .3s, border-color .3s; }
 .contact__links a:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
