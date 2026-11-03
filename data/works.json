@@ -405,7 +405,12 @@
       "roles": [
         "前端開發"
       ],
-      "tags": [],
+      "tags": [
+        "網站框架開發（Vue / Nuxt.js）",
+        "響應式網頁（RWD）",
+        "網頁切版（HTML / CSS）",
+        "互動與動畫（JavaScript）"
+      ],
       "status": "live",
       "url": "https://www.msf.org.tw/",
       "demo": "",
@@ -445,8 +450,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）",
-        "網頁切版（HTML / CSS）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -481,7 +485,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "live",
       "url": "https://jctprovider.com.tw/",
@@ -989,7 +993,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1016,7 +1020,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1055,7 +1059,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1082,8 +1086,8 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）",
-        "互動遊戲／測驗"
+        "RWD",
+        "互動測驗"
       ],
       "status": "",
       "url": "",
@@ -1182,7 +1186,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1209,7 +1213,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1236,7 +1240,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1263,7 +1267,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1290,7 +1294,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1329,7 +1333,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1356,7 +1360,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1383,7 +1387,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1422,7 +1426,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -1461,7 +1465,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "redesigned",
       "url": "https://www.cie.org.tw/",
@@ -2125,7 +2129,7 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）"
+        "RWD"
       ],
       "status": "",
       "url": "",
@@ -2195,7 +2199,7 @@
         "前端開發"
       ],
       "tags": [
-        "網頁切版（HTML / CSS）"
+        "HTML5/CSS3"
       ],
       "status": "",
       "url": "",
@@ -2697,8 +2701,8 @@
         "前端開發"
       ],
       "tags": [
-        "響應式網頁（RWD）",
-        "網頁切版（HTML / CSS）"
+        "RWD",
+        "HTML5/CSS3"
       ],
       "status": "redesigned",
       "url": "https://www.cht.com.tw/",
@@ -2781,7 +2785,7 @@
         "前端開發"
       ],
       "tags": [
-        "網頁切版（HTML / CSS）"
+        "HTML5"
       ],
       "status": "",
       "url": "",
@@ -3435,7 +3439,7 @@
         "前端開發"
       ],
       "tags": [
-        "網頁切版（HTML / CSS）"
+        "HTML/CSS"
       ],
       "status": "redesigned",
       "url": "https://www.msi.com/",
@@ -3668,7 +3672,7 @@
         "前端開發"
       ],
       "tags": [
-        "網頁切版（HTML / CSS）"
+        "HTML/CSS"
       ],
       "status": "",
       "url": "",
@@ -3822,7 +3826,7 @@
         "前端開發"
       ],
       "tags": [
-        "網頁切版（HTML / CSS）"
+        "HTML/CSS"
       ],
       "status": "redesigned",
       "url": "https://www.benq.com/",
@@ -3896,7 +3900,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4006,7 +4010,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4038,7 +4042,7 @@
         "前端開發"
       ],
       "tags": [
-        "網頁切版（HTML / CSS）"
+        "HTML/CSS"
       ],
       "status": "redesigned",
       "url": "https://www.bin-music.com.tw/",
@@ -4142,7 +4146,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4174,7 +4178,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4212,7 +4216,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4286,7 +4290,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4342,7 +4346,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4397,7 +4401,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4513,7 +4517,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4575,7 +4579,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4649,7 +4653,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4693,7 +4697,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4833,7 +4837,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -4949,7 +4953,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
@@ -5005,7 +5009,7 @@
         "視覺設計"
       ],
       "tags": [
-        "Flash 動畫"
+        "Flash"
       ],
       "status": "",
       "url": "",
